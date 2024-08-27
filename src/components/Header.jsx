@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImage from "../assets/pb.png"
 
-const Header = ({ scrollToSection }) => {
+const Header = ({ scrollToSection, headerList }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -16,35 +14,25 @@ const Header = ({ scrollToSection }) => {
   };
 
   return (
-    <header className="bg-[#0F1724] text-white py-4">
-      <div className="container mx-auto flex justify-between items-center px-4 lg:px-6">
-        <motion.h1
-          className="text-2xl lg:text-3xl font-bold cursor-pointer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => scrollToSection("landing")}
-        >
-          <img src={logoImage} alt="logo" width={44} height={44} />
+    <header className="h-28 bg-white shadow-md shadow-slate-300 px-12  py-10">
+      <div className="mx-auto  flex justify-between items-center  lg:px-6">
+        <p className="text-2xl lg:text-3xl font-bold cursor-pointer text-center w-full lg:w-auto">
+          Kristal.dev
+        </p>
 
-        </motion.h1>
-        <div className="lg:hidden cursor-pointer" onClick={toggleMenu}>
-          <svg
-            className={`w-8 h-8 ${isOpen ? "text-gray-300" : "text-white"}`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
-            />
-          </svg>
-        </div>
-        <nav className="hidden lg:flex space-x-8">
-          {["skills", "services", "experience", "projects", "contact"].map((item) => (
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden text-xl"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+          onClick={toggleMenu}
+        >
+          ☰
+        </button>
+
+        {/* Desktop Menu */}
+        <nav className="hidden lg:flex space-x-8 items-center justify-center w-full lg:w-auto">
+          {headerList.map((item) => (
             <motion.div
               key={item}
               className="cursor-pointer"
@@ -52,12 +40,48 @@ const Header = ({ scrollToSection }) => {
               whileTap={{ scale: 0.9 }}
               onClick={() => handleItemClick(item)}
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
+              <p className="text-2xl font-bold text-center">{item}</p>
             </motion.div>
           ))}
         </nav>
       </div>
+
+      {/* Mobile Menu */}
       <AnimatePresence>
+        {isOpen && (
+          <motion.nav
+            key="mobile-menu"
+            className="lg:hidden flex flex-col space-y-4 p-4 items-center"
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
+          >
+            {headerList.map((item) => (
+              <motion.div
+                key={item}
+                className="cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => handleItemClick(item)}
+              >
+                <p className="text-xl font-bold text-center">{item}</p>
+              </motion.div>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+};
+
+export default Header;
+
+{
+  /* Modal */
+}
+
+{
+  /* <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ x: "-100%" }}
@@ -77,7 +101,10 @@ const Header = ({ scrollToSection }) => {
                 >
                   <img src={logoImage} alt="logo" width={44} height={44} />
                 </h1>
-                <div className="cursor-pointer" onClick={() => setIsOpen(false)}>
+                <div
+                  className="cursor-pointer"
+                  onClick={() => setIsOpen(false)}
+                >
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -94,8 +121,9 @@ const Header = ({ scrollToSection }) => {
                   </svg>
                 </div>
               </div>
+
               <nav className="flex flex-col space-y-4">
-                {["skills", "services", "experience", "projects", "contact"].map((item) => (
+                {headerList.map((item) => (
                   <motion.div
                     key={item}
                     className="cursor-pointer text-xl"
@@ -110,9 +138,5 @@ const Header = ({ scrollToSection }) => {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
-    </header>
-  );
-};
-
-export default Header;
+      </AnimatePresence> */
+}

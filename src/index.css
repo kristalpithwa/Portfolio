@@ -2,10 +2,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
-  font-family: "Inter", sans-serif;
+
+
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("./fonts/LibreBaskerville-Regular.ttf") format("ttf");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
 }
 
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("./fonts/LibreBaskerville-Bold.ttf") format("ttf");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("./fonts/LibreBaskerville-Italic.ttf") format("ttf");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+}
+
+body,
+#root {
+  height: 100%;
+  font-family: "Libre Baskerville",;
+  background-color: #F5F5F5;
+}
 
 h2 {
   background: linear-gradient(90deg, #b3138c, #00b0ff);
