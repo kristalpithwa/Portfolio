@@ -7,7 +7,7 @@ const experiences = [
     company: "Bonzark Technologies",
     timeframe: "July 2022 - May 2024",
     description: "Worked as a frontend developer on various projects.",
-    icon: "./src/assets/bonzark.png", // Updated path for Bonzark Technologies logo
+    icon: "./src/assets/bonzark.png",
     highlights: [
       "Developed responsive web applications using React.",
       "Implemented state management with Redux.",
@@ -18,7 +18,7 @@ const experiences = [
     company: "Qtonz Infosoft",
     timeframe: "May 2024 - Present",
     description: "Currently working as a MERN stack developer.",
-    icon: "./src/assets/qtonz.png", // Updated path for Qtonz Infosoft logo
+    icon: "./src/assets/qtonz.png",
     highlights: [
       "Building scalable backend APIs using Node.js and Express.",
       "Designing and maintaining MongoDB databases.",
@@ -29,7 +29,7 @@ const experiences = [
 
 const ExperienceSectionLarge = () => {
   return (
-    <div className="bg-gray-900 text-white py-16" id="experience">
+    <div className="text-white py-5" id="experience">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold mb-12 text-center">
           {`Some Things I’ve Built`}

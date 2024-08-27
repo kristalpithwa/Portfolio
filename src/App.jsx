@@ -1,16 +1,18 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import LoadingComponent from "./components/Loader.jsx";
 
 const LazyLandingSection = React.lazy(() => import("./sections/Landing"));
-const LazySkillsSection = React.lazy(() => import("./sections/Skills"));
-const LazyServiceSection = React.lazy(() => import("./sections/Services"));
-const LazyExperienceSection = React.lazy(() => import("./sections/Experience"));
-const LazyProjectSection = React.lazy(() => import("./sections/Project"));
+const LazyAboutMeSection = React.lazy(() => import("./sections/AboutMe"));
+const LazyProjectSection = React.lazy(() => import("./sections/Projects"));
 const LazyContactUs = React.lazy(() => import("./sections/Contact"));
+// const LazyProjectSection = React.lazy(() => import("./sections/Project"));
+// const LazyServiceSection = React.lazy(() => import("./sections/Services"));
 
 function App() {
+  const [menu, setMenu] = useState(["Home", "About", "Projects", "Contact"]);
+
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -19,17 +21,17 @@ function App() {
   };
 
   return (
-    <div className="overflow-hidden bg-gray-800">
-      <Header scrollToSection={scrollToSection} />
+    <div className="overflow-hidden ">
+      <Header headerList={menu} scrollToSection={scrollToSection} />
       <Suspense fallback={<LoadingComponent />}>
         <LazyLandingSection />
-        <LazySkillsSection />
-        <LazyServiceSection />
-        <LazyExperienceSection />
+        <LazyAboutMeSection />
         <LazyProjectSection />
+        {/* <LazyServiceSection /> */}
+        {/* <LazyProjectSection /> */}
         <LazyContactUs />
       </Suspense>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
