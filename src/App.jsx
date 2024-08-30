@@ -31,7 +31,7 @@ function App() {
         {/* <LazyProjectSection /> */}
         <LazyContactUs />
       </Suspense>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
