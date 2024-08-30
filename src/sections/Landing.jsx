@@ -9,7 +9,7 @@ const LandingSection = () => {
 
   return (
     <div
-      id="landing"
+      id="Home"
       className="relative h-[800px] flex justify-center items-center"
     >
       <div className="w-full max-w-[1350px] flex justify-between items-center bg-pink  rounded-lg">

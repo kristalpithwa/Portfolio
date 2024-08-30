@@ -16,7 +16,7 @@ const AboutMe = () => {
   return (
     <div
       className="min-h-screen h-[800px] flex flex-col items-center justify-center"
-      id="aboutMe"
+      id="About"
     >
       <div className="w-full max-w-[1500px] flex justify-between items-center ">
         <img
