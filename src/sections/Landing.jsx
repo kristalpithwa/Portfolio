@@ -3,10 +3,6 @@ import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import profilePic from "../assets/kristal.jpg";
 
 const LandingSection = () => {
-  const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div
       id="Home"

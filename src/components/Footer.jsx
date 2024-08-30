@@ -86,7 +86,7 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Prayag Bhimani. All rights
+              &copy; {new Date().getFullYear()} Kristal Pithwa. All rights
               reserved.
             </p>
           </motion.div>
