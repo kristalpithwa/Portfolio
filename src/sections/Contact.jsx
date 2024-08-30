@@ -1,11 +1,13 @@
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
-import { RiMapPin2Line, RiMailLine, RiPhoneLine } from "react-icons/ri"; // Importing icons
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+
+import * as Yup from "yup";
+import emailjs from "emailjs-com";
+import { useFormik } from "formik";
+import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import { RiMapPin2Line, RiMailLine, RiPhoneLine } from "react-icons/ri";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactUsSection = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -72,14 +74,14 @@ const ContactUsSection = () => {
       <ToastContainer />
 
       <div className="container mx-auto px-6">
-        <motion.h2
+        {/* <motion.h2
           className="text-4xl lg:text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-[#b3138c] to-[#00b0ff]"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Contact Me
-        </motion.h2>
+        </motion.h2> */}
 
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <motion.div
@@ -92,24 +94,33 @@ const ContactUsSection = () => {
               className="text-3xl font-semibold mb-4"
               whileHover={{ scale: 1.05, color: "#FF0080" }}
             >
-              Get in Touch
+              Let's Talk.
+            </motion.h3>
+            <motion.h3
+              className="text-3xl font-semibold mb-4"
+              whileHover={{ scale: 1.05, color: "#FF0080" }}
+            >
+              Tell me about your
+            </motion.h3>
+            <motion.h3
+              className="text-3xl font-semibold mb-4"
+              whileHover={{ scale: 1.05, color: "#FF0080" }}
+            >
+              Project.
             </motion.h3>
 
             <motion.p
               className="text-gray-400 mb-6 leading-relaxed"
               whileHover={{ scale: 1.02 }}
             >
-              I am a passionate MERN stack developer available for freelance
-              projects. I would love to hear from you, whether you have a
-              question about my work, need a demo, or anything else. Let's
-              create something amazing together!
+              Let's create something together
             </motion.p>
 
             <ul className="list-disc pl-5 text-gray-400 space-y-2">
-              <li className="flex items-center">
+              {/* <li className="flex items-center">
                 <RiMapPin2Line className="text-2xl mr-2" />
                 Rajkot, Gujarat - 360004
-              </li>
+              </li> */}
               <li className="flex items-center">
                 <RiPhoneLine className="text-2xl mr-2" />
                 <a href="tel:+91 8000830484" className="text-blue-400">
@@ -119,8 +130,8 @@ const ContactUsSection = () => {
               <li className="flex items-center">
                 <RiMailLine className="text-2xl mr-2" />
                 <a
-                  href="mailto:crystalpithwa@gmail.com"
                   className="text-blue-400"
+                  href="mailto:crystalpithwa@gmail.com"
                 >
                   crystalpithwa@gmail.com
                 </a>
@@ -136,6 +147,13 @@ const ContactUsSection = () => {
           >
             <form onSubmit={formik.handleSubmit}>
               <div className="mb-6">
+                <motion.h3
+                  className="text-3xl font-semibold mb-4"
+                  whileHover={{ scale: 1.05, color: "#FF0080" }}
+                >
+                  Send us a message
+                </motion.h3>
+
                 <label
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-400 mb-2"
@@ -206,7 +224,7 @@ const ContactUsSection = () => {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-400 mb-2"
                 >
-                  Message
+                  Tell me about your project.
                 </label>
 
                 <motion.textarea
