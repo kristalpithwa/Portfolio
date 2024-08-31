@@ -10,7 +10,7 @@ import cssImage from "../assets/css3.svg";
 import gitImage from "../assets/git.svg";
 import reduxImage from "../assets/redux.svg";
 import tailwindImage from "../assets/tailwind.svg";
-import profilePic from "../assets/kristal.jpg";
+import profilePic from "../assets/emoji.svg";
 
 const AboutMe = () => {
   return (
@@ -23,7 +23,7 @@ const AboutMe = () => {
           alt="Profile"
           loading="lazy"
           src={profilePic}
-          className="w-[400px] h-[400px] rounded-full object-cover border-4"
+          className="w-[400px] h-[400px] object-contain"
         />
         <div className="w-[1000px]">
           <h1 className="text-7xl font-bold text-black">About Me</h1>
@@ -41,7 +41,7 @@ const AboutMe = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center mt-24 space-x-8">
+      <div className="flex justify-center items-center mt-36 space-x-8">
         <h1 className="text-4xl font-bold text-black">Tech Stack |</h1>
         <img
           alt="JavaScript"
