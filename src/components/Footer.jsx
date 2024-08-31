@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiTwitter, FiLinkedin, FiGithub } from "react-icons/fi";
+import { FiTwitter, FiLinkedin, FiGithub, FiInstagram } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -19,16 +19,16 @@ const Footer = () => {
             </h4>
             <div className="flex justify-center lg:justify-start space-x-4">
               <motion.a
-                href="https://twitter.com/yourtwitter"
+                href="https://www.instagram.com/_kryystall"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl text-blue-400 hover:text-blue-500 transition-colors duration:300"
                 whileHover={{ scale: 1.2 }}
               >
-                <FiTwitter />
+                <FiInstagram />
               </motion.a>
               <motion.a
-                href="https://www.linkedin.com/in/prayag-p-2b56001b7/"
+                href="https://www.linkedin.com/in/kristal-pithwa-a62861a4/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl text-blue-400 hover:text-blue-500 transition-colors duration:300"
@@ -37,7 +37,7 @@ const Footer = () => {
                 <FiLinkedin />
               </motion.a>
               <motion.a
-                href="https://github.com/httpsprayag"
+                href="https://github.com/kristalpithwa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl text-blue-400 hover:text-blue-500 transition-colors duration:300"
