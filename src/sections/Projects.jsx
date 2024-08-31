@@ -65,9 +65,9 @@ const experiences = [
 
 const ProjectsSection = () => {
   return (
-    <div className="text-white py-5" id="Projects">
-      <div className="mx-auto px-40">
-        <h2 className="text-5xl font-bold mb-24 text-center">
+    <div className="text-white" id="Projects">
+      <div className="px-12">
+        <h2 className="text-3xl font-bold mb-12 text-center">
           {`Some Things I’ve Built`}
         </h2>
 
@@ -75,26 +75,23 @@ const ProjectsSection = () => {
           {/* Center line */}
           <div className="absolute left-1/2 bg-gray-700 w-1 h-full top-0 transform -translate-x-1/2" />
 
-          {/* Circle at center */}
-          {/* <div className="absolute bg-gradient-to-r from-pink-500 to-blue-500 w-6 h-6 rounded-full ring-4" /> */}
-
           <div className="flex flex-col flex-grow">
             {experiences.map((experience, index) => (
               <div
                 key={index}
-                className={`relative flex mb-14 ${
+                className={`relative flex mb-4 ${
                   index % 2 === 1 ? "md:ml-auto pt-5" : "md:mr-auto"
                 }`}
               >
                 {/* Experience Box */}
                 <div
-                  className={`p-5 bg-gray-800 border border-gray-700 rounded-lg shadow-lg w-[750px]  ${
+                  className={`p-5 bg-gray-800 border border-gray-700 rounded-lg shadow-lg w-[590px]  ${
                     index % 2 === 0 ? "ml-auto" : "mr-auto"
                   }`}
                 >
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center">
                     <div>
-                      <h3 className="text-3xl font-semibold text-white">
+                      <h3 className="text-2xl font-semibold text-white">
                         {experience.company}
                       </h3>
                     </div>
@@ -102,16 +99,16 @@ const ProjectsSection = () => {
 
                   {/* Description */}
 
-                  <p className="text-gray-300 text-xl mb-4 ">
+                  <p className="text-gray-300 text-sm mt-3">
                     {experience.description}
                   </p>
-                  <p className="text-gray-300  text-xl mb-4">
+                  <p className="text-gray-300  text-sm mt-3">
                     Technologies: {experience.technologies}
                   </p>
 
                   {/* Highlights */}
 
-                  <ul className="text-gray-400">
+                  <ul className="text-gray-400 mt-3">
                     {experience.highlights.map((item, i) => (
                       <li key={i} className="flex mb-2">
                         <svg
@@ -121,14 +118,14 @@ const ProjectsSection = () => {
                           stroke="currentColor"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className="w-6 h-6 mr-2   text-blue-500"
+                          className="w-5 h-5 mr-2 text-blue-500"
                         >
                           <circle cx="12" cy="12" r="10"></circle>
                           <line x1="12" y1="8" x2="12" y2="12"></line>
                           <line x1="12" y1="16" x2="12" y2="16"></line>
                         </svg>
 
-                        <p className="text-gray-300 text-[16px]">
+                        <p className="text-gray-300 text-[12px]">
                           {item.mobile} : {item.link}
                         </p>
                       </li>

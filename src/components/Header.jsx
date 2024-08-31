@@ -14,9 +14,9 @@ const Header = ({ scrollToSection, headerList }) => {
   };
 
   return (
-    <header className="h-28 bg-white shadow-md shadow-slate-300 px-12  py-10">
-      <div className="mx-auto  flex justify-between items-center  lg:px-6">
-        <p className="text-2xl lg:text-3xl font-bold cursor-pointer text-center w-full lg:w-auto">
+    <header className="h-20 bg-white shadow-md shadow-slate-300 px-2  py-6">
+      <div className="mx-auto  flex justify-between items-center lg:px-4">
+        <p className="text-2xl lg:text-2xl font-bold cursor-pointer text-center w-full lg:w-auto">
           Kristal.dev
         </p>
 
@@ -40,7 +40,7 @@ const Header = ({ scrollToSection, headerList }) => {
               whileTap={{ scale: 0.9 }}
               onClick={() => handleItemClick(item)}
             >
-              <p className="text-2xl font-bold text-center">{item}</p>
+              <p className="text-xl font-bold text-center">{item}</p>
             </motion.div>
           ))}
         </nav>
