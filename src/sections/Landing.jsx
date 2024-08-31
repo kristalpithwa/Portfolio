@@ -6,15 +6,15 @@ const LandingSection = () => {
   return (
     <div
       id="Home"
-      className="relative h-[800px] flex justify-center items-center"
+      className="relative h-[610px] flex justify-center items-center"
     >
-      <div className="w-full max-w-[1350px] flex justify-between items-center bg-pink  rounded-lg">
+      <div className="w-full max-w-[1100px] flex justify-between items-center">
         <div>
-          <h1 className="text-7xl font-bold text-black">Front-End Developer</h1>
-          <p className="text-3xl font-semibold text-black">
+          <h1 className="text-6xl font-bold text-black">Front-End Developer</h1>
+          <p className="text-2xl font-semibold text-black">
             React & React Native
           </p>
-          <p className="mt-6 text-[22px] text-black">
+          <p className="mt-3 text-lg text-black">
             Hey stranger! My self Kristal Pithwa and I enjoy creating things
             that live on the internet.
             <br />
@@ -53,7 +53,7 @@ const LandingSection = () => {
           alt="Profile"
           loading="lazy"
           src={profilePic}
-          className="w-[400px] h-[400px] rounded-full object-cover border-4"
+          className="w-[300px] h-[300px] rounded-full object-cover"
         />
       </div>
     </div>
