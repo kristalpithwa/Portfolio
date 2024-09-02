@@ -6,7 +6,7 @@ const LandingSection = () => {
   return (
     <div
       id="Home"
-      className="relative h-[610px] flex justify-center items-center"
+      className="relative lg:h-[610px] xl:h-[910px] bg-slate-300 flex justify-center items-center"
     >
       <div className="w-full max-w-[1100px] flex justify-between items-center">
         <div>
