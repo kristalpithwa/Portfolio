@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "Libre Baskerville";
-  src: url("./fonts/LibreBaskerville-Regular.ttf") format("ttf");
+  src: url("./fonts/LibreBaskerville-Regular.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
   font-weight: 400;
@@ -14,24 +14,17 @@
 
 @font-face {
   font-family: "Libre Baskerville";
-  src: url("./fonts/LibreBaskerville-Bold.ttf") format("ttf");
+  src: url("./fonts/LibreBaskerville-Bold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
   font-weight: 600;
 }
 
-@font-face {
-  font-family: "Libre Baskerville";
-  src: url("./fonts/LibreBaskerville-Italic.ttf") format("ttf");
-  font-style: normal;
-  font-display: swap;
-  font-weight: 500;
-}
 
 body,
 #root {
   height: 100%;
-  font-family: "Libre Baskerville",;
+  font-family: "Libre Baskerville";
   background-color: #F5F5F5;
 }
 
