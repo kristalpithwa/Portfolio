@@ -8,9 +8,9 @@ const LandingSection = () => {
   return (
     <div
       id="Home"
-      className="relative h-[calc(100vh-80px)]  flex justify-center items-center bg-slate-200"
+      className="relative h-[calc(100vh-80px)]  flex justify-center items-center"
     >
-      <div className="w-full max-w-[1350px] flex flex-col lg:flex-row justify-between items-center p-5">
+      <div className="w-full max-w-[1300px] flex flex-col lg:flex-row justify-between items-center p-5">
         <div>
           <div className="flex items-center">
             <h1 className="text-center text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-black">

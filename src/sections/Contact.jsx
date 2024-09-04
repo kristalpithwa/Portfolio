@@ -33,7 +33,7 @@ const ContactUsSection = () => {
           import.meta.env.VITE_SERVICE_ID,
           import.meta.env.VITE_TEMPLATE_ID,
           {
-            to_name: "Prayag Bhimani",
+            to_name: "Kristal Pithwa",
             from_name: values.name,
             message: values.message,
             reply_to: values.email,
@@ -70,11 +70,14 @@ const ContactUsSection = () => {
   });
 
   return (
-    <div className="text-black px-16" id="Contact">
+    <div
+      className="text-black w-full h-screen flex items-center justify-center "
+      id="Contact"
+    >
       <ToastContainer />
 
-      <div className="py-16">
-        <div className="flex flex-col lg:flex-row justify-between items-center">
+      <div className="py-16 px-52 w-full">
+        <div className="flex w-full flex-col lg:flex-row justify-between items-center">
           <motion.div
             className="lg:w-1/2 mb-12 lg:mb-0 px-12 text-justify max-w-[650px]"
             initial={{ opacity: 0, x: -100 }}
