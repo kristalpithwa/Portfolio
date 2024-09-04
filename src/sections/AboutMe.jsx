@@ -14,19 +14,21 @@ const AboutMe = () => {
   return (
     <div
       id="About"
-      className="min-h-screen h-[610px] flex flex-col items-center justify-center"
+      className="min-h-screen h-screen  flex flex-col items-center justify-center"
     >
-      <div className="w-full max-w-[1200px] flex justify-between items-center">
+      <div className="w-full  max-w-[1300px] flex flex-col lg:flex-row justify-between items-center p-5">
         <img
           alt="Profile"
           loading="lazy"
           src={profilePic}
-          className="w-[235px] h-[235px] object-contain"
+          className=" mt-5 w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[280px] md:h-[280px] lg:w-[250px] lg:h-[250px] xl:w-[320px] xl:h-[320px] rounded-full object-cover shadow-lg"
         />
 
-        <div className="w-[915px]">
-          <h1 className="text-6xl font-bold text-black">About Me</h1>
-          <p className="mt-6 text-[16px] text-black">
+        <div className="lg:ml-36">
+          <h1 className="mt-5  text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-black">
+            About Me
+          </h1>
+          <p className="mt-5 text-sm sm:text-base md:text-lg lg:text-[14px] xl:text-base text-black leading-relaxed">
             I am a React/React Native Developer with 3+ years of dedicated
             experience, professionally well-versed in crafting robust and
             user-centric web and mobile applications for both iOS and Android
