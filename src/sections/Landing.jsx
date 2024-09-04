@@ -8,17 +8,17 @@ const LandingSection = () => {
   return (
     <div
       id="Home"
-      className="relative h-[calc(100vh-80px)]  flex justify-center items-center md:px-14 lg:px-1 xl:px-2 py-12 lg:py-20 xl:py-28"
+      className="relative h-[calc(100vh-80px)]  flex justify-center items-center bg-slate-200"
     >
       <div className="w-full max-w-[1350px] flex flex-col lg:flex-row justify-between items-center lg:space-y-0  sm:p-10 xl:p-16">
-        <div className="text-center lg:text-left">
-          <div className="flex">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-black">
+        <div>
+          <div className="flex items-center">
+            <h1 className="text-center sm:text-4xl md:text-5xl xl:text-6xl font-bold text-black">
               Front-End Developer
             </h1>
             <img
-              src={waving}
               alt="logo"
+              src={waving}
               className="w-[40px] h-[40px] animate-wave ml-3"
             />
           </div>
@@ -33,6 +33,7 @@ const LandingSection = () => {
               className="w-[40px] h-[40px] animate-rotate"
             />
           </div>
+
           <p className="mt-5 text-sm sm:text-base md:text-lg lg:text-[14px] xl:text-base text-black leading-relaxed">
             Hey stranger! My name is Kristal Pithwa, and I enjoy creating things
             that live on the internet.
@@ -68,11 +69,12 @@ const LandingSection = () => {
             </a>
           </div>
         </div>
+
         <img
           alt="Profile"
           loading="lazy"
           src={profilePic}
-          className="w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[280px] md:h-[280px] lg:w-[250px] lg:h-[250px] xl:w-[320px] xl:h-[320px] rounded-full object-cover shadow-lg"
+          className=" mt-5 w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[280px] md:h-[280px] lg:w-[250px] lg:h-[250px] xl:w-[320px] xl:h-[320px] rounded-full object-cover shadow-lg"
         />
       </div>
     </div>
