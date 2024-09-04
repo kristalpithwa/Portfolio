@@ -10,10 +10,10 @@ const LandingSection = () => {
       id="Home"
       className="relative h-[calc(100vh-80px)]  flex justify-center items-center bg-slate-200"
     >
-      <div className="w-full max-w-[1350px] flex flex-col lg:flex-row justify-between items-center lg:space-y-0  sm:p-10 xl:p-16">
+      <div className="w-full max-w-[1350px] flex flex-col lg:flex-row justify-between items-center p-5">
         <div>
           <div className="flex items-center">
-            <h1 className="text-center sm:text-4xl md:text-5xl xl:text-6xl font-bold text-black">
+            <h1 className="text-center text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-black">
               Front-End Developer
             </h1>
             <img
