@@ -41,68 +41,92 @@ const AboutMe = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center mt-20 space-x-7">
-        <h1 className="text-2xl font-bold text-black">Tech Stack |</h1>
-        <img
-          alt="JavaScript"
-          loading="lazy"
-          src={JavaScriptImage}
-          className="w-[75px] h-[75px] object-contain"
-        />
-        <img
-          alt="Typescript"
-          loading="lazy"
-          src={TypescriptImage}
-          className="w-[65px] h-[65px] object-contain"
-        />
-        <img
-          alt="React"
-          loading="lazy"
-          src={ReactImage}
-          className="w-[75px] h-[75px] object-contain"
-        />
-        <img
-          alt="Android"
-          loading="lazy"
-          src={Android}
-          className="w-[75px] h-[75px] object-contain"
-        />
-        <img
-          alt="Xcode"
-          loading="lazy"
-          src={Xcode}
-          className="w-[75px] h-[75px] object-contain"
-        />
-        <img
-          alt="Tailwind"
-          loading="lazy"
-          src={tailwindImage}
-          className="w-[75px] h-[75px] object-contain"
-        />
-        <img
-          alt="Redux"
-          loading="lazy"
-          src={reduxImage}
-          className="w-[75px] h-[75px] object-contain"
-        />
-        <img
-          alt="Git"
-          loading="lazy"
-          src={gitImage}
-          className="w-[75px] h-[75px] object-contain"
-        />
-        <img
-          alt="Html"
-          loading="lazy"
-          src={htmlImage}
-          className="w-[75px] h-[75px] object-contain"
-        />
-        <img
-          alt="Css"
-          loading="lazy"
-          src={cssImage}
-          className="w-[75px] h-[75px] object-contain"
-        />
+      <div className="flex flex-wrap justify-center items-center mt-10 space-x-3 md:space-x-5 lg:space-x-7 lg:flex-nowrap">
+        <h1 className="w-full lg:w-auto text-center text-xl font-bold text-black mb-6 lg:mb-0 lg:mr-4 md:text-2xl">
+          Tech Stack |
+        </h1>
+        <div className="flex flex-wrap justify-center lg:flex-nowrap lg:space-x-5">
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="JavaScript"
+              loading="lazy"
+              src={JavaScriptImage}
+              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+            />
+          </div>
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="Typescript"
+              loading="lazy"
+              src={TypescriptImage}
+              className="w-[45px] h-[45px] md:w-[60px] md:h-[60px] lg:w-[65px] lg:h-[65px] object-contain"
+            />
+          </div>
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="React"
+              loading="lazy"
+              src={ReactImage}
+              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+            />
+          </div>
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="Android"
+              loading="lazy"
+              src={Android}
+              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+            />
+          </div>
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="Xcode"
+              loading="lazy"
+              src={Xcode}
+              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+            />
+          </div>
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="Tailwind"
+              loading="lazy"
+              src={tailwindImage}
+              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+            />
+          </div>
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="Redux"
+              loading="lazy"
+              src={reduxImage}
+              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+            />
+          </div>
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="Git"
+              loading="lazy"
+              src={gitImage}
+              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+            />
+          </div>
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="Html"
+              loading="lazy"
+              src={htmlImage}
+              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+            />
+          </div>
+          <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
+            <img
+              alt="Css"
+              loading="lazy"
+              src={cssImage}
+              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
