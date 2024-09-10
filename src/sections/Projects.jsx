@@ -92,6 +92,30 @@ const ProjectsSection = () => {
               <p className="text-gray-300 text-xs sm:text-sm md:text-base mt-3">
                 Technologies: {experience.technologies}
               </p>
+
+              <ul className="text-gray-400 mt-3">
+                {experience.highlights.map((item, i) => (
+                  <li key={i} className="flex mb-2">
+                    <svg
+                      fill="none"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-5 h-5 mr-2 text-blue-500"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12" y2="16"></line>
+                    </svg>
+
+                    <a href={item.link} className="text-gray-300 text-[12px]">
+                      {item.mobileType} : {item.link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -106,27 +130,5 @@ export default ProjectsSection;
   /* Highlights */
 }
 {
-  /* <ul className="text-gray-400 mt-3">
-{experience.highlights.map((item, i) => (
-  <li key={i} className="flex mb-2">
-    <svg
-      fill="none"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="w-5 h-5 mr-2 text-blue-500"
-    >
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="12" y1="8" x2="12" y2="12"></line>
-      <line x1="12" y1="16" x2="12" y2="16"></line>
-    </svg>
-
-    <a href={item.link} className="text-gray-300 text-[12px]">
-      {item.mobileType} : {item.link}
-    </a>
-  </li>
-))}
-</ul> */
+  /* */
 }
