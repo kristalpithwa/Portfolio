@@ -1,11 +1,10 @@
 import { useState } from "react";
-
 import * as Yup from "yup";
 import emailjs from "emailjs-com";
 import { useFormik } from "formik";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
-import { RiMapPin2Line, RiMailLine, RiPhoneLine } from "react-icons/ri";
+import { RiMailLine, RiPhoneLine } from "react-icons/ri";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -26,7 +25,7 @@ const ContactUsSection = () => {
       message: Yup.string().required("Message is required"),
     }),
     onSubmit: async (values) => {
-      setIsLoading(true); // Show loader
+      setIsLoading(true);
 
       try {
         const response = await emailjs.send(
@@ -42,14 +41,13 @@ const ContactUsSection = () => {
         );
 
         if (response.status === 200) {
-          // Success toast with progress bar
           toast.success(
             <div>
               <span>Message sent successfully!</span>
               <div className="progress-bar" />
             </div>,
             {
-              autoClose: 4000, // 4 seconds
+              autoClose: 4000,
               onClose: () => formik.resetForm(),
               hideProgressBar: true,
               closeOnClick: true,
@@ -64,40 +62,40 @@ const ContactUsSection = () => {
         console.error("Error sending message:", error);
         toast.error("Failed to send message. Please try again later.");
       } finally {
-        setIsLoading(false); // Hide loader
+        setIsLoading(false);
       }
     },
   });
 
   return (
     <div
-      className="text-black w-full h-screen flex items-center justify-center "
+      className="text-black w-full h-screen flex items-center justify-center"
       id="Contact"
     >
       <ToastContainer />
 
-      <div className="py-16 px-52 w-full">
-        <div className="flex w-full flex-col lg:flex-row justify-between items-center">
+      <div className="py-16 px-6 md:px-12 lg:px-20 xl:px-32 w-full max-w-screen-xl">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:space-x-8">
           <motion.div
-            className="lg:w-1/2 mb-12 lg:mb-0 px-12 text-justify max-w-[650px]"
+            className="lg:w-1/2 mb-12 lg:mb-0 px-4 md:px-8 text-justify max-w-[650px]"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h3
-              className="text-5xl font-semibold mb-4"
+              className="text-4xl md:text-5xl font-semibold mb-4"
               whileHover={{ scale: 1.05, color: "#FF0080" }}
             >
               Let's Talk.
             </motion.h3>
             <motion.h3
-              className="text-5xl font-semibold mb-4"
+              className="text-4xl md:text-5xl font-semibold mb-4"
               whileHover={{ scale: 1.05, color: "#FF0080" }}
             >
               Tell me about your
             </motion.h3>
             <motion.h3
-              className="text-5xl font-semibold mb-4"
+              className="text-4xl md:text-5xl font-semibold mb-4"
               whileHover={{ scale: 1.05, color: "#FF0080" }}
             >
               Project.
@@ -105,20 +103,20 @@ const ContactUsSection = () => {
 
             <motion.p
               whileHover={{ scale: 1.02 }}
-              className="mt-6 text-2xl font-medium"
+              className="mt-6 text-lg md:text-2xl font-medium"
             >
               Let's create something together
             </motion.p>
 
             <ul className="list-disc mt-5 text-gray-400 space-y-2">
               <li className="flex items-center">
-                <RiPhoneLine className="text-2xl mr-2" />
+                <RiPhoneLine className="text-xl md:text-2xl mr-2" />
                 <a href="tel:+91 8000830484" className="text-black">
                   +91 8000830484
                 </a>
               </li>
               <li className="flex items-center">
-                <RiMailLine className="text-2xl mr-2" />
+                <RiMailLine className="text-xl md:text-2xl mr-2" />
                 <a className="text-black" href="mailto:crystalpithwa@gmail.com">
                   crystalpithwa@gmail.com
                 </a>
@@ -127,7 +125,7 @@ const ContactUsSection = () => {
           </motion.div>
 
           <motion.div
-            className="lg:w-1/2 w-full px-8 rounded-lg shadow-lg border-slate-600 border max-w-[600px]"
+            className="lg:w-1/2 w-full px-4 md:px-8 rounded-lg shadow-lg border-slate-600 border max-w-[600px]"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -176,7 +174,7 @@ const ContactUsSection = () => {
               <div className="mb-6 mt-4">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-black "
+                  className="block text-sm font-medium text-black"
                 >
                   Email
                 </label>

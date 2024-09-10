@@ -41,8 +41,8 @@ const AboutMe = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center items-center mt-10 space-x-3 md:space-x-5 lg:space-x-7 lg:flex-nowrap">
-        <h1 className="w-full lg:w-auto text-center text-xl font-bold text-black mb-6 lg:mb-0 lg:mr-4 md:text-2xl">
+      <div className="flex flex-wrap justify-center items-center mt-10 space-x-16 md:space-x-5 lg:space-x-7 lg:flex-nowrap">
+        <h1 className="w-full lg:w-auto text-center  font-bold text-black mb-6 lg:mb-0 lg:mr-4 text-3xl">
           Tech Stack |
         </h1>
         <div className="flex flex-wrap justify-center lg:flex-nowrap lg:space-x-5">
@@ -51,7 +51,7 @@ const AboutMe = () => {
               alt="JavaScript"
               loading="lazy"
               src={JavaScriptImage}
-              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
           <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
@@ -59,7 +59,7 @@ const AboutMe = () => {
               alt="Typescript"
               loading="lazy"
               src={TypescriptImage}
-              className="w-[45px] h-[45px] md:w-[60px] md:h-[60px] lg:w-[65px] lg:h-[65px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
           <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
@@ -67,7 +67,7 @@ const AboutMe = () => {
               alt="React"
               loading="lazy"
               src={ReactImage}
-              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
           <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
@@ -75,7 +75,7 @@ const AboutMe = () => {
               alt="Android"
               loading="lazy"
               src={Android}
-              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
           <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
@@ -83,7 +83,7 @@ const AboutMe = () => {
               alt="Xcode"
               loading="lazy"
               src={Xcode}
-              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
           <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
@@ -91,7 +91,7 @@ const AboutMe = () => {
               alt="Tailwind"
               loading="lazy"
               src={tailwindImage}
-              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
           <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
@@ -99,7 +99,7 @@ const AboutMe = () => {
               alt="Redux"
               loading="lazy"
               src={reduxImage}
-              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
           <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
@@ -107,7 +107,7 @@ const AboutMe = () => {
               alt="Git"
               loading="lazy"
               src={gitImage}
-              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
           <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
@@ -115,7 +115,7 @@ const AboutMe = () => {
               alt="Html"
               loading="lazy"
               src={htmlImage}
-              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
           <div className="w-1/4 md:w-1/6 lg:w-auto p-2">
@@ -123,7 +123,7 @@ const AboutMe = () => {
               alt="Css"
               loading="lazy"
               src={cssImage}
-              className="w-[50px] h-[50px] md:w-[65px] md:h-[65px] lg:w-[75px] lg:h-[75px] object-contain"
+              className="w-[75px] h-[75px] object-contain"
             />
           </div>
         </div>
