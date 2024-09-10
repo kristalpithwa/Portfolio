@@ -65,31 +65,30 @@ const experiences = [
 const ProjectsSection = () => {
   return (
     <div
-      className="flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
       id="Projects"
+      className="flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
     >
-      <h2 className="text-xl sm:text-2xl lg:text-3xl pt-6 sm:pt-8 lg:pt-10 font-bold mb-8 text-center">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl mt-7 sm:mt-15 md:mt-10 lg:mt-5 font-bold mb-10 text-center">
         {`Some Things I’ve Built.`}
       </h2>
 
       <div className="relative w-full max-w-[1300px] flex justify-center items-center">
-        {/* Center line */}
-        <div className="absolute left-1/2 bg-gray-700 w-[2px] h-full top-0 transform -translate-x-1/2" />
-
         <div className="flex flex-col flex-grow w-full">
           {experiences.map((experience, index) => (
             <div
               key={index.toString()}
-              className={`relative mb-6 p-4 sm:p-6 lg:p-8 bg-gray-800 border border-gray-700 rounded-lg shadow-lg ${
+              className={`relative mb-5 p-6 bg-gray-800 border border-gray-700 rounded-lg shadow-lg md:${
                 index % 2 === 1 ? "ml-auto" : "mr-auto"
-              } w-full max-w-[95%] sm:max-w-[90%] md:max-w-[80%] lg:max-w-[70%]`}
+              }  max-w-full md:max-w-[80%] lg:max-w-[55%]`}
             >
               <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-white">
                 {experience.name}
               </h3>
+
               <p className="text-gray-300 text-xs sm:text-sm md:text-base mt-3">
                 {experience.description}
               </p>
+
               <p className="text-gray-300 text-xs sm:text-sm md:text-base mt-3">
                 Technologies: {experience.technologies}
               </p>

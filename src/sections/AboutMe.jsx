@@ -25,10 +25,10 @@ const AboutMe = () => {
         />
 
         <div className="lg:ml-36">
-          <h1 className="mt-5  text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-black">
+          <h1 className="mt-5 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-black">
             About Me
           </h1>
-          <p className="mt-5 text-sm sm:text-base md:text-lg lg:text-[14px] xl:text-base text-black leading-relaxed">
+          <p className="sm:mt-5 text-sm sm:text-base md:text-lg lg:text-[14px] xl:text-base text-black leading-relaxed">
             I am a React/React Native Developer with 3+ years of dedicated
             experience, professionally well-versed in crafting robust and
             user-centric web and mobile applications for both iOS and Android
@@ -41,7 +41,7 @@ const AboutMe = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center items-center mt-10 space-x-16 md:space-x-5 lg:space-x-7 lg:flex-nowrap">
+      <div className="flex flex-wrap justify-center items-center sm:mt-10 space-x-5 sm:space-x-16 md:space-x-5 lg:space-x-7 lg:flex-nowrap">
         <h1 className="w-full lg:w-auto text-center  font-bold text-black mb-6 lg:mb-0 lg:mr-4 text-3xl">
           Tech Stack |
         </h1>
