@@ -125,10 +125,3 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
-
-{
-  /* Highlights */
-}
-{
-  /* */
-}
