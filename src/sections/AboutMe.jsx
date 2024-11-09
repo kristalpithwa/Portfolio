@@ -29,7 +29,7 @@ const AboutMe = () => {
             About Me
           </h1>
           <p className="sm:mt-5 text-sm sm:text-base md:text-lg lg:text-[14px] xl:text-base text-black leading-relaxed">
-            I am a React/React Native Developer with 3+ years of dedicated
+            I am a React/React Native Developer with 5+ years of dedicated
             experience, professionally well-versed in crafting robust and
             user-centric web and mobile applications for both iOS and Android
             platforms. My extensive expertise includes proficiently leveraging
