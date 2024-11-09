@@ -33,7 +33,7 @@ const AboutMe = () => {
             experience, professionally well-versed in crafting robust and
             user-centric web and mobile applications for both iOS and Android
             platforms. My extensive expertise includes proficiently leveraging
-            React and React-Native's capabilities, optimizing performance,
+            React and React Native's capabilities, optimizing performance,
             ensuring seamless UI/UX, and collaborating seamlessly within
             cross-functional teams to deliver high-quality, scalable web and
             mobile solutions.
