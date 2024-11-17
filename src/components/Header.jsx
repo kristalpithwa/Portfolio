@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header = ({ scrollToSection, headerList }) => {
+const Header = ({ headerList, scrollToSection }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -14,15 +14,15 @@ const Header = ({ scrollToSection, headerList }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 h-20 bg-white shadow-md shadow-slate-300 px-2 py-6">
-      <div className="mx-auto flex justify-between items-center lg:px-4">
-        <p className="text-2xl lg:text-2xl font-bold cursor-pointer text-center w-full lg:w-auto">
+    <header className="sticky top-0 z-50 h-16 bg-white shadow-md shadow-slate-300 px-4 py-4">
+      <div className="mx-auto flex justify-between items-center lg:px-4 gap-4">
+        <p className="text-xl lg:text-2xl font-bold cursor-pointer text-center w-full lg:w-auto">
           Kristal.dev
         </p>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-xl"
+          className="lg:hidden text-xl transition-transform duration-300 transform hover:scale-110"
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
           onClick={toggleMenu}
@@ -32,7 +32,7 @@ const Header = ({ scrollToSection, headerList }) => {
 
         {/* Desktop Menu */}
         <nav className="hidden lg:flex space-x-8 items-center justify-center w-full lg:w-auto">
-          {headerList.map((item) => (
+          {headerList?.map((item) => (
             <motion.div
               key={item}
               className="cursor-pointer"
@@ -40,7 +40,7 @@ const Header = ({ scrollToSection, headerList }) => {
               whileTap={{ scale: 0.9 }}
               onClick={() => handleItemClick(item)}
             >
-              <p className="text-xl font-bold text-center">{item}</p>
+              <p className="text-lg lg:text-xl font-bold text-center">{item}</p>
             </motion.div>
           ))}
         </nav>
@@ -51,12 +51,12 @@ const Header = ({ scrollToSection, headerList }) => {
         {isOpen && (
           <motion.nav
             key="mobile-menu"
-            className="lg:hidden flex flex-col space-y-4 p-4 items-center"
-            initial={{ height: 0 }}
-            animate={{ height: "auto" }}
-            exit={{ height: 0 }}
+            className="lg:hidden flex flex-col space-y-4 items-center w-full bg-white absolute top-full left-0 z-40 shadow-md overflow-y-auto max-h-[calc(100vh-80px)]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            {headerList.map((item) => (
+            {headerList?.map((item) => (
               <motion.div
                 key={item}
                 className="cursor-pointer"
@@ -64,7 +64,9 @@ const Header = ({ scrollToSection, headerList }) => {
                 whileTap={{ scale: 0.9 }}
                 onClick={() => handleItemClick(item)}
               >
-                <p className="text-xl font-bold text-center">{item}</p>
+                <p className="text-lg lg:text-xl font-bold text-center">
+                  {item}
+                </p>
               </motion.div>
             ))}
           </motion.nav>
