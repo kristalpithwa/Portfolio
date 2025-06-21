@@ -1,22 +1,12 @@
-import React, { Suspense, useState } from "react";
-import Header from "./components/Header";
+import { Suspense } from "react";
 import LoadingComponent from "./components/Loader.jsx";
+import FallingLettersCanvas from "./FallingLettersCanvas.jsx";
 
 function App() {
-  const [menu] = useState(["Home", "About", "Projects", "Contact"]);
-
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 overflow-x-hidden">
-      {/* <Header scrollToSection={scrollToSection} menu={menu} /> */}
-
       <Suspense fallback={<LoadingComponent />}>
+        <FallingLettersCanvas />
         <div className="content-wrapper">
           <div className="container max-w-7xl mx-auto px-6 py-20">
             {/* Header Section */}
