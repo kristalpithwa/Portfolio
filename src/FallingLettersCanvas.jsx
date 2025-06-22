@@ -1,5 +1,5 @@
 // FallingLettersCanvas.jsx
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Matter from "matter-js";
 
 const FallingLettersCanvas = () => {
@@ -68,6 +68,7 @@ const FallingLettersCanvas = () => {
       "LLM",
       "RAG",
     ];
+
     const fallingObjects = [];
 
     function createFallingLetter() {
@@ -151,11 +152,11 @@ const FallingLettersCanvas = () => {
       ref={canvasRef}
       id="matter-canvas"
       style={{
-        position: "fixed",
         top: 0,
         left: 0,
-        pointerEvents: "none",
         zIndex: 0,
+        position: "fixed",
+        pointerEvents: "none",
       }}
     />
   );
