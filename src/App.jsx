@@ -3,6 +3,7 @@ import LoadingComponent from "./components/Loader.jsx";
 import FallingLettersCanvas from "./FallingLettersCanvas.jsx";
 import profilePic from "../src/assets/kristal.jpg";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import GitHubCalendar from "react-github-calendar";
 
 import JavaScriptImage from "../src/assets/javascript.svg";
 import TypescriptImage from "../src/assets/typescript.svg";
@@ -517,6 +518,21 @@ function App() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* <!-- Section Divider --> */}
+            <div className="section-divider">
+              <span className="border-white/10 border rounded-full">
+                Github Contribution
+              </span>
+            </div>
+
+            {/* <!-- Github Contribution --> */}
+            <div
+              style={{ animationDelay: "0.2s" }}
+              className="glass-card flex refraction-effect items-center justify-center animate-float rounded-3xl p-6 md:p-8 animate-slide-left animate mb-24"
+            >
+              <GitHubCalendar blockMargin={8} username="kristalpithwa" />
             </div>
 
             {/* <!-- Section Divider --> */}
