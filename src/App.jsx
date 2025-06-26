@@ -523,11 +523,11 @@ function App() {
             {/* <!-- Section Divider --> */}
             <div className="section-divider">
               <span className="border-white/10 border rounded-full">
-                Github Contribution
+                OpenSource Contribution
               </span>
             </div>
 
-            {/* <!-- Github Contribution --> */}
+            {/* <!-- Opensource Contribution --> */}
             <div
               style={{ animationDelay: "0.2s" }}
               className="glass-card flex refraction-effect items-center justify-center animate-float rounded-3xl p-6 md:p-8 animate-slide-left animate mb-24"
