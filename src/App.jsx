@@ -295,13 +295,19 @@ function App() {
                     </p>
 
                     <div className="space-y-2 mb-4">
-                      <div className="text-xs text-gray-500">Link:</div>
-                      <ul className="text-xs text-gray-400 space-y-1">
-                        <li>
-                          •
-                          https://apps.apple.com/in/app/record-social/id6446630104
-                        </li>
-                      </ul>
+                      <div className="text-xs text-gray-200">
+                        Link :{"   "}
+                        <a
+                          href={
+                            "https://apps.apple.com/in/app/record-social/id6446630104"
+                          }
+                          className="text-gray-500 text-[12px]"
+                        >
+                          {
+                            " https://apps.apple.com/in/app/record-social/id6446630104"
+                          }
+                        </a>
+                      </div>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
@@ -344,7 +350,6 @@ function App() {
                         Clinic System App - Dedicated Developer
                       </h3>
                     </div>
-
                     <div className="divider-gradient mb-4"></div>
                     <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                       Clinic Management System App Designed and developed for
@@ -356,13 +361,19 @@ function App() {
                     </p>
 
                     <div className="space-y-2 mb-4">
-                      <div className="text-xs text-gray-500">Link:</div>
-                      <ul className="text-xs text-gray-400 space-y-1">
-                        <li>
-                          •
-                          https://apps.apple.com/us/app/validi-clinic-system/id1049757545
-                        </li>
-                      </ul>
+                      <div className="text-xs text-gray-200">
+                        Link :{"   "}
+                        <a
+                          href={
+                            "https://apps.apple.com/us/app/validi-clinic-system/id1049757545"
+                          }
+                          className="text-gray-500 text-[12px]"
+                        >
+                          {
+                            " https://apps.apple.com/us/app/validi-clinic-system/id1049757545"
+                          }
+                        </a>
+                      </div>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
@@ -421,13 +432,19 @@ function App() {
                     </p>
 
                     <div className="space-y-2 mb-4">
-                      <div className="text-xs text-gray-500">Link:</div>
-                      <ul className="text-xs text-gray-400 space-y-1">
-                        <li>
-                          •
-                          https://apps.apple.com/us/app/adaptive-instruction-advisor/id6461770153?uo=2
-                        </li>
-                      </ul>
+                      <div className="text-xs text-gray-200">
+                        Link :{"   "}
+                        <a
+                          href={
+                            "https://apps.apple.com/us/app/adaptive-instruction-advisor/id6461770153?uo=2"
+                          }
+                          className="text-gray-500 text-[12px]"
+                        >
+                          {
+                            " https://apps.apple.com/us/app/adaptive-instruction-advisor/id6461770153?uo=2"
+                          }
+                        </a>
+                      </div>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
@@ -478,14 +495,21 @@ function App() {
                       you're a seasoned rapper or a newcomer looking to step
                       into the cypher, our app is perfect for every skill level.
                     </p>
+
                     <div className="space-y-2 mb-4">
-                      <div className="text-xs text-gray-500">Link:</div>
-                      <ul className="text-xs text-gray-400 space-y-1">
-                        <li>
-                          •
-                          https://apps.apple.com/us/app/battleraplive/id346512771
-                        </li>
-                      </ul>
+                      <div className="text-xs text-gray-200">
+                        Link :{"   "}
+                        <a
+                          href={
+                            "https://apps.apple.com/us/app/battleraplive/id346512771"
+                          }
+                          className="text-gray-500 text-[12px]"
+                        >
+                          {
+                            " https://apps.apple.com/us/app/battleraplive/id346512771"
+                          }
+                        </a>
+                      </div>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
