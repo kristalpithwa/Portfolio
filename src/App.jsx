@@ -10,7 +10,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 overflow-x-hidden">
+    <div className="min-h-screen bg-[#060b18] overflow-x-hidden">
       <FallingLettersCanvas />
 
       <Suspense fallback={<LoadingComponent />}>
