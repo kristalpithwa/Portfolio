@@ -6,9 +6,7 @@ const OpenSource = () => {
   return (
     <>
       <div className="section-divider">
-        <span className="border-white/10 border rounded-full">
-          OpenSource Contribution
-        </span>
+        <span>Open Source Contributions</span>
       </div>
 
       <motion.div

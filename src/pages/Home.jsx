@@ -1,3 +1,4 @@
+import Navbar from "../components/Navbar";
 import Hero from "../sections/Hero";
 import AboutMe from "../sections/AboutMe";
 import TechStack from "../sections/TechStack";
@@ -9,13 +10,15 @@ import Footer from "../sections/Footer";
 const Home = () => {
   return (
     <div className="content-wrapper">
-      <div className="container max-w-7xl mx-auto px-6 py-20">
+      <Navbar />
+      <div className="noise-overlay" />
+      <div className="container max-w-6xl mx-auto px-6 pt-14">
         <Hero />
-        <AboutMe />
-        <TechStack />
-        <FeaturedWork />
+        <div id="about"><AboutMe /></div>
+        <div id="tech"><TechStack /></div>
+        <div id="work"><FeaturedWork /></div>
         <OpenSource />
-        <Contact />
+        <div id="contact"><Contact /></div>
         <Footer />
       </div>
     </div>
