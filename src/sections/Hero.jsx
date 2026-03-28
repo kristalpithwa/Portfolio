@@ -77,7 +77,7 @@ const Hero = () => {
             className="w-[24px] h-[24px] mx-2 animate-wave"
           />
         </span>{" "}
-        My name is Kristal Pithwa, and I enjoy creating things that live on the
+        My Self Kristal Pithwa, and I enjoy creating things that live on the
         internet. I'm passionate about digital products that help people
         experience everyday life, not endure it. I specialize in building
         responsive and scalable web and mobile apps.
@@ -89,46 +89,39 @@ const Hero = () => {
         transition={{ duration: 0.5, delay: 1 }}
         className="flex flex-wrap justify-center gap-3 relative z-10"
       >
-        <div className="glass-card rounded-full px-6 py-2 flex items-center hover:bg-white/10 transition-colors cursor-pointer">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/kristalpithwa"
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-white hover:text-blue-500 transition-colors duration-300"
-          >
-            <FiGithub />
-          </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/kristalpithwa"
+          className="glass-card rounded-full px-6 py-2 flex items-center hover:bg-white/10 transition-colors"
+        >
+          <FiGithub className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-white hover:text-blue-500 transition-colors duration-300" />
           <span className="text-emerald-400 text-sm font-medium ml-3">
             GitHub
           </span>
-        </div>
+        </a>
 
-        <div className="glass-card rounded-full px-6 py-2 flex items-center hover:bg-white/10 transition-colors cursor-pointer">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/kristal-pithwa-a62861a4/"
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-white hover:text-blue-500 transition-colors duration-300"
-          >
-            <FiLinkedin />
-          </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/kristal-pithwa"
+          className="glass-card rounded-full px-6 py-2 flex items-center hover:bg-white/10 transition-colors"
+        >
+          <FiLinkedin className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-white hover:text-blue-500 transition-colors duration-300" />
           <span className="text-blue-400 text-sm font-medium ml-3 mt-1">
             Linkedin
           </span>
-        </div>
+        </a>
 
-        <div className="glass-card rounded-full px-6 py-2 flex items-center hover:bg-white/10 transition-colors cursor-pointer">
-          <a
-            href="mailto:crystalpithwa@gmail.com"
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-white hover:text-blue-500 transition-colors duration-300"
-          >
-            <FiMail />
-          </a>
-
+        <a
+          href="mailto:crystalpithwa@gmail.com"
+          className="glass-card rounded-full px-6 py-2 flex items-center hover:bg-white/10 transition-colors"
+        >
+          <FiMail className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-white hover:text-blue-500 transition-colors duration-300" />
           <span className="text-purple-400 text-sm font-medium ml-3 mt-1">
             Mail
           </span>
-        </div>
+        </a>
       </motion.div>
 
       {/* Quick Stats */}
