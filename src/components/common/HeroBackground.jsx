@@ -1,14 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
+
+const STAR_COUNT = 20;
+
+// Generate deterministic seed-based random data for stars
+function generateStars(width, height) {
+  return Array.from({ length: STAR_COUNT }, () => ({
+    scale: Math.random() * 0.5 + 0.5,
+    x: Math.random() * width,
+    y: Math.random() * height,
+    yOffset: Math.random() * -100,
+    duration: Math.random() * 5 + 3,
+    delay: Math.random() * 2,
+    w: Math.random() * 3 + 1,
+    h: Math.random() * 3 + 1,
+  }));
+}
 
 const HeroBackground = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [dimensions, setDimensions] = useState({ width: 1200, height: 800 });
+  const [stars, setStars] = useState(null);
 
   useEffect(() => {
-    setDimensions({ width: window.innerWidth, height: window.innerHeight });
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    setStars(generateStars(width, height));
 
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -27,33 +45,34 @@ const HeroBackground = () => {
         }}
       />
 
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute bg-white rounded-full"
-          initial={{
-            opacity: 0.1,
-            scale: Math.random() * 0.5 + 0.5,
-            x: Math.random() * dimensions.width,
-            y: Math.random() * dimensions.height,
-          }}
-          animate={{
-            opacity: [0.1, 0.5, 0.1],
-            scale: [0.5, 1, 0.5],
-            y: [null, Math.random() * -100],
-          }}
-          transition={{
-            duration: Math.random() * 5 + 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: Math.random() * 2,
-          }}
-          style={{
-            width: Math.random() * 3 + 1 + "px",
-            height: Math.random() * 3 + 1 + "px",
-          }}
-        />
-      ))}
+      {stars &&
+        stars.map((star, i) => (
+          <motion.div
+            key={i}
+            className="absolute bg-white rounded-full"
+            initial={{
+              opacity: 0.1,
+              scale: star.scale,
+              x: star.x,
+              y: star.y,
+            }}
+            animate={{
+              opacity: [0.1, 0.5, 0.1],
+              scale: [0.5, 1, 0.5],
+              y: [null, star.yOffset],
+            }}
+            transition={{
+              duration: star.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: star.delay,
+            }}
+            style={{
+              width: star.w + "px",
+              height: star.h + "px",
+            }}
+          />
+        ))}
     </div>
   );
 };
