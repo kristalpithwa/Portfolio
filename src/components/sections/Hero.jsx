@@ -195,7 +195,7 @@ const Hero = () => {
                 <AnimatedText text="Mobile App Developer" delay={0.5} />
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/logo.svg" alt="" className="w-4 h-4 animate-rotate opacity-40" />
+              <div className="h-px w-8 bg-gradient-to-r from-transparent to-blue-400/50 hidden sm:block" />
             </motion.div>
 
             <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.5 }}
