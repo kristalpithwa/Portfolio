@@ -72,6 +72,7 @@ const AboutMe = () => {
                 src="/kristal.jpg"
                 width={220}
                 height={220}
+                style={{ width: "auto", height: "auto" }}
                 className="w-40 h-40 sm:w-44 sm:h-44 md:w-full md:h-auto md:max-w-[220px] object-cover rounded-[14px] block"
               />
             </div>
