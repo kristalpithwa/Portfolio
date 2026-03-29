@@ -1,8 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx}",
+  ],
   theme: {
     extend: {
+      fontFamily: {
+        libre: ["var(--font-libre)", "serif"],
+        geist: ["var(--font-geist)", "sans-serif"],
+      },
       keyframes: {
         rotate: {
           "0%": { transform: "rotate(0deg)" },
