@@ -8,8 +8,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
+
+  console.log(id);
+
   const project = PROJECTS.find((p) => p.id === parseInt(id));
   if (!project) return {};
+
   return {
     title: project.title,
     description: project.shortDescription,
