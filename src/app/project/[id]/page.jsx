@@ -12,12 +12,20 @@ export async function generateMetadata({ params }) {
   const project = PROJECTS.find((p) => p.id === parseInt(id));
   if (!project) return {};
 
+  const projectUrl = `https://kristalpithwa.vercel.app/project/${id}`;
+
   return {
     title: project.title,
     description: project.shortDescription,
+    metadataBase: new URL("https://kristalpithwa.vercel.app"),
+    alternates: {
+      canonical: projectUrl,
+    },
     openGraph: {
       title: `${project.title} | Kristal Pithwa`,
       description: project.shortDescription,
+      type: "article",
+      url: projectUrl,
     },
   };
 }

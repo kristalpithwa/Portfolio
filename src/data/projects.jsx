@@ -5,6 +5,7 @@ export const PROJECTS = [
     tags: ["React-Native", "TypeScript", "NPM Package", "Auth"],
     link: "https://www.npmjs.com/package/@kristalpithwa/react-native-linkedin-login",
     color: "border-blue-500",
+    images: [],
     shortDescription:
       "A React Native library that simplifies LinkedIn login integration using a WebView modal. It provides a ready-to-use component for handling TypeScript-based authentication flows with ease.",
     fullDescription: (
@@ -63,6 +64,7 @@ export const PROJECTS = [
     ],
     link: "https://www.npmjs.com/package/react-native-open-street-map-view",
     color: "border-emerald-500",
+    images: [],
     shortDescription:
       "A React Native component for rendering OpenStreetMap on Android and iOS. It serves as a drop-in replacement for Google Maps, offering features like zoom, routing, and markers.",
     fullDescription: (
@@ -116,6 +118,13 @@ export const PROJECTS = [
     ],
     link: "https://apps.apple.com/in/app/record-social/id6446630104",
     color: "border-blue-500",
+    images: [
+      "/images/RecordSocial/230x498bb.webp",
+      "/images/RecordSocial/230x498bb (1).webp",
+      "/images/RecordSocial/230x498bb (2).webp",
+      "/images/RecordSocial/230x498bb (3).webp",
+      "/images/RecordSocial/230x498bb (4).webp",
+    ],
     shortDescription:
       "The Social Music App is the ultimate social platform for music enthusiasts worldwide, designed to connect friends based on music taste with GPS features.",
     fullDescription: (
@@ -160,6 +169,12 @@ export const PROJECTS = [
     ],
     link: "https://apps.apple.com/us/app/validi-clinic-system/id1049757545",
     color: "border-purple-500",
+    images: [
+      "/images/Validi/230x498bb.webp",
+      "/images/Validi/230x498bb (1).webp",
+      "/images/Validi/230x498bb (2).webp",
+      "/images/Validi/230x498bb (5).webp",
+    ],
     shortDescription:
       "Clinic Management System App designed for registered staff, providing seamless access to client profiles, medical history, and detailed journal entries.",
     fullDescription: (
@@ -199,6 +214,12 @@ export const PROJECTS = [
     ],
     link: "https://apps.apple.com/us/app/adaptive-instruction-advisor/id6461770153?uo=2",
     color: "border-purple-500",
+    images: [
+      "/images/AIA/230x498bb.webp",
+      "/images/AIA/230x498bb (1).webp",
+      "/images/AIA/230x498bb (2).webp",
+      "/images/AIA/230x498bb (3).webp",
+    ],
     shortDescription:
       "Adaptive learning applications help students of all ages improve their writing skills with AI-powered instant feedback on responses.",
     fullDescription: (
@@ -234,6 +255,12 @@ export const PROJECTS = [
     ],
     link: "https://apps.apple.com/us/app/battleraplive/id346512771",
     color: "border-yellow-500",
+    images: [
+      "/images/BRL/230x498bb.webp",
+      "/images/BRL/230x498bb (1).webp",
+      "/images/BRL/230x498bb (2).webp",
+      "/images/BRL/230x498bb (4).webp",
+    ],
     shortDescription:
       "Discover your rap potential with BattleRapLive, the ultimate freestyle and battle rap app. Designed to awaken the MC within.",
     fullDescription: (

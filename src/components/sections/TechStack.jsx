@@ -3,16 +3,54 @@
 import { motion } from "framer-motion";
 
 const techStack = [
-  { src: "/images/tech/react.svg", name: "React Native", accent: "from-cyan-400/20" },
-  { src: "/images/tech/xcode.svg", name: "iOS / Xcode", accent: "from-blue-300/20" },
-  { src: "/images/tech/android.svg", name: "Android", accent: "from-green-400/20" },
-  { src: "/images/tech/typescript.svg", name: "TypeScript", accent: "from-blue-400/20" },
-  { src: "/images/tech/javascript.svg", name: "JavaScript", accent: "from-yellow-400/20" },
+  {
+    src: "/images/tech/react.svg",
+    name: "React Native",
+    accent: "from-cyan-400/20",
+  },
+  {
+    src: "/images/tech/xcode.svg",
+    name: "iOS / Xcode",
+    accent: "from-blue-300/20",
+  },
+  {
+    src: "/images/tech/android.svg",
+    name: "Android",
+    accent: "from-green-400/20",
+  },
+  {
+    src: "/images/tech/typescript.svg",
+    name: "TypeScript",
+    accent: "from-blue-400/20",
+  },
+  {
+    src: "/images/tech/javascript.svg",
+    name: "JavaScript",
+    accent: "from-yellow-400/20",
+  },
   { src: "/images/tech/react.svg", name: "React", accent: "from-cyan-300/20" },
-  { src: "/images/tech/redux.svg", name: "Redux", accent: "from-purple-400/20" },
-  { src: "/images/tech/tailwind.svg", name: "Tailwind CSS", accent: "from-teal-400/20" },
+  {
+    src: "/images/tech/nextjs.svg",
+    name: "Next.js",
+    accent: "from-blue-500/20",
+  },
+
+  {
+    src: "/images/tech/redux.svg",
+    name: "Redux",
+    accent: "from-purple-400/20",
+  },
+  {
+    src: "/images/tech/tailwind.svg",
+    name: "Tailwind CSS",
+    accent: "from-teal-400/20",
+  },
   { src: "/images/tech/git.svg", name: "Git", accent: "from-orange-400/20" },
-  { src: "/images/tech/html5.svg", name: "HTML5", accent: "from-orange-500/20" },
+  {
+    src: "/images/tech/html5.svg",
+    name: "HTML5",
+    accent: "from-orange-500/20",
+  },
   { src: "/images/tech/css3.svg", name: "CSS3", accent: "from-blue-500/20" },
 ];
 

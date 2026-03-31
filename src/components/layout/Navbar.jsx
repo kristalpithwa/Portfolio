@@ -31,11 +31,13 @@ const Navbar = () => {
           ? "backdrop-blur-2xl bg-[#060b18]/80 shadow-lg shadow-black/20"
           : "bg-transparent"
       }`}
+      aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
         <a
           href="#"
-          className="text-white font-geist font-bold text-xl tracking-tight hover:opacity-80 transition-opacity"
+          className="text-white font-geist font-bold text-xl tracking-tight hover:opacity-80 transition-opacity focus:outline-2 focus:outline-offset-2 focus:outline-blue-400 rounded"
+          aria-label="Kristal Pithwa - Portfolio Home"
         >
           K<span className="text-blue-400">.</span>
         </a>
@@ -45,14 +47,16 @@ const Navbar = () => {
             <a
               key={label}
               href={href}
-              className="px-4 py-2 text-sm text-gray-400 hover:text-white rounded-lg hover:bg-white/[0.04] transition-all duration-200 font-geist"
+              className="px-4 py-2 text-sm text-gray-400 hover:text-white rounded-lg hover:bg-white/[0.04] transition-all duration-200 font-geist focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
+              aria-label={`Navigate to ${label} section`}
             >
               {label}
             </a>
           ))}
           <a
             href="mailto:crystalpithwa@gmail.com"
-            className="ml-3 px-5 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-gray-100 transition-colors font-geist"
+            className="ml-3 px-5 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-gray-100 transition-colors font-geist focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
+            aria-label="Email Kristal to hire for your project"
           >
             Hire Me
           </a>
@@ -60,8 +64,10 @@ const Navbar = () => {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
-          aria-label="Toggle menu"
+          className="md:hidden p-2 text-gray-400 hover:text-white transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-blue-400 rounded"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
         >
           {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
         </button>
@@ -69,10 +75,13 @@ const Navbar = () => {
 
       {menuOpen && (
         <motion.div
+          id="mobile-menu"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           className="md:hidden backdrop-blur-2xl bg-[#060b18]/95 border-t border-white/[0.04] px-6 py-4 space-y-1"
+          role="navigation"
+          aria-label="Mobile navigation"
         >
           {navLinks.map(({ label, href }) => (
             <a

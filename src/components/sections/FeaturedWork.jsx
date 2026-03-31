@@ -16,8 +16,41 @@ const FeaturedWork = () => {
   const leftColumnProjects = PROJECTS.filter((_, i) => i % 2 === 0);
   const rightColumnProjects = PROJECTS.filter((_, i) => i % 2 !== 0);
 
+  // Add schema markup for projects
+  const projectSchemas = PROJECTS.map((project) => ({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.title,
+    description: project.shortDescription,
+    applicationCategory: "MobileApplication",
+    operatingSystem: project.tags.includes("iOS")
+      ? project.tags.includes("Android")
+        ? "iOS, Android"
+        : "iOS"
+      : "Android",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    url: project.link,
+    author: {
+      "@type": "Person",
+      name: "Kristal Pithwa",
+    },
+  }));
+
   return (
     <>
+      {typeof document !== "undefined" &&
+        projectSchemas.map((schema, idx) => (
+          <script
+            key={idx}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            suppressHydrationWarning
+          />
+        ))}
       <div className="section-divider">
         <span>Featured Work</span>
       </div>
