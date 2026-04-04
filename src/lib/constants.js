@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Mobile App Developer",
   description:
     "Mobile App Developer specializing in React Native, iOS & Android. 5+ years building production cross-platform applications.",
-  url: "https://kristalpithwa.com",
+  url: "https://kristalpithwa.vercel.app",
   email: "crystalpithwa@gmail.com",
   socials: {
     github: "https://github.com/kristalpithwa",

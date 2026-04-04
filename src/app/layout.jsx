@@ -75,15 +75,6 @@ export const metadata = {
     title: "Kristal Pithwa | Expert Mobile App Developer",
     description:
       "Expert React Native, iOS, and Android developer with 5+ years experience. View my portfolio of 20+ apps and NPM packages built with performance and design excellence.",
-    images: [
-      {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Kristal Pithwa - Expert Mobile App Developer Portfolio",
-        type: "image/png",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -91,22 +82,21 @@ export const metadata = {
     description:
       "Expert React Native, iOS & Android developer. 5+ years building production apps. View portfolio of 20+ applications.",
     creator: "@kristalpithwa",
-    images: ["/images/og-image.png"],
   },
   icons: {
     icon: "/images/emoji.svg",
     shortcut: "/images/emoji.svg",
     apple: "/images/emoji.svg",
   },
+  manifest: "/manifest.json",
   viewport: {
     width: "device-width",
     initialScale: 1,
     maximumScale: 5,
     userScalable: true,
   },
-  verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
-  },
+  // Add your Google Search Console verification code here:
+  // verification: { google: "your-actual-code-from-search-console" },
 };
 
 export default function RootLayout({ children }) {

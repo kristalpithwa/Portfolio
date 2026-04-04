@@ -336,7 +336,7 @@ const Hero = () => {
                 Hey!
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  alt="React Native ecommerce app with Firebase"
+                  alt="Waving hand"
                   src="/images/waving.png"
                   className="w-4 h-4 animate-wave"
                 />

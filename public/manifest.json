@@ -1,0 +1,17 @@
+{
+  "name": "Kristal Pithwa Portfolio",
+  "short_name": "Kristal",
+  "description": "Mobile App Developer specializing in React Native, iOS & Android.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060b18",
+  "theme_color": "#060b18",
+  "icons": [
+    {
+      "src": "/images/emoji.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
