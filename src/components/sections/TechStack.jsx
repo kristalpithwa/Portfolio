@@ -8,6 +8,12 @@ const techStack = [
     name: "React Native",
     accent: "from-cyan-400/20",
   },
+  { src: "/images/tech/react.svg", name: "React", accent: "from-cyan-300/20" },
+  {
+    src: "/images/tech/nextjs.svg",
+    name: "Next.js",
+    accent: "from-blue-500/20",
+  },
   {
     src: "/images/tech/xcode.svg",
     name: "iOS / Xcode",
@@ -27,12 +33,6 @@ const techStack = [
     src: "/images/tech/javascript.svg",
     name: "JavaScript",
     accent: "from-yellow-400/20",
-  },
-  { src: "/images/tech/react.svg", name: "React", accent: "from-cyan-300/20" },
-  {
-    src: "/images/tech/nextjs.svg",
-    name: "Next.js",
-    accent: "from-blue-500/20",
   },
 
   {
