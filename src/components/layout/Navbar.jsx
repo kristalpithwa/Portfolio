@@ -60,14 +60,16 @@ const Navbar = () => {
             className="ml-3 px-5 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-gray-100 transition-colors font-geist focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
             aria-label="Download Kristal Pithwa's React Native resume"
           >
-            Hire Me
+            Resume
           </a>
         </div>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden p-2 text-gray-400 hover:text-white transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-blue-400 rounded"
-          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
         >
@@ -102,7 +104,7 @@ const Navbar = () => {
             onClick={() => setMenuOpen(false)}
             className="block px-4 py-3 text-sm font-medium text-blue-400 font-geist"
           >
-            Hire Me
+            Resume
           </a>
         </motion.div>
       )}

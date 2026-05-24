@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Kristal Pithwa",
-  title: "Mobile App Developer",
+  title: "Mobile Developer",
   description:
-    "Mobile App Developer specializing in React Native, iOS & Android. 5+ years building production cross-platform applications.",
+    "Mobile Developer specializing in React Native, iOS & Android. 5+ years building production cross-platform applications.",
   url: "https://kristalpithwa.vercel.app",
   email: "crystalpithwa@gmail.com",
   socials: {

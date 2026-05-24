@@ -85,7 +85,7 @@ const AboutMe = () => {
             Who I Am
           </div>
           <h3 className="text-xl font-bold text-white tracking-tight font-geist mb-3">
-            Mobile App Developer
+            Mobile Developer
           </h3>
           <div className="divider-gradient mb-4" />
           <p className="text-gray-400 leading-relaxed text-sm mb-5">

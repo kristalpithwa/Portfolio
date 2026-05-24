@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="text-white font-geist font-bold text-lg tracking-tight mb-1">
               Kristal Pithwa
             </div>
-            <p className="text-gray-500 text-xs">Mobile App Developer</p>
+            <p className="text-gray-500 text-xs">Mobile Developer</p>
           </div>
 
           <div className="flex items-center gap-4">
@@ -46,7 +46,8 @@ const Footer = () => {
 
           <div className="text-center sm:text-right">
             <p className="text-gray-600 text-xs flex items-center gap-1 justify-center sm:justify-end">
-              Made with <FiHeart size={10} className="text-red-400" /> &copy; {new Date().getFullYear()} Kristal Pithwa
+              Made with <FiHeart size={10} className="text-red-400" /> &copy;{" "}
+              {new Date().getFullYear()} Kristal Pithwa
             </p>
           </div>
         </div>

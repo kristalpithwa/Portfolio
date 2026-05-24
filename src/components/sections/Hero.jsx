@@ -320,7 +320,7 @@ const Hero = () => {
             >
               <div className="h-px w-8 bg-gradient-to-r from-transparent to-blue-400/50 hidden sm:block" />
               <div className="text-base sm:text-lg text-gray-300 font-geist font-medium">
-                <AnimatedText text="Mobile App Developer" delay={0.5} />
+                <AnimatedText text="Mobile Developer" delay={0.5} />
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <div className="h-px w-8 bg-gradient-to-r from-transparent to-blue-400/50 hidden sm:block" />

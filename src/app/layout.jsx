@@ -30,16 +30,16 @@ export const metadata = {
   metadataBase: new URL("https://kristalpithwa.vercel.app"),
   title: {
     default:
-      "Kristal Pithwa | Expert Mobile App Developer | React Native | iOS | Android",
+      "Kristal Pithwa | Expert Mobile Developer | React Native | iOS | Android",
     template: "%s | Mobile Developer | Kristal Pithwa",
   },
   description:
-    "Kristal Pithwa is an expert mobile app developer with 5+ years experience building React Native, iOS, and Android applications. Specialized in cross-platform development, animations, and pixel-perfect UI. View 20+ production apps and NPM packages.",
+    "Kristal Pithwa is an expert mobile developer with 5+ years experience building React Native, iOS, and Android applications. Specialized in cross-platform development, animations, and pixel-perfect UI. View 20+ production apps and NPM packages.",
   keywords: [
     "React Native developer",
     "iOS developer",
     "Android developer",
-    "mobile app developer",
+    "mobile developer",
     "cross-platform development",
     "React Native expert",
     "mobile development",
@@ -72,13 +72,13 @@ export const metadata = {
     locale: "en_US",
     url: "https://kristalpithwa.vercel.app",
     siteName: "Kristal Pithwa Portfolio",
-    title: "Kristal Pithwa | Expert Mobile App Developer",
+    title: "Kristal Pithwa | Expert Mobile Developer",
     description:
       "Expert React Native, iOS, and Android developer with 5+ years experience. View my portfolio of 20+ apps and NPM packages built with performance and design excellence.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kristal Pithwa | Mobile App Developer",
+    title: "Kristal Pithwa | Mobile Developer",
     description:
       "Expert React Native, iOS & Android developer. 5+ years building production apps. View portfolio of 20+ applications.",
     creator: "@kristalpithwa",
@@ -89,14 +89,15 @@ export const metadata = {
     apple: "/images/emoji.svg",
   },
   manifest: "/manifest.json",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
   // Add your Google Search Console verification code here:
   // verification: { google: "your-actual-code-from-search-console" },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({ children }) {
@@ -104,9 +105,9 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Kristal Pithwa",
-    jobTitle: "Senior Mobile App Developer",
+    jobTitle: "Senior Mobile Developer",
     description:
-      "Expert mobile app developer specializing in React Native, iOS & Android development with 5+ years of experience building production applications.",
+      "Expert mobile developer specializing in React Native, iOS & Android development with 5+ years of experience building production applications.",
     url: "https://kristalpithwa.vercel.app",
     image: "https://kristalpithwa.vercel.app/kristal.jpg",
     sameAs: [
