@@ -54,9 +54,11 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="mailto:crystalpithwa@gmail.com"
+            href="https://drive.google.com/uc?export=download&id=1LYHI5nHlzbzkIj7_akdVLRR7eAU67_8e"
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-3 px-5 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-gray-100 transition-colors font-geist focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
-            aria-label="Email Kristal to hire for your project"
+            aria-label="Download Kristal Pithwa's React Native resume"
           >
             Hire Me
           </a>
@@ -94,7 +96,9 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="mailto:crystalpithwa@gmail.com"
+            href="https://drive.google.com/uc?export=download&id=1LYHI5nHlzbzkIj7_akdVLRR7eAU67_8e"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             className="block px-4 py-3 text-sm font-medium text-blue-400 font-geist"
           >
