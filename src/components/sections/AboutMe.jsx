@@ -1,173 +1,114 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FiCheckCircle, FiAward, FiSmartphone, FiCpu, FiCode } from "react-icons/fi";
 import { SiApple, SiAndroid, SiReact } from "react-icons/si";
 import Image from "next/image";
 
-const skills = [
-  {
-    label: "iOS & Android",
-    color: "bg-blue-500/10 text-blue-300 border-blue-500/15",
-  },
-  {
-    label: "Cross-platform",
-    color: "bg-teal-500/10 text-teal-300 border-teal-500/15",
-  },
-  {
-    label: "App Performance",
-    color: "bg-purple-500/10 text-purple-300 border-purple-500/15",
-  },
-  {
-    label: "UI/UX Design",
-    color: "bg-pink-500/10 text-pink-300 border-pink-500/15",
-  },
-  {
-    label: "OTA Updates",
-    color: "bg-amber-500/10 text-amber-300 border-amber-500/15",
-  },
+const keyHighlights = [
+  { label: "React Native & Expo Specialist", icon: SiReact, color: "text-cyan-400" },
+  { label: "Native iOS & Android Modules", icon: SiApple, color: "text-slate-200" },
+  { label: "60 FPS Reanimated 3 Animations", icon: FiCpu, color: "text-purple-400" },
+  { label: "App Store & Google Play Deployment", icon: FiSmartphone, color: "text-emerald-400" },
+  { label: "TypeScript & Scalable Architecture", icon: FiCode, color: "text-blue-400" },
 ];
 
-const platforms = [
-  { icon: SiApple, name: "iOS", color: "text-gray-300" },
-  { icon: SiAndroid, name: "Android", color: "text-green-400" },
-  { icon: SiReact, name: "React Native", color: "text-cyan-400" },
+const stats = [
+  { value: "5+", label: "Years Experience", desc: "Mobile Development" },
+  { value: "20+", label: "Apps Shipped", desc: "iOS & Android" },
+  { value: "100%", label: "App Store Ready", desc: "Clean Submissions" },
+  { value: "60fps", label: "Performance", desc: "Smooth UX & UI" },
 ];
-
-const cardBase = "glass-card rounded-2xl";
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-  },
-};
 
 const AboutMe = () => {
   return (
     <>
       <div className="section-divider">
-        <span>About Me</span>
+        <span>About Kristal</span>
       </div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-80px" }}
-        variants={{
-          hidden: {},
-          show: { transition: { staggerChildren: 0.08 } },
-        }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-16"
-      >
+      <div className="mb-20">
         <motion.div
-          variants={item}
-          className={`${cardBase} p-5 flex items-center justify-center md:row-span-2`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
         >
-          <div className="relative">
-            <div className="p-[2px] rounded-2xl bg-gradient-to-br from-teal-400 via-blue-500 to-purple-500">
-              <Image
-                alt="Kristal Pithwa"
-                src="/kristal.jpg"
-                width={220}
-                height={220}
-                style={{ width: "auto", height: "auto" }}
-                className="w-40 h-40 sm:w-44 sm:h-44 md:w-full md:h-auto md:max-w-[220px] object-cover rounded-[14px] block"
-              />
-            </div>
-            <div className="absolute inset-0 -z-10 rounded-2xl blur-3xl opacity-20 bg-gradient-to-br from-teal-400 via-blue-500 to-purple-500" />
-          </div>
-        </motion.div>
-
-        <motion.div variants={item} className={`${cardBase} p-6 md:col-span-2`}>
-          <div className="text-[10px] text-gray-500 uppercase tracking-[0.15em] font-geist mb-1">
-            Who I Am
-          </div>
-          <h3 className="text-xl font-bold text-white tracking-tight font-geist mb-3">
-            Mobile Developer
-          </h3>
-          <div className="divider-gradient mb-4" />
-          <p className="text-gray-400 leading-relaxed text-sm mb-5">
-            5+ years building production mobile applications for iOS and
-            Android. I specialize in React Native to deliver cross-platform apps
-            with native performance, smooth 60fps animations, and pixel-perfect
-            UI — from concept to App Store {"&"} Google Play.
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {skills.map(({ label, color }) => (
-              <span
-                key={label}
-                className={`px-2.5 py-1 rounded-full text-[10px] font-medium border ${color}`}
-              >
-                {label}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          variants={item}
-          className={`${cardBase} p-5 flex flex-col items-center justify-center text-center`}
-        >
-          <div className="text-2xl font-bold font-geist text-white tracking-tighter">
-            5+
-          </div>
-          <div className="text-[10px] text-gray-500 mt-1 uppercase tracking-widest">
-            Years Experience
-          </div>
-        </motion.div>
-
-        <motion.div
-          variants={item}
-          className={`${cardBase} p-5 flex flex-col items-center justify-center text-center`}
-        >
-          <div className="text-2xl font-bold font-geist text-white tracking-tighter">
-            20+
-          </div>
-          <div className="text-[10px] text-gray-500 mt-1 uppercase tracking-widest">
-            Apps Delivered
-          </div>
-        </motion.div>
-
-        {/* <motion.div variants={item} className={`${cardBase} p-5 md:col-span-1`}>
-          <div className="text-[10px] text-gray-500 uppercase tracking-[0.15em] font-geist mb-3">
-            Platforms
-          </div>
-          <div className="flex gap-3 justify-center md:justify-start">
-            {platforms.map(({ icon: Icon, name, color }) => (
-              <div key={name} className="flex flex-col items-center gap-1.5">
-                <div className="w-9 h-9 rounded-xl bg-white/[0.04] border border-white/[0.05] flex items-center justify-center">
-                  <Icon size={16} className={color} />
-                </div>
-                <span className="text-[9px] text-gray-500 font-geist">
-                  {name}
-                </span>
+          {/* Profile Card & Avatar (4 cols) */}
+          <div className="lg:col-span-4 flex flex-col items-center text-center">
+            <div className="relative group mb-6">
+              {/* Animated glowing border */}
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 opacity-60 blur-lg group-hover:opacity-90 transition duration-500 animate-pulse-glow" />
+              
+              <div className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-white/20 p-1.5 shadow-2xl">
+                <Image
+                  alt="Kristal Pithwa - Mobile Developer"
+                  src="/kristal.jpg"
+                  width={280}
+                  height={280}
+                  priority
+                  className="w-56 h-56 sm:w-64 sm:h-64 object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-            ))}
-          </div>
-        </motion.div> */}
 
-        <motion.div variants={item} className={`${cardBase} p-5 md:col-span-3`}>
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-[10px] text-gray-500 uppercase tracking-[0.15em] font-geist">
-              Mobile Expertise
-            </span>
-            <span className="text-xs text-gray-400 font-geist font-medium">
-              95%
-            </span>
+              {/* Status pill */}
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#060b18]/90 backdrop-blur-md border border-cyan-500/30 px-3.5 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                <span className="text-[11px] font-semibold text-slate-200">Senior Mobile Engineer</span>
+              </div>
+            </div>
+
+            <h3 className="text-xl font-bold text-white tracking-tight mt-2 mb-1">
+              Kristal Pithwa
+            </h3>
+            <p className="text-sm text-cyan-400 font-medium">
+              React Native • iOS • Android
+            </p>
           </div>
-          <div className="h-1.5 bg-white/[0.04] rounded-full overflow-hidden">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: "95%" }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-              className="h-full bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 rounded-full"
-            />
+
+          {/* Biography & Core Competencies (8 cols) */}
+          <div className="lg:col-span-8 glass-card rounded-3xl p-7 sm:p-9 border border-white/[0.08] relative overflow-hidden">
+            <div className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">
+              Engineering Philosophy
+            </div>
+            
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-4">
+              Crafting fluid, high-performance mobile experiences.
+            </h2>
+
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+              With over <strong>5+ years of specialized mobile development</strong>, I bridge the gap between design vision and technical execution. I build production-grade applications using React Native, TypeScript, and native bridges, focusing on silky 60fps animations, intuitive UX, and clean architecture.
+            </p>
+
+            {/* Core Highlights List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {keyHighlights.map(({ label, icon: Icon, color }) => (
+                <div
+                  key={label}
+                  className="flex items-center gap-2.5 bg-white/[0.03] border border-white/[0.06] rounded-xl p-2.5"
+                >
+                  <Icon size={16} className={`${color} shrink-0`} />
+                  <span className="text-xs sm:text-sm font-medium text-slate-200">{label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Metrics Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/[0.08]">
+              {stats.map(({ value, label, desc }) => (
+                <div key={label} className="text-center p-2 rounded-xl bg-black/30 border border-white/[0.04]">
+                  <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent tracking-tight">
+                    {value}
+                  </div>
+                  <div className="text-xs font-bold text-white mt-1 leading-tight">{label}</div>
+                  <div className="text-[10px] text-slate-400 mt-0.5">{desc}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </>
   );
 };

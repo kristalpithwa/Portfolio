@@ -1,28 +1,16 @@
-import localFont from "next/font/local";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import ClientCanvas from "@/components/ui/ClientCanvas";
 import "./globals.css";
-
-const libreBaskerville = localFont({
-  src: [
-    {
-      path: "../../public/fonts/LibreBaskerville-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/LibreBaskerville-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-libre",
-  display: "swap",
-});
 
 const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -222,7 +210,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${libreBaskerville.variable} ${geist.variable}`}
+      className={`${geist.variable} ${geistMono.variable} scroll-smooth`}
     >
       <head>
         <script
@@ -250,7 +238,7 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
       </head>
-      <body className="min-h-screen bg-[#060b18] overflow-x-hidden font-libre">
+      <body className="min-h-screen bg-[#060b18] text-slate-100 font-sans overflow-x-hidden selection:bg-cyan-500/20 selection:text-white antialiased">
         <ClientCanvas />
         <div className="noise-overlay" />
         {children}
