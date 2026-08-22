@@ -13,11 +13,19 @@ export default function HomePage() {
       <Navbar />
       <div className="container max-w-6xl mx-auto px-6 pt-14">
         <Hero />
-        <div id="about"><AboutMe /></div>
-        <div id="tech"><TechStack /></div>
-        <div id="work"><FeaturedWork /></div>
+        <div id="about">
+          <AboutMe />
+        </div>
+        <div id="tech">
+          <TechStack />
+        </div>
+        <div id="work">
+          <FeaturedWork />
+        </div>
         <OpenSource />
-        <div id="contact"><Contact /></div>
+        <div id="contact">
+          <Contact />
+        </div>
         <Footer />
       </div>
     </div>

@@ -15,6 +15,9 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const googleDriveLink =
+    "https://drive.google.com/drive/folders/1rxuh2kagfGl66vjF0Hf6KVZ0Dv5NeaI5?usp=drive_link";
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -54,7 +57,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="https://drive.google.com/uc?export=download&id=1LYHI5nHlzbzkIj7_akdVLRR7eAU67_8e"
+            href={googleDriveLink}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 px-5 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-gray-100 transition-colors font-geist focus:outline-2 focus:outline-offset-2 focus:outline-blue-400"
@@ -98,7 +101,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="https://drive.google.com/uc?export=download&id=1LYHI5nHlzbzkIj7_akdVLRR7eAU67_8e"
+            href={googleDriveLink}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
