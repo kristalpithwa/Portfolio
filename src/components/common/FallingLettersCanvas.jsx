@@ -110,8 +110,8 @@ const FallingLettersCanvas = () => {
         friction: 0.002,
         frictionAir: 0.016,
         render: {
-          fillStyle: `hsla(${hue}, 85%, 65%, 0.07)`,
-          strokeStyle: `hsla(${hue}, 90%, 75%, 0.32)`,
+          fillStyle: `hsla(${hue}, 85%, 65%, 0.03)`,
+          strokeStyle: `hsla(${hue}, 90%, 75%, 0.15)`,
           lineWidth: 1,
         },
       });
@@ -154,8 +154,8 @@ const FallingLettersCanvas = () => {
           0,
           radius,
         );
-        gradient.addColorStop(0, `hsla(${hue}, 100%, 95%, 0.4)`);
-        gradient.addColorStop(0.3, `hsla(${hue}, 90%, 75%, 0.12)`);
+        gradient.addColorStop(0, `hsla(${hue}, 100%, 95%, 0.18)`);
+        gradient.addColorStop(0.3, `hsla(${hue}, 90%, 75%, 0.05)`);
         gradient.addColorStop(1, "transparent");
 
         ctx.fillStyle = gradient;
@@ -174,7 +174,7 @@ const FallingLettersCanvas = () => {
           0,
           Math.PI * 2,
         );
-        ctx.fillStyle = "rgba(255, 255, 255, 0.55)";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.25)";
         ctx.fill();
 
         // 3. Draw subtle secondary bottom-right reflection curve
@@ -188,7 +188,7 @@ const FallingLettersCanvas = () => {
           0,
           Math.PI * 2,
         );
-        ctx.fillStyle = `hsla(${hue}, 100%, 90%, 0.2)`;
+        ctx.fillStyle = `hsla(${hue}, 100%, 90%, 0.08)`;
         ctx.fill();
 
         // 4. Draw tech stack name inside bubble
@@ -197,9 +197,9 @@ const FallingLettersCanvas = () => {
         ctx.textBaseline = "middle";
 
         // Subtle glow effect behind text
-        ctx.shadowColor = `hsla(${hue}, 100%, 70%, 0.6)`;
-        ctx.shadowBlur = 3;
-        ctx.fillStyle = `hsla(${hue}, 95%, 90%, 0.95)`;
+        ctx.shadowColor = `hsla(${hue}, 100%, 70%, 0.25)`;
+        ctx.shadowBlur = 2;
+        ctx.fillStyle = `hsla(${hue}, 95%, 90%, 0.45)`;
         ctx.fillText(tech, 0, 1);
 
         ctx.restore();
