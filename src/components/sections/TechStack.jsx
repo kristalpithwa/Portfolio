@@ -1,47 +1,82 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiSmartphone, FiLayout, FiServer, FiLayers } from "react-icons/fi";
-import { SiApple, SiAndroid, SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiRedux, SiTailwindcss, SiGit, SiFirebase } from "react-icons/si";
+import { FiSmartphone, FiLayout, FiServer } from "react-icons/fi";
+import {
+  SiReact,
+  SiExpo,
+  SiXcode,
+  SiAndroid,
+  SiNodedotjs,
+  SiExpress,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiRedux,
+} from "react-icons/si";
 
 const techCategories = [
   {
     title: "Core Mobile Development",
     icon: FiSmartphone,
-    description: "Architecting native & cross-platform applications with 60fps animations.",
+    description:
+      "Engineering production-grade iOS & Android applications with React Native, Expo, and fluid 60fps native interactions.",
     accent: "from-cyan-500/20 via-blue-500/10 to-transparent",
     border: "border-cyan-500/30",
     skills: [
-      { name: "React Native", level: "Expert", src: "/images/tech/react.svg" },
-      { name: "iOS / Xcode", level: "Advanced", src: "/images/tech/xcode.svg" },
-      { name: "Android", level: "Advanced", src: "/images/tech/android.svg" },
-      { name: "TypeScript", level: "Expert", src: "/images/tech/typescript.svg" },
+      { name: "React Native", level: "Expert", icon: SiReact, color: "#61DAFB" },
+      { name: "Expo", level: "Expert", icon: SiExpo, color: "#FFFFFF" },
+      { name: "iOS / Xcode", level: "Advanced", icon: SiXcode, color: "#1575F9" },
+      { name: "Android", level: "Advanced", icon: SiAndroid, color: "#3DDC84" },
     ],
   },
   {
-    title: "Web & Frontend Ecosystem",
+    title: "Frontend & Backend Ecosystem",
     icon: FiLayout,
-    description: "Building responsive, accessible web portals and accompanying web apps.",
+    description:
+      "Building full-stack web architectures with high-performance React/Next.js interfaces and robust Node.js/Express services.",
     accent: "from-purple-500/20 via-indigo-500/10 to-transparent",
     border: "border-purple-500/30",
     skills: [
-      { name: "React", level: "Expert", src: "/images/tech/react.svg" },
-      { name: "Next.js", level: "Advanced", src: "/images/tech/nextjs.svg" },
-      { name: "JavaScript", level: "Expert", src: "/images/tech/javascript.svg" },
-      { name: "Tailwind CSS", level: "Advanced", src: "/images/tech/tailwind.svg" },
+      { name: "React", level: "Expert", icon: SiReact, color: "#61DAFB" },
+      { name: "Node.js", level: "Expert", icon: SiNodedotjs, color: "#5FA04E" },
+      { name: "Express.js", level: "Expert", icon: SiExpress, color: "#FFFFFF" },
+      { name: "Next.js", level: "Advanced", icon: SiNextdotjs, color: "#FFFFFF" },
     ],
   },
   {
-    title: "State, Architecture & Cloud",
+    title: "Languages, State & Design Systems",
     icon: FiServer,
-    description: "Scalable state management, offline sync, API integrations, and backend services.",
+    description:
+      "Type-safe software design with TypeScript/JavaScript, centralized state with Redux, and modern styling via Tailwind CSS.",
     accent: "from-emerald-500/20 via-teal-500/10 to-transparent",
     border: "border-emerald-500/30",
     skills: [
-      { name: "Redux Toolkit", level: "Expert", src: "/images/tech/redux.svg" },
-      { name: "Git & CI/CD", level: "Advanced", src: "/images/tech/git.svg" },
-      { name: "HTML5 / CSS3", level: "Expert", src: "/images/tech/html5.svg" },
-      { name: "Mobile CI/CD", level: "Advanced", src: "/images/tech/css3.svg" },
+      {
+        name: "TypeScript",
+        level: "Expert",
+        icon: SiTypescript,
+        color: "#3178C6",
+      },
+      {
+        name: "JavaScript",
+        level: "Expert",
+        icon: SiJavascript,
+        color: "#F7DF1E",
+      },
+      {
+        name: "Tailwind CSS",
+        level: "Advanced",
+        icon: SiTailwindcss,
+        color: "#06B6D4",
+      },
+      {
+        name: "Redux Toolkit",
+        level: "Expert",
+        icon: SiRedux,
+        color: "#764ABC",
+      },
     ],
   },
 ];
@@ -62,14 +97,22 @@ const TechStack = () => {
             Technologies I Master
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Specialized in high-performance mobile architectures, native bridging, and modern full-stack web standards.
+            Specialized in high-performance mobile architectures, native
+            bridging, and modern full-stack web standards.
           </p>
         </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {techCategories.map((category, idx) => {
-            const { title, icon: Icon, description, accent, border, skills } = category;
+            const {
+              title,
+              icon: Icon,
+              description,
+              accent,
+              border,
+              skills,
+            } = category;
             return (
               <motion.div
                 key={title}
@@ -99,18 +142,17 @@ const TechStack = () => {
 
                 {/* Tech Pills Grid */}
                 <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/[0.08]">
-                  {skills.map(({ name, level, src }) => (
+                  {skills.map(({ name, level, icon: SkillIcon, color }) => (
                     <div
                       key={name}
                       className="flex items-center gap-2.5 bg-black/40 border border-white/[0.06] rounded-xl p-2.5 hover:border-white/[0.2] transition-colors"
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={src}
-                        alt={name}
-                        loading="lazy"
-                        className="w-6 h-6 object-contain shrink-0 drop-shadow"
-                      />
+                      <div
+                        className="w-6 h-6 flex items-center justify-center shrink-0"
+                        style={{ color: color || "#38bdf8" }}
+                      >
+                        <SkillIcon size={22} className="drop-shadow" />
+                      </div>
                       <div className="min-w-0">
                         <div className="text-xs font-semibold text-white truncate leading-tight">
                           {name}
