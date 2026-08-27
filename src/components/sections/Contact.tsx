@@ -3,59 +3,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  FiMail,
-  FiLinkedin,
-  FiGithub,
   FiArrowUpRight,
   FiCheck,
   FiCopy,
   FiClock,
   FiSend,
 } from "react-icons/fi";
-import { IconType } from "react-icons";
-
-interface ContactOption {
-  href: string;
-  icon: IconType;
-  label: string;
-  value: string;
-  badge: string;
-  accent: string;
-  border: string;
-  external?: boolean;
-}
-
-const contactOptions: ContactOption[] = [
-  {
-    href: "mailto:crystalpithwa@gmail.com",
-    icon: FiMail,
-    label: "Direct Email",
-    value: "crystalpithwa@gmail.com",
-    badge: "Fastest response",
-    accent: "group-hover:text-cyan-400",
-    border: "hover:border-cyan-500/40",
-  },
-  {
-    href: "https://www.linkedin.com/in/kristal-pithwa",
-    icon: FiLinkedin,
-    label: "LinkedIn Profile",
-    value: "kristal-pithwa",
-    badge: "Connect & Chat",
-    accent: "group-hover:text-blue-400",
-    border: "hover:border-blue-500/40",
-    external: true,
-  },
-  {
-    href: "https://github.com/kristalpithwa",
-    icon: FiGithub,
-    label: "GitHub Repositories",
-    value: "kristalpithwa",
-    badge: "Open Source & Code",
-    accent: "group-hover:text-purple-400",
-    border: "hover:border-purple-500/40",
-    external: true,
-  },
-];
+import { contactOptions } from "@/data/constants";
 
 const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -96,8 +50,8 @@ const Contact: React.FC = () => {
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-8 font-normal">
             Whether you need a brand-new React Native app from scratch,
-            performance optimization for an existing codebase, or an
-            experienced developer for your team — I&apos;m here to help.
+            performance optimization for an existing codebase, or an experienced
+            developer for your team — I&apos;m here to help.
           </p>
 
           {/* Quick Copy Email Bar */}

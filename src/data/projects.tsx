@@ -133,10 +133,10 @@ export const PROJECTS: Project[] = [
     fullDescription: (
       <>
         <p>
-          As the dedicated developer, I built the &quot;Social Music App&quot; to be the
-          ultimate social platform for music enthusiasts. It features a stunning
-          user interface designed to connect friends based on their music
-          preferences.
+          As the dedicated developer, I built the &quot;Social Music App&quot;
+          to be the ultimate social platform for music enthusiasts. It features
+          a stunning user interface designed to connect friends based on their
+          music preferences.
         </p>
         <h3 className="text-xl text-white font-medium mt-4 mb-2">
           Core Functionalities
@@ -238,9 +238,9 @@ export const PROJECTS: Project[] = [
         </h3>
         <p>
           The system adapts to the student&apos;s writing style, providing
-          progressively more challenging prompts and feedback as the student&apos;s
-          skills improve. It tracks progress over time and offers insights to
-          teachers and parents.
+          progressively more challenging prompts and feedback as the
+          student&apos;s skills improve. It tracks progress over time and offers
+          insights to teachers and parents.
         </p>
       </>
     ),
@@ -270,8 +270,8 @@ export const PROJECTS: Project[] = [
       <>
         <p>
           BattleRapLive brings a mobile recording studio right to your pocket.
-          Whether you&apos;re a seasoned rapper or a newcomer looking to step into
-          the cypher, this app is perfect for every skill level.
+          Whether you&apos;re a seasoned rapper or a newcomer looking to step
+          into the cypher, this app is perfect for every skill level.
         </p>
         <h3 className="text-xl text-white font-medium mt-4 mb-2">
           Key Features

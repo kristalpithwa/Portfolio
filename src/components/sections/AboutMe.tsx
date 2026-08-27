@@ -2,37 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FiSmartphone, FiCpu, FiCode } from "react-icons/fi";
-import { SiApple, SiReact } from "react-icons/si";
-import { IconType } from "react-icons";
 import Image from "next/image";
-
-interface KeyHighlight {
-  label: string;
-  icon: IconType;
-  color: string;
-}
-
-interface StatItem {
-  value: string;
-  label: string;
-  desc: string;
-}
-
-const keyHighlights: KeyHighlight[] = [
-  { label: "React Native & Expo Specialist", icon: SiReact, color: "text-cyan-400" },
-  { label: "Native iOS & Android Modules", icon: SiApple, color: "text-slate-200" },
-  { label: "60 FPS Reanimated 3 Animations", icon: FiCpu, color: "text-purple-400" },
-  { label: "App Store & Google Play Deployment", icon: FiSmartphone, color: "text-emerald-400" },
-  { label: "TypeScript & Scalable Architecture", icon: FiCode, color: "text-blue-400" },
-];
-
-const stats: StatItem[] = [
-  { value: "5+", label: "Years Experience", desc: "Mobile Development" },
-  { value: "20+", label: "Apps Shipped", desc: "iOS & Android" },
-  { value: "100%", label: "App Store Ready", desc: "Clean Submissions" },
-  { value: "60fps", label: "Performance", desc: "Smooth UX & UI" },
-];
+import { keyHighlights, stats } from "@/data/constants";
 
 const AboutMe: React.FC = () => {
   return (
@@ -94,7 +65,12 @@ const AboutMe: React.FC = () => {
             </h2>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
-              With over <strong>5+ years of specialized mobile development</strong>, I bridge the gap between design vision and technical execution. I build production-grade applications using React Native, TypeScript, and native bridges, focusing on silky 60fps animations, intuitive UX, and clean architecture.
+              With over{" "}
+              <strong>5+ years of specialized mobile development</strong>, I
+              bridge the gap between design vision and technical execution. I
+              build production-grade applications using React Native,
+              TypeScript, and native bridges, focusing on silky 60fps
+              animations, intuitive UX, and clean architecture.
             </p>
 
             {/* Core Highlights List */}
@@ -125,7 +101,9 @@ const AboutMe: React.FC = () => {
                   <div className="text-xs font-bold text-white mt-1 leading-tight">
                     {label}
                   </div>
-                  <div className="text-[10px] text-slate-400 mt-0.5">{desc}</div>
+                  <div className="text-[10px] text-slate-400 mt-0.5">
+                    {desc}
+                  </div>
                 </div>
               ))}
             </div>
