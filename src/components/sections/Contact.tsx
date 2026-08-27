@@ -1,10 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FiMail, FiLinkedin, FiGithub, FiArrowUpRight, FiCheck, FiCopy, FiClock, FiSend } from "react-icons/fi";
+import {
+  FiMail,
+  FiLinkedin,
+  FiGithub,
+  FiArrowUpRight,
+  FiCheck,
+  FiCopy,
+  FiClock,
+  FiSend,
+} from "react-icons/fi";
+import { IconType } from "react-icons";
 
-const contactOptions = [
+interface ContactOption {
+  href: string;
+  icon: IconType;
+  label: string;
+  value: string;
+  badge: string;
+  accent: string;
+  border: string;
+  external?: boolean;
+}
+
+const contactOptions: ContactOption[] = [
   {
     href: "mailto:crystalpithwa@gmail.com",
     icon: FiMail,
@@ -36,7 +57,7 @@ const contactOptions = [
   },
 ];
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -74,7 +95,9 @@ const Contact = () => {
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-8 font-normal">
-            Whether you need a brand-new React Native app from scratch, performance optimization for an existing codebase, or an experienced developer for your team — I&apos;m here to help.
+            Whether you need a brand-new React Native app from scratch,
+            performance optimization for an existing codebase, or an
+            experienced developer for your team — I&apos;m here to help.
           </p>
 
           {/* Quick Copy Email Bar */}
@@ -95,7 +118,9 @@ const Contact = () => {
               {copied ? (
                 <>
                   <FiCheck className="text-emerald-400" size={15} />
-                  <span className="text-emerald-300 font-semibold">Email Copied to Clipboard!</span>
+                  <span className="text-emerald-300 font-semibold">
+                    Email Copied to Clipboard!
+                  </span>
                 </>
               ) : (
                 <>
@@ -108,34 +133,49 @@ const Contact = () => {
 
           {/* Contact Channels Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            {contactOptions.map(({ href, icon: Icon, label, value, badge, accent, border, external }) => (
-              <a
-                key={label}
-                href={href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
-                className={`group glass-card rounded-2xl p-5 text-left border border-white/[0.06] ${border} transition-all duration-300 flex flex-col justify-between hover:shadow-lg`}
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="p-2.5 rounded-xl bg-white/[0.04] text-slate-300 group-hover:text-cyan-400 transition-colors">
-                      <Icon size={20} />
+            {contactOptions.map(
+              ({
+                href,
+                icon: Icon,
+                label,
+                value,
+                badge,
+                accent,
+                border,
+                external,
+              }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  className={`group glass-card rounded-2xl p-5 text-left border border-white/[0.06] ${border} transition-all duration-300 flex flex-col justify-between hover:shadow-lg`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="p-2.5 rounded-xl bg-white/[0.04] text-slate-300 group-hover:text-cyan-400 transition-colors">
+                        <Icon size={20} />
+                      </div>
+                      <span className="text-[10px] font-medium text-slate-400 bg-white/[0.03] px-2 py-0.5 rounded-full border border-white/[0.05]">
+                        {badge}
+                      </span>
                     </div>
-                    <span className="text-[10px] font-medium text-slate-400 bg-white/[0.03] px-2 py-0.5 rounded-full border border-white/[0.05]">
-                      {badge}
-                    </span>
+                    <div className="text-xs text-slate-400 font-medium mb-1">
+                      {label}
+                    </div>
+                    <div
+                      className={`text-sm font-bold text-white tracking-tight ${accent} transition-colors truncate`}
+                    >
+                      {value}
+                    </div>
                   </div>
-                  <div className="text-xs text-slate-400 font-medium mb-1">{label}</div>
-                  <div className={`text-sm font-bold text-white tracking-tight ${accent} transition-colors truncate`}>
-                    {value}
+                  <div className="flex items-center gap-1 text-xs font-semibold text-cyan-400 mt-4 group-hover:translate-x-1 transition-transform">
+                    <span>Connect</span>
+                    <FiArrowUpRight size={14} />
                   </div>
-                </div>
-                <div className="flex items-center gap-1 text-xs font-semibold text-cyan-400 mt-4 group-hover:translate-x-1 transition-transform">
-                  <span>Connect</span>
-                  <FiArrowUpRight size={14} />
-                </div>
-              </a>
-            ))}
+                </a>
+              ),
+            )}
           </div>
 
           {/* Availability Footer Badge */}

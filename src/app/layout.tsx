@@ -1,3 +1,5 @@
+import React from "react";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ClientCanvas from "@/components/ui/ClientCanvas";
 import { Analytics } from "@vercel/analytics/react";
@@ -16,7 +18,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://kristalpithwa.vercel.app"),
   title: {
     default:
@@ -79,18 +81,20 @@ export const metadata = {
     apple: "/images/emoji.svg",
   },
   manifest: "/manifest.json",
-  // Add your Google Search Console verification code here:
-  // verification: { google: "your-actual-code-from-search-console" },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",

@@ -1,11 +1,25 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
-import { FiCheckCircle, FiAward, FiSmartphone, FiCpu, FiCode } from "react-icons/fi";
-import { SiApple, SiAndroid, SiReact } from "react-icons/si";
+import { FiSmartphone, FiCpu, FiCode } from "react-icons/fi";
+import { SiApple, SiReact } from "react-icons/si";
+import { IconType } from "react-icons";
 import Image from "next/image";
 
-const keyHighlights = [
+interface KeyHighlight {
+  label: string;
+  icon: IconType;
+  color: string;
+}
+
+interface StatItem {
+  value: string;
+  label: string;
+  desc: string;
+}
+
+const keyHighlights: KeyHighlight[] = [
   { label: "React Native & Expo Specialist", icon: SiReact, color: "text-cyan-400" },
   { label: "Native iOS & Android Modules", icon: SiApple, color: "text-slate-200" },
   { label: "60 FPS Reanimated 3 Animations", icon: FiCpu, color: "text-purple-400" },
@@ -13,14 +27,14 @@ const keyHighlights = [
   { label: "TypeScript & Scalable Architecture", icon: FiCode, color: "text-blue-400" },
 ];
 
-const stats = [
+const stats: StatItem[] = [
   { value: "5+", label: "Years Experience", desc: "Mobile Development" },
   { value: "20+", label: "Apps Shipped", desc: "iOS & Android" },
   { value: "100%", label: "App Store Ready", desc: "Clean Submissions" },
   { value: "60fps", label: "Performance", desc: "Smooth UX & UI" },
 ];
 
-const AboutMe = () => {
+const AboutMe: React.FC = () => {
   return (
     <>
       <div className="section-divider">
@@ -40,7 +54,7 @@ const AboutMe = () => {
             <div className="relative group mb-6">
               {/* Animated glowing border */}
               <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 opacity-60 blur-lg group-hover:opacity-90 transition duration-500 animate-pulse-glow" />
-              
+
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-white/20 p-1.5 shadow-2xl">
                 <Image
                   alt="Kristal Pithwa - Mobile Developer"
@@ -55,7 +69,9 @@ const AboutMe = () => {
               {/* Status pill */}
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#060b18]/90 backdrop-blur-md border border-cyan-500/30 px-3.5 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                <span className="text-[11px] font-semibold text-slate-200">Senior Mobile Engineer</span>
+                <span className="text-[11px] font-semibold text-slate-200">
+                  Senior Mobile Engineer
+                </span>
               </div>
             </div>
 
@@ -72,7 +88,7 @@ const AboutMe = () => {
             <div className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">
               Engineering Philosophy
             </div>
-            
+
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-4">
               Crafting fluid, high-performance mobile experiences.
             </h2>
@@ -89,7 +105,9 @@ const AboutMe = () => {
                   className="flex items-center gap-2.5 bg-white/[0.03] border border-white/[0.06] rounded-xl p-2.5"
                 >
                   <Icon size={16} className={`${color} shrink-0`} />
-                  <span className="text-xs sm:text-sm font-medium text-slate-200">{label}</span>
+                  <span className="text-xs sm:text-sm font-medium text-slate-200">
+                    {label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -97,11 +115,16 @@ const AboutMe = () => {
             {/* Metrics Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/[0.08]">
               {stats.map(({ value, label, desc }) => (
-                <div key={label} className="text-center p-2 rounded-xl bg-black/30 border border-white/[0.04]">
+                <div
+                  key={label}
+                  className="text-center p-2 rounded-xl bg-black/30 border border-white/[0.04]"
+                >
                   <div className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent tracking-tight">
                     {value}
                   </div>
-                  <div className="text-xs font-bold text-white mt-1 leading-tight">{label}</div>
+                  <div className="text-xs font-bold text-white mt-1 leading-tight">
+                    {label}
+                  </div>
                   <div className="text-[10px] text-slate-400 mt-0.5">{desc}</div>
                 </div>
               ))}

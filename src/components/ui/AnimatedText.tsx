@@ -1,8 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React from "react";
+import { motion, Variants } from "framer-motion";
 
-const AnimatedText = ({
+interface AnimatedTextProps {
+  text: string;
+  className?: string;
+  type?: "character" | "word";
+  delay?: number;
+}
+
+const AnimatedText: React.FC<AnimatedTextProps> = ({
   text,
   className = "",
   type = "character",
@@ -11,15 +19,15 @@ const AnimatedText = ({
   const isCharacter = type === "character";
   const elements = isCharacter ? text.split("") : text.split(" ");
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
-    visible: (i = 1) => ({
+    visible: (i: number = 1) => ({
       opacity: 1,
       transition: { staggerChildren: 0.05, delayChildren: 0.04 * i + delay },
     }),
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       y: 0,

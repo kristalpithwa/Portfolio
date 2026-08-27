@@ -1,17 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiFileText, FiExternalLink } from "react-icons/fi";
 
-const navLinks = [
+interface NavLinkItem {
+  label: string;
+  href: string;
+  id: string;
+}
+
+const navLinks: NavLinkItem[] = [
   { label: "About", href: "#about", id: "about" },
   { label: "Tech", href: "#tech", id: "tech" },
   { label: "Work", href: "#work", id: "work" },
   { label: "Contact", href: "#contact", id: "contact" },
 ];
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");

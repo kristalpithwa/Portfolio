@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import AnimatedText from "@/components/ui/AnimatedText";
 import HeroBackground from "@/components/common/HeroBackground";
 import {
@@ -15,9 +15,18 @@ import {
   FiAward,
 } from "react-icons/fi";
 import { SiApple, SiAndroid, SiReact } from "react-icons/si";
-import { motion, AnimatePresence } from "framer-motion";
+import { IconType } from "react-icons";
+import { motion } from "framer-motion";
 
-const socialLinks = [
+interface SocialLink {
+  href: string;
+  icon: IconType;
+  label: string;
+  hover: string;
+  target?: string;
+}
+
+const socialLinks: SocialLink[] = [
   {
     href: "https://github.com/kristalpithwa",
     icon: FiGithub,
@@ -40,7 +49,7 @@ const socialLinks = [
   },
 ];
 
-const PhoneMockup = () => (
+const PhoneMockup: React.FC = () => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
@@ -58,7 +67,6 @@ const PhoneMockup = () => (
       >
         {/* Phone Frame */}
         <div className="w-[230px] h-[460px] bg-gradient-to-b from-[#1c2237] via-[#11172a] to-[#0d1222] rounded-[44px] p-[6px] shadow-[0_25px_70px_-15px_rgba(56,189,248,0.25),0_0_50px_rgba(139,92,246,0.12)] border border-white/[0.12] relative">
-          
           {/* Dynamic Island */}
           <div className="absolute top-[12px] left-1/2 -translate-x-1/2 w-[80px] h-[20px] bg-black rounded-full z-30 flex items-center justify-between px-2.5 shadow-inner">
             <div className="w-2.5 h-2.5 rounded-full bg-[#101426] border border-blue-500/40" />
@@ -67,10 +75,11 @@ const PhoneMockup = () => (
 
           {/* Screen Content */}
           <div className="w-full h-full bg-[#0a0f1d] rounded-[38px] overflow-hidden relative flex flex-col justify-between pt-9 pb-3 px-3.5">
-            
             {/* Status Bar */}
             <div className="flex justify-between items-center px-1 mb-2">
-              <span className="text-[9px] text-slate-400 font-mono font-medium">9:41</span>
+              <span className="text-[9px] text-slate-400 font-mono font-medium">
+                9:41
+              </span>
               <div className="flex items-center gap-1.5">
                 <div className="flex gap-[1.5px] items-end">
                   <div className="w-[2px] h-[3px] bg-slate-300 rounded-full" />
@@ -78,7 +87,9 @@ const PhoneMockup = () => (
                   <div className="w-[2px] h-[7px] bg-slate-300 rounded-full" />
                   <div className="w-[2px] h-[9px] bg-slate-300 rounded-full" />
                 </div>
-                <span className="text-[8px] text-cyan-400 font-mono font-bold">5G</span>
+                <span className="text-[8px] text-cyan-400 font-mono font-bold">
+                  5G
+                </span>
                 <div className="w-4 h-[9px] border border-slate-400/60 rounded-[2px] p-[1px] flex items-center">
                   <div className="h-full w-4/5 bg-emerald-400 rounded-[1px]" />
                 </div>
@@ -106,11 +117,15 @@ const PhoneMockup = () => (
               <div className="grid grid-cols-2 gap-1.5 mt-2">
                 <div className="bg-black/40 rounded-lg p-1.5 border border-white/[0.04]">
                   <div className="text-[8px] text-slate-400">Apps Built</div>
-                  <div className="text-xs font-bold text-white">20+ Production</div>
+                  <div className="text-xs font-bold text-white">
+                    20+ Production
+                  </div>
                 </div>
                 <div className="bg-black/40 rounded-lg p-1.5 border border-white/[0.04]">
                   <div className="text-[8px] text-slate-400">Frame Rate</div>
-                  <div className="text-xs font-bold text-emerald-400">60 FPS Native</div>
+                  <div className="text-xs font-bold text-emerald-400">
+                    60 FPS Native
+                  </div>
                 </div>
               </div>
             </div>
@@ -122,7 +137,9 @@ const PhoneMockup = () => (
                   <div className="p-1 rounded-md bg-blue-500/30 text-cyan-300">
                     <SiReact size={11} />
                   </div>
-                  <span className="text-[10px] font-semibold text-slate-200">RecordSocial</span>
+                  <span className="text-[10px] font-semibold text-slate-200">
+                    RecordSocial
+                  </span>
                 </div>
                 <span className="px-1.5 py-0.5 rounded-full text-[8px] font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                   Live
@@ -131,19 +148,23 @@ const PhoneMockup = () => (
 
               {/* Music waveform visualizer */}
               <div className="flex items-center justify-between gap-1 h-6 px-1 my-1.5 bg-black/30 rounded-lg">
-                {[40, 75, 55, 90, 60, 100, 45, 80, 65, 95, 50, 85].map((h, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{ height: [`${h * 0.3}%`, `${h}%`, `${h * 0.4}%`] }}
-                    transition={{
-                      duration: 1.2,
-                      repeat: Infinity,
-                      delay: i * 0.08,
-                      ease: "easeInOut",
-                    }}
-                    className="w-1 bg-gradient-to-t from-cyan-400 to-blue-500 rounded-full"
-                  />
-                ))}
+                {[40, 75, 55, 90, 60, 100, 45, 80, 65, 95, 50, 85].map(
+                  (h, i) => (
+                    <motion.div
+                      key={i}
+                      animate={{
+                        height: [`${h * 0.3}%`, `${h}%`, `${h * 0.4}%`],
+                      }}
+                      transition={{
+                        duration: 1.2,
+                        repeat: Infinity,
+                        delay: i * 0.08,
+                        ease: "easeInOut",
+                      }}
+                      className="w-1 bg-gradient-to-t from-cyan-400 to-blue-500 rounded-full"
+                    />
+                  ),
+                )}
               </div>
 
               <div className="flex items-center justify-between text-[9px] text-slate-300 mt-1">
@@ -156,9 +177,13 @@ const PhoneMockup = () => (
             <div className="bg-white/[0.03] border border-white/[0.05] rounded-xl p-2 mb-2 flex items-center justify-between">
               <div className="flex items-center gap-1.5">
                 <FiActivity className="text-cyan-400" size={12} />
-                <span className="text-[9px] text-slate-300 font-medium">Reanimated 3 UI</span>
+                <span className="text-[9px] text-slate-300 font-medium">
+                  Reanimated 3 UI
+                </span>
               </div>
-              <span className="text-[9px] font-mono text-cyan-300 font-semibold">100% Smooth</span>
+              <span className="text-[9px] font-mono text-cyan-300 font-semibold">
+                100% Smooth
+              </span>
             </div>
 
             {/* Bottom Nav Mockup */}
@@ -192,8 +217,12 @@ const PhoneMockup = () => (
         <FiAward size={13} />
       </div>
       <div>
-        <div className="text-[11px] font-bold text-white tracking-tight">5+ Years</div>
-        <div className="text-[9px] text-cyan-300 font-medium">React Native Specialist</div>
+        <div className="text-[11px] font-bold text-white tracking-tight">
+          5+ Years
+        </div>
+        <div className="text-[9px] text-cyan-300 font-medium">
+          React Native Specialist
+        </div>
       </div>
     </motion.div>
 
@@ -207,8 +236,12 @@ const PhoneMockup = () => (
         <SiApple size={13} />
       </div>
       <div>
-        <div className="text-[11px] font-bold text-white tracking-tight">iOS & Android</div>
-        <div className="text-[9px] text-purple-300 font-medium">App Store Deployed</div>
+        <div className="text-[11px] font-bold text-white tracking-tight">
+          iOS & Android
+        </div>
+        <div className="text-[9px] text-purple-300 font-medium">
+          App Store Deployed
+        </div>
       </div>
     </motion.div>
 
@@ -217,7 +250,7 @@ const PhoneMockup = () => (
   </motion.div>
 );
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -240,10 +273,8 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          
           {/* Left Text Column */}
           <div className="flex-1 text-center lg:text-left">
-            
             {/* Status Pill */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -309,7 +340,10 @@ const Hero = () => {
             >
               <div className="h-[2px] w-8 bg-gradient-to-r from-transparent to-cyan-400 hidden sm:block" />
               <div className="text-lg sm:text-xl text-slate-200 font-semibold tracking-tight">
-                <AnimatedText text="Expert Mobile Developer & React Native Specialist" delay={0.4} />
+                <AnimatedText
+                  text="Expert Mobile Developer & React Native Specialist"
+                  delay={0.4}
+                />
               </div>
               <div className="h-[2px] w-8 bg-gradient-to-l from-transparent to-cyan-400 hidden sm:block" />
             </motion.div>
@@ -330,7 +364,10 @@ const Hero = () => {
                   className="w-4 h-4 animate-wave inline-block"
                 />
               </span>{" "}
-              I architect and ship high-performance mobile applications for iOS & Android. With 5+ years of production experience, I specialize in 60fps animations, cross-platform architecture, and publishing to the App Store & Google Play.
+              I architect and ship high-performance mobile applications for iOS &
+              Android. With 5+ years of production experience, I specialize in
+              60fps animations, cross-platform architecture, and publishing to
+              the App Store & Google Play.
             </motion.p>
 
             {/* CTAs */}
@@ -359,7 +396,9 @@ const Hero = () => {
                 {copied ? (
                   <>
                     <FiCheck className="text-emerald-400" size={15} />
-                    <span className="text-emerald-300 font-semibold">Email Copied!</span>
+                    <span className="text-emerald-300 font-semibold">
+                      Email Copied!
+                    </span>
                   </>
                 ) : (
                   <>
@@ -384,7 +423,9 @@ const Hero = () => {
               transition={{ delay: 0.95 }}
               className="flex items-center gap-3 justify-center lg:justify-start"
             >
-              <span className="text-xs text-slate-400 font-medium mr-1">Find me on:</span>
+              <span className="text-xs text-slate-400 font-medium mr-1">
+                Find me on:
+              </span>
               {socialLinks.map(({ href, icon: Icon, label, hover, target }) => (
                 <a
                   key={label}

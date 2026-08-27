@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import dynamic from "next/dynamic";
 
 const FallingLettersCanvas = dynamic(
@@ -7,6 +8,6 @@ const FallingLettersCanvas = dynamic(
   { ssr: false }
 );
 
-export default function ClientCanvas() {
+export default function ClientCanvas(): React.JSX.Element {
   return <FallingLettersCanvas />;
 }

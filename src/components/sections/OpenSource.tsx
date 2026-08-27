@@ -1,10 +1,11 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import GitHubCalendar from "react-github-calendar";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
 
-const OpenSource = () => {
+const OpenSource: React.FC = () => {
   return (
     <>
       <div className="section-divider">

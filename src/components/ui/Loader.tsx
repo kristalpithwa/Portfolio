@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 
-const Loader = () => {
+const Loader: React.FC = () => {
   return (
     <div className="flex items-center justify-center h-screen bg-[#060b18]">
       <motion.div

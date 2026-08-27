@@ -1,11 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const STAR_COUNT = 20;
 
-function generateStars(width, height) {
+interface Star {
+  scale: number;
+  x: number;
+  y: number;
+  yOffset: number;
+  duration: number;
+  delay: number;
+  w: number;
+  h: number;
+}
+
+function generateStars(width: number, height: number): Star[] {
   return Array.from({ length: STAR_COUNT }, () => ({
     scale: Math.random() * 0.5 + 0.5,
     x: Math.random() * width,
@@ -18,10 +29,13 @@ function generateStars(width, height) {
   }));
 }
 
-const HeroBackground = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [mounted, setMounted] = useState(false);
-  const [stars, setStars] = useState([]);
+const HeroBackground: React.FC = () => {
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
+  const [mounted, setMounted] = useState<boolean>(false);
+  const [stars, setStars] = useState<Star[]>([]);
 
   useEffect(() => {
     setMounted(true);
@@ -29,7 +43,7 @@ const HeroBackground = () => {
     const height = window.innerHeight;
     setStars(generateStars(width, height));
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
@@ -39,7 +53,9 @@ const HeroBackground = () => {
 
   // Render nothing on the server to avoid hydration mismatch from Math.random()
   if (!mounted) {
-    return <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10" />;
+    return (
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10" />
+    );
   }
 
   return (
@@ -64,7 +80,7 @@ const HeroBackground = () => {
           animate={{
             opacity: [0.1, 0.5, 0.1],
             scale: [0.5, 1, 0.5],
-            y: [null, star.yOffset],
+            y: [null as unknown as number, star.yOffset],
           }}
           transition={{
             duration: star.duration,

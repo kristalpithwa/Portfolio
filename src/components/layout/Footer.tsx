@@ -1,8 +1,9 @@
 "use client";
 
-import { FiGithub, FiLinkedin, FiMail, FiHeart } from "react-icons/fi";
+import React from "react";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="relative mt-12 pb-12">
       <div className="divider-gradient mb-8" />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,25 +11,38 @@ import {
   FiExternalLink,
   FiCode,
 } from "react-icons/fi";
-import { SiApple, SiAndroid, SiReact, SiNodedotjs } from "react-icons/si";
+import { SiApple, SiAndroid, SiReact } from "react-icons/si";
+import { IconType } from "react-icons";
 import { PROJECTS } from "@/data/projects";
+import { Project } from "@/types";
 
-const platformMap = {
+interface PlatformInfo {
+  icon: IconType;
+  color: string;
+  bg: string;
+}
+
+const platformMap: Record<string, PlatformInfo> = {
   iOS: { icon: SiApple, color: "text-slate-200", bg: "bg-slate-800/80" },
   Android: { icon: SiAndroid, color: "text-emerald-400", bg: "bg-emerald-950/60" },
   "React-Native": { icon: SiReact, color: "text-cyan-400", bg: "bg-cyan-950/60" },
   "NPM Package": { icon: FiPackage, color: "text-rose-400", bg: "bg-rose-950/60" },
 };
 
-const filterTabs = [
+interface FilterTab {
+  id: string;
+  label: string;
+}
+
+const filterTabs: FilterTab[] = [
   { id: "all", label: "All Projects" },
   { id: "apps", label: "Production Apps" },
   { id: "packages", label: "NPM Libraries" },
   { id: "ios", label: "iOS & Android" },
 ];
 
-const FeaturedWork = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
+const FeaturedWork: React.FC = () => {
+  const [activeFilter, setActiveFilter] = useState<string>("all");
 
   const filteredProjects = PROJECTS.filter((project) => {
     if (activeFilter === "all") return true;
@@ -95,7 +108,11 @@ const FeaturedWork = () => {
   );
 };
 
-const ProjectCard = ({ project }) => {
+interface ProjectCardProps {
+  project: Project;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const hasImages = project.images && project.images.length > 0;
   const isNpm = project.tags.includes("NPM Package");
 
@@ -114,7 +131,7 @@ const ProjectCard = ({ project }) => {
           <div className="relative w-full h-56 sm:h-64 rounded-2xl bg-gradient-to-br from-slate-900 via-[#0d1428] to-slate-900 border border-white/[0.06] mb-6 overflow-hidden flex items-center justify-center p-4">
             {/* Ambient backlight */}
             <div className="absolute inset-0 bg-radial from-cyan-500/10 via-transparent to-transparent opacity-60 pointer-events-none" />
-            
+
             {/* Multiple device preview cards */}
             <div className="relative flex items-center justify-center gap-3 w-full h-full">
               {project.images.slice(0, 3).map((img, idx) => (
@@ -142,7 +159,9 @@ const ProjectCard = ({ project }) => {
             {/* Quick tag badge on image */}
             <div className="absolute bottom-3 left-3 bg-[#060b18]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-1.5 z-30">
               <FiSmartphone size={12} className="text-cyan-400" />
-              <span className="text-[11px] font-semibold text-slate-200">Mobile Production App</span>
+              <span className="text-[11px] font-semibold text-slate-200">
+                Mobile Production App
+              </span>
             </div>
           </div>
         ) : isNpm ? (
@@ -153,10 +172,15 @@ const ProjectCard = ({ project }) => {
                 <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                 <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
               </div>
-              <span className="text-[10px] text-slate-400">npm package • TypeScript</span>
+              <span className="text-[10px] text-slate-400">
+                npm package • TypeScript
+              </span>
             </div>
             <div className="py-2 text-slate-300">
-              <span className="text-cyan-400">$</span> npm install {project.title.toLowerCase().includes("linkedin") ? "@kristalpithwa/react-native-linkedin-login" : "react-native-open-street-map-view"}
+              <span className="text-cyan-400">$</span> npm install{" "}
+              {project.title.toLowerCase().includes("linkedin")
+                ? "@kristalpithwa/react-native-linkedin-login"
+                : "react-native-open-street-map-view"}
             </div>
             <div className="text-[11px] text-emerald-400/90 flex items-center gap-1.5 bg-white/[0.03] px-2.5 py-1.5 rounded-lg border border-white/[0.04]">
               <FiCode size={13} className="text-cyan-400" />

@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   FiArrowLeft,
   FiExternalLink,
@@ -14,9 +14,11 @@ import {
   FiArrowUpRight,
 } from "react-icons/fi";
 import { SiApple, SiAndroid } from "react-icons/si";
+import { IconType } from "react-icons";
 import { PROJECTS } from "@/data/projects";
+import { Project, ThemeConfig } from "@/types";
 
-const colorThemes = {
+const colorThemes: Record<string, ThemeConfig> = {
   blue: {
     glow: "bg-blue-500",
     glowFrom: "from-blue-500",
@@ -64,7 +66,7 @@ const colorThemes = {
   },
 };
 
-const getTheme = (colorClass) => {
+const getTheme = (colorClass?: string): ThemeConfig => {
   if (!colorClass) return colorThemes.blue;
   for (const key of Object.keys(colorThemes)) {
     if (colorClass.includes(key)) return colorThemes[key];
@@ -72,14 +74,28 @@ const getTheme = (colorClass) => {
   return colorThemes.blue;
 };
 
-const platformIcons = {
+const platformIcons: Record<string, IconType> = {
   iOS: SiApple,
   Android: SiAndroid,
   "React-Native": FiSmartphone,
 };
 
 /* ─── Phone Mockup ─── */
-const PhoneFrame = ({ src, alt, isActive, onClick, index }) => (
+interface PhoneFrameProps {
+  src: string;
+  alt: string;
+  isActive: boolean;
+  onClick: () => void;
+  index: number;
+}
+
+const PhoneFrame: React.FC<PhoneFrameProps> = ({
+  src,
+  alt,
+  isActive,
+  onClick,
+  index,
+}) => (
   <motion.div
     layout
     initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -89,7 +105,12 @@ const PhoneFrame = ({ src, alt, isActive, onClick, index }) => (
       scale: isActive ? 1 : 0.88,
     }}
     whileHover={{ scale: isActive ? 1.02 : 0.92, opacity: isActive ? 1 : 0.7 }}
-    transition={{ type: "spring", stiffness: 300, damping: 30, delay: index * 0.08 }}
+    transition={{
+      type: "spring",
+      stiffness: 300,
+      damping: 30,
+      delay: index * 0.08,
+    }}
     onClick={onClick}
     className={`relative shrink-0 cursor-pointer transition-all duration-300 ${
       isActive ? "z-10" : "z-0"
@@ -112,13 +133,7 @@ const PhoneFrame = ({ src, alt, isActive, onClick, index }) => (
 
       {/* Screen */}
       <div className="w-full h-full bg-[#0a0e1a] rounded-[29px] overflow-hidden relative">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className="object-cover"
-          sizes="200px"
-        />
+        <Image src={src} alt={alt} fill className="object-cover" sizes="200px" />
       </div>
     </div>
 
@@ -130,11 +145,17 @@ const PhoneFrame = ({ src, alt, isActive, onClick, index }) => (
 );
 
 /* ─── Main Component ─── */
-const ProjectDetailsContent = ({ project }) => {
+interface ProjectDetailsContentProps {
+  project: Project;
+}
+
+const ProjectDetailsContent: React.FC<ProjectDetailsContentProps> = ({
+  project,
+}) => {
   const router = useRouter();
   const theme = getTheme(project.color);
-  const [activeImage, setActiveImage] = useState(0);
-  const scrollRef = useRef(null);
+  const [activeImage, setActiveImage] = useState<number>(0);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const hasImages = project.images && project.images.length > 0;
 
   useEffect(() => {
@@ -144,7 +165,7 @@ const ProjectDetailsContent = ({ project }) => {
   const platforms = project.tags.filter((t) => platformIcons[t]);
   const techTags = project.tags.filter((t) => !platformIcons[t]);
 
-  const scrollTo = (dir) => {
+  const scrollTo = (dir: "left" | "right") => {
     if (!scrollRef.current) return;
     const amount = dir === "left" ? -240 : 240;
     scrollRef.current.scrollBy({ left: amount, behavior: "smooth" });

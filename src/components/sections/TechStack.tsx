@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { FiSmartphone, FiLayout, FiServer } from "react-icons/fi";
 import {
@@ -15,8 +16,25 @@ import {
   SiTailwindcss,
   SiRedux,
 } from "react-icons/si";
+import { IconType } from "react-icons";
 
-const techCategories = [
+interface SkillItem {
+  name: string;
+  level: string;
+  icon: IconType;
+  color?: string;
+}
+
+interface TechCategory {
+  title: string;
+  icon: IconType;
+  description: string;
+  accent: string;
+  border: string;
+  skills: SkillItem[];
+}
+
+const techCategories: TechCategory[] = [
   {
     title: "Core Mobile Development",
     icon: FiSmartphone,
@@ -81,7 +99,7 @@ const techCategories = [
   },
 ];
 
-const TechStack = () => {
+const TechStack: React.FC = () => {
   return (
     <>
       <div className="section-divider">

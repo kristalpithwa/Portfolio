@@ -1,4 +1,6 @@
-export const siteConfig = {
+import { SiteConfig } from "@/types";
+
+export const siteConfig: SiteConfig = {
   name: "Kristal Pithwa",
   title: "Mobile Developer",
   description:

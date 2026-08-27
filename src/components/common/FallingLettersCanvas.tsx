@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Matter from "matter-js";
+import { BubbleBody } from "@/types";
 
-const FallingLettersCanvas = () => {
-  const canvasRef = useRef(null);
+const FallingLettersCanvas: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const { Engine, Render, World, Bodies, Runner, Events } = Matter;
@@ -78,7 +79,7 @@ const FallingLettersCanvas = () => {
       "Docker",
     ];
 
-    const fallingObjects = [];
+    const fallingObjects: BubbleBody[] = [];
 
     function createFallingBubble() {
       const tech = techStack[Math.floor(Math.random() * techStack.length)];
@@ -114,7 +115,7 @@ const FallingLettersCanvas = () => {
           strokeStyle: `hsla(${hue}, 90%, 75%, 0.15)`,
           lineWidth: 1,
         },
-      });
+      }) as BubbleBody;
 
       body.customBubble = {
         tech,
@@ -129,11 +130,14 @@ const FallingLettersCanvas = () => {
 
       if (fallingObjects.length > 40) {
         const old = fallingObjects.shift();
-        World.remove(world, old);
+        if (old) {
+          World.remove(world, old);
+        }
       }
     }
 
     const afterRenderHandler = () => {
+      if (!canvas) return;
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
@@ -236,7 +240,7 @@ const FallingLettersCanvas = () => {
       Events.off(render, "afterRender", afterRenderHandler);
       Render.stop(render);
       Runner.stop(runner);
-      World.clear(world);
+      World.clear(world, false);
       Engine.clear(engine);
     };
   }, []);
