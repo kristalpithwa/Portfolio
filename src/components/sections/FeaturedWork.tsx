@@ -12,9 +12,8 @@ interface FilterTab {
 
 const filterTabs: FilterTab[] = [
   { id: "all", label: "All Projects" },
-  { id: "apps", label: "Production Apps" },
-  { id: "packages", label: "NPM Libraries" },
-  { id: "ios", label: "iOS & Android" },
+  { id: "apps", label: "Mobile Apps" },
+  { id: "packages", label: "NPM Packages" },
 ];
 
 const FeaturedWork: React.FC = () => {

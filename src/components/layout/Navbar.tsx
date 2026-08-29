@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState("");
 
   const googleDriveLink =
-    "https://drive.google.com/drive/folders/1rxuh2kagfGl66vjF0Hf6KVZ0Dv5NeaI5?usp=drive_link";
+    "https://drive.google.com/drive/folders/19cMUgW-c2jWw7XNj3_33FYw7Q4_Q-aH9?usp=drive_link";
 
   useEffect(() => {
     const onScroll = () => {
@@ -117,7 +117,9 @@ const Navbar: React.FC = () => {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden p-2.5 text-slate-300 hover:text-white bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-xl"
-          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
         >

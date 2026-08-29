@@ -29,7 +29,7 @@ const AboutMe: React.FC = () => {
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-white/20 p-1.5 shadow-2xl">
                 <Image
                   alt="Kristal Pithwa - Mobile Developer"
-                  src="/kristal.jpg"
+                  src="https://lh3.googleusercontent.com/d/1ZTxWFS8pLTLI_k1n2bn_MU_1MQPFfMfY"
                   width={280}
                   height={280}
                   priority
