@@ -9,13 +9,22 @@ import {
   FiClock,
   FiSend,
 } from "react-icons/fi";
-import { contactOptions } from "@/data/constants";
+import { contactSection, contactOptions, personalInfo } from "@/data/portfolioData";
 
 const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const {
+    sectionTag,
+    subtitleTag,
+    heading,
+    highlight,
+    description,
+    email,
+    statusText,
+  } = contactSection;
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("crystalpithwa@gmail.com");
+    navigator.clipboard.writeText(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -23,7 +32,7 @@ const Contact: React.FC = () => {
   return (
     <>
       <div className="section-divider">
-        <span>Let&apos;s Connect</span>
+        <span>{sectionTag}</span>
       </div>
 
       <div className="mb-20">
@@ -38,26 +47,24 @@ const Contact: React.FC = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-gradient-to-b from-cyan-500/10 to-transparent blur-3xl pointer-events-none" />
 
           <div className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">
-            Start a Conversation
+            {subtitleTag}
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Have a Mobile App Idea?{" "}
+            {heading}{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Let&apos;s Build It.
+              {highlight}
             </span>
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-8 font-normal">
-            Whether you need a brand-new React Native app from scratch,
-            performance optimization for an existing codebase, or an experienced
-            developer for your team — I&apos;m here to help.
+            {description}
           </p>
 
           {/* Quick Copy Email Bar */}
           <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
             <a
-              href="mailto:crystalpithwa@gmail.com"
+              href={`mailto:${email}`}
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full text-sm font-semibold shadow-lg shadow-cyan-500/25 hover:from-cyan-400 hover:to-blue-500 transition-all focus-visible:ring-2 focus-visible:ring-cyan-400"
             >
               <FiSend size={15} />
@@ -67,7 +74,7 @@ const Contact: React.FC = () => {
             <button
               onClick={handleCopyEmail}
               className="inline-flex items-center gap-2 px-5 py-3 glass-card rounded-full text-slate-200 text-sm font-medium hover:bg-white/[0.08] hover:text-white transition-all border border-white/[0.1] focus-visible:ring-2 focus-visible:ring-cyan-400"
-              aria-label="Copy Kristal's email address"
+              aria-label={`Copy ${personalInfo.name}'s email address`}
             >
               {copied ? (
                 <>
@@ -79,7 +86,7 @@ const Contact: React.FC = () => {
               ) : (
                 <>
                   <FiCopy className="text-slate-400" size={15} />
-                  <span>Copy crystalpithwa@gmail.com</span>
+                  <span>Copy {email}</span>
                 </>
               )}
             </button>
@@ -136,7 +143,7 @@ const Contact: React.FC = () => {
           <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/25 rounded-full px-4 py-1.5">
             <FiClock size={14} className="text-emerald-400" />
             <span className="text-xs font-semibold text-emerald-300">
-              Current Status: Open to Opportunities • Replies within 24 Hours
+              {statusText}
             </span>
           </div>
         </motion.div>

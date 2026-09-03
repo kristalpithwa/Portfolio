@@ -15,8 +15,10 @@ import {
 } from "react-icons/fi";
 import { SiApple, SiAndroid } from "react-icons/si";
 import { IconType } from "react-icons";
-import { PROJECTS } from "@/data/projects";
+import { PROJECTS } from "@/data/portfolioData";
 import { Project, ThemeConfig } from "@/types";
+
+
 
 const colorThemes: Record<string, ThemeConfig> = {
   blue: {

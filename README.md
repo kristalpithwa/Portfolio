@@ -1,21 +1,41 @@
-# ✨ Modern Developer Portfolio
+# ✨ Modern Developer Portfolio & Showcase
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15.5-black?style=for-the-badge&logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Framer_Motion-11.0-FF0055?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+  <img src="https://img.shields.io/badge/Matter.js-0.19-EB445A?style=for-the-badge" alt="Matter.js" />
+</p>
 
 A modern, high-performance, and visually captivating portfolio built with **Next.js 15 (App Router)**, **React 18**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **Matter.js** interactive physics.
 
-Designed specifically for Software Engineers, Mobile Developers (React Native / iOS / Android), and Frontend Developers to showcase projects, technical skills, open-source work, and experience with a polished, glassmorphic dark-mode aesthetic.
+Designed specifically for Software Engineers, Mobile Developers (React Native / iOS / Android), and Full-Stack Developers to showcase projects, technical skills, open-source contributions, and experience with a sleek, glassmorphic dark-mode aesthetic.
+
+---
+
+## 🌟 Single-File Dynamic Configuration
+
+> **💡 Zero Headaches, Single Source of Truth:**
+> You can update your **entire portfolio** (bio, avatar, links, projects, skills, metrics, and SEO) by editing **just one single file**:
+> 
+> 👉 **[`src/data/portfolioData.tsx`](src/data/portfolioData.tsx)**
+
+No need to search through dozens of components or pages to change your name, email, skills, or projects.
 
 ---
 
 ## 🚀 Features
 
-- ⚡ **Next.js 15 App Router & React 18**: Server-side rendering, static generation (SSG) for project dynamic routes, and fast page loads.
-- ⚛️ **Interactive Physics Hero (Matter.js)**: Fun, interactive physics-based floating skill badges that respond to gravity and user interaction.
-- 🎨 **Modern Glassmorphic Dark UI**: Custom gradients, glowing borders, smooth micro-interactions, and responsive layout powered by Tailwind CSS & Framer Motion.
-- 📱 **Featured Projects & Filter Tabs**: Filter projects by category (Mobile Apps, NPM Packages, etc.) with dedicated dynamic project detail pages (`/project/[id]`).
-- 🐙 **GitHub Contributions Heatmap**: Live GitHub activity calendar integration via `react-github-calendar`.
-- 🛠️ **Categorized Tech Stack Grid**: Interactive tech breakdown across Core Mobile, Frameworks, State Management, Architecture, and DevOps.
-- 💼 **Resume & Social Links**: Quick access to Google Drive resume/portfolio drive links, LinkedIn, GitHub, and email contact forms.
-- 🔍 **SEO & Performance Ready**: OpenGraph metadata, dynamic OG image generation, Sitemap, Robots.txt, and Vercel Analytics/Speed Insights integrated.
+- ⚡ **Next.js 15 App Router & React 18**: Server-side rendering, static site generation (SSG) for dynamic project routes (`/project/[id]`), and lightning-fast page loads.
+- ⚛️ **Interactive Physics Hero (Matter.js)**: Floating tech bubbles that respond to gravity, mouse movement, and collision physics.
+- 🎨 **Modern Glassmorphic Dark UI**: Custom ambient glows, gradient text, smooth micro-interactions, and 100% responsive design.
+- 📱 **Featured Projects & Category Filters**: Filter projects (Mobile Apps, NPM Packages, etc.) with rich screenshots and dedicated detail pages.
+- 🐙 **Live GitHub Contribution Heatmap**: Real-time GitHub commit calendar integration via `react-github-calendar`.
+- 🛠️ **Categorized Tech Stack Bento Grid**: Visual breakdown across Core Mobile, Full-Stack Ecosystem, and Languages/Tools.
+- 💼 **Interactive 3D Phone Mockup**: Live animated preview card simulating mobile app interactions.
+- 🔍 **Complete SEO & JSON-LD Schemas**: Dynamic OpenGraph previews, Twitter cards, Sitemap, Robots.txt, and Schema.org structured data (Person, Organization, FAQ, Breadcrumbs).
 
 ---
 
@@ -36,32 +56,28 @@ Designed specifically for Software Engineers, Mobile Developers (React Native / 
 ## 📁 Project Structure
 
 ```text
-├── public/                     # Static assets (images, icons, resume)
+├── public/                     # Static assets (images, icons, previews)
 ├── src/
-│   ├── app/                    # Next.js App Router pages & metadata
-│   │   ├── layout.tsx          # Root layout with SEO & global providers
-│   │   ├── page.tsx            # Main portfolio homepage
-│   │   ├── opengraph-image.tsx # Dynamic OpenGraph social preview image
+│   ├── app/                    # Next.js App Router pages & SEO
+│   │   ├── layout.tsx          # Root layout with SEO & JSON-LD schemas
+│   │   ├── page.tsx            # Main portfolio landing page
+│   │   ├── opengraph-image.tsx # Dynamic OpenGraph social preview
 │   │   ├── project/[id]/       # Dynamic project detail pages
-│   │   ├── robots.txt/         # SEO robots configuration
-│   │   └── sitemap.xml/        # SEO sitemap configuration
+│   │   ├── robots.txt/         # SEO crawler rules
+│   │   └── sitemap.xml/        # SEO sitemap generator
 │   ├── components/
-│   │   ├── common/             # Reusable UI components (Footer, etc.)
-│   │   ├── layout/             # Layout components (Navbar, etc.)
-│   │   ├── sections/           # Homepage sections
-│   │   │   ├── Hero.tsx        # Hero with Matter.js physics badges
-│   │   │   ├── AboutMe.tsx     # Bio, highlights, and profile picture
-│   │   │   ├── TechStack.tsx   # Skill grid and competencies
-│   │   │   ├── FeaturedWork.tsx# Project portfolio cards & filtering
-│   │   │   ├── OpenSource.tsx  # GitHub calendar and contributions
-│   │   │   └── Contact.tsx     # Contact details & links
-│   │   └── ui/                 # Atomic UI components
+│   │   ├── common/             # Reusable UI & physics canvas components
+│   │   ├── layout/             # Layout components (Navbar, Footer)
+│   │   ├── sections/           # Modular homepage sections (Hero, About, Tech, Work, Contact)
+│   │   └── ui/                 # Animated UI elements
 │   ├── data/
-│   │   ├── constants.ts        # Stats, contact links, key highlights
-│   │   └── projects.tsx        # Projects data and showcase items
-│   └── lib/                    # Utility functions
-├── next.config.mjs             # Next.js configuration & image domains
-├── tailwind.config.js          # Tailwind CSS custom themes & animations
+│   │   ├── portfolioData.tsx   # ⭐ MASTER SINGLE SOURCE OF TRUTH DATA FILE
+│   │   ├── constants.ts        # Backward-compatibility re-export
+│   │   └── projects.tsx        # Backward-compatibility re-export
+│   ├── lib/                    # Helper utilities
+│   └── types/                  # TypeScript interface definitions
+├── next.config.mjs             # Next.js configuration
+├── tailwind.config.js          # Tailwind styling tokens & keyframes
 └── package.json                # Dependencies and scripts
 ```
 
@@ -93,7 +109,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view your portfolio.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the portfolio.
 
 ### 4. Build for production
 
@@ -104,36 +120,27 @@ npm run start
 
 ---
 
-## ✏️ How to Customize for Yourself
+## ✏️ How to Customize for Yourself (in 3 Minutes)
 
-You can easily adapt this portfolio to your own profile by modifying a few configuration files:
+All portfolio data, identity, projects, skills, links, stats, and SEO settings are centralized into **one single master data file**:
 
-### 1. Update Personal Info & Social Links
-Open [`src/data/constants.ts`](file:///src/data/constants.ts):
-- Update `stats` (years of experience, apps shipped, etc.).
-- Update `contactOptions` (email, LinkedIn username/URL, GitHub username/URL).
-- Update `keyHighlights` (your specialties and key domains).
+👉 **[`src/data/portfolioData.tsx`](src/data/portfolioData.tsx)**
 
-### 2. Update Projects
-Open [`src/data/projects.tsx`](file:///src/data/projects.tsx):
-- Edit or add your projects with title, description, category (`apps`, `packages`), screenshots, tech tags, and live/GitHub/App Store links.
+Simply open `src/data/portfolioData.tsx` and edit the following sections:
 
-### 3. Update Profile Picture & About Me
-Open [`src/components/sections/AboutMe.tsx`](file:///src/components/sections/AboutMe.tsx):
-- Replace the image `src` with your own image URL or place your image in `public/` (e.g. `/profile.jpg`).
-- Edit the bio text and engineering philosophy to match your experience.
-
-### 4. Update Resume / Google Drive Link
-Open [`src/components/layout/Navbar.tsx`](file:///src/components/layout/Navbar.tsx) and [`src/components/sections/Hero.tsx`](file:///src/components/sections/Hero.tsx):
-- Replace `googleDriveLink` with your own Google Drive resume/portfolio folder or direct PDF link.
-
-### 5. Update GitHub Activity Heatmap
-Open [`src/components/sections/OpenSource.tsx`](file:///src/components/sections/OpenSource.tsx):
-- Change `username="kristalpithwa"` to your GitHub username.
-
-### 6. Update SEO & Metadata
-Open [`src/app/layout.tsx`](file:///src/app/layout.tsx):
-- Update `metadata` title, description, OpenGraph tags, and canonical website URL.
+| Section | Description |
+| :--- | :--- |
+| **`personalInfo`** | Name, initials, roles, email, location, avatar URL, resume link, site URL, and hero bio. |
+| **`personalInfo.hero`** | Hero headlines, primary/secondary CTA links, and 3D phone mockup metrics. |
+| **`personalInfo.about`** | About section philosophy heading and detailed bio narrative. |
+| **`stats`** | Metric counters (years of experience, apps shipped, performance stats). |
+| **`keyHighlights`** | Core competency badges, icons, and accent colors. |
+| **`socialLinks` & `contactOptions`** | GitHub, LinkedIn, and direct email links/badges. |
+| **`techStackSection`** | Categorized skill groups (Mobile, Full-Stack, Languages & Tools) with levels and colors. |
+| **`fallingBubbleTech`** | Keywords for the interactive floating physics canvas. |
+| **`openSourceSection`** | Your GitHub username for the live contribution calendar. |
+| **`PROJECTS`** | Your project showcase items (tags, screenshots, short & full feature descriptions). |
+| **`seoConfig`** | Meta title, description, keywords, Twitter handle, and FAQ structured data. |
 
 ---
 
@@ -143,7 +150,7 @@ Open [`src/app/layout.tsx`](file:///src/app/layout.tsx):
 
 The easiest way to deploy your Next.js portfolio is with the [Vercel Platform](https://vercel.com/new):
 
-1. Push your code to a GitHub/GitLab repository.
+1. Push your code to your GitHub repository.
 2. Import your repository to **Vercel**.
 3. Vercel will automatically detect Next.js and build your portfolio.
 4. Click **Deploy**!

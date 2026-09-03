@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PROJECTS } from "@/data/projects";
+import { PROJECTS, personalInfo, seoConfig } from "@/data/portfolioData";
 import ProjectDetailsContent from "@/components/common/ProjectDetailsContent";
 
 interface PageProps {
@@ -20,17 +20,17 @@ export async function generateMetadata({
   const project = PROJECTS.find((p) => p.id === parseInt(id, 10));
   if (!project) return {};
 
-  const projectUrl = `https://kristalpithwa.vercel.app/project/${id}`;
+  const projectUrl = `${personalInfo.websiteUrl}/project/${id}`;
 
   return {
     title: project.title,
     description: project.shortDescription,
-    metadataBase: new URL("https://kristalpithwa.vercel.app"),
+    metadataBase: new URL(personalInfo.websiteUrl),
     alternates: {
       canonical: projectUrl,
     },
     openGraph: {
-      title: `${project.title} | Kristal Pithwa`,
+      title: `${project.title} | ${personalInfo.name}`,
       description: project.shortDescription,
       type: "article",
       url: projectUrl,
@@ -47,9 +47,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} | Kristal Pithwa`,
+      title: `${project.title} | ${personalInfo.name}`,
       description: project.shortDescription,
-      creator: "@kristalpithwa",
+      creator: seoConfig.twitterHandle,
       images: project.images?.[0] ? [project.images[0]] : [],
     },
   };

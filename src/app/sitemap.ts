@@ -1,9 +1,9 @@
 import { MetadataRoute } from "next";
-import { PROJECTS } from "@/data/projects";
+import { PROJECTS, personalInfo } from "@/data/portfolioData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projects: MetadataRoute.Sitemap = PROJECTS.map((p) => ({
-    url: `https://kristalpithwa.vercel.app/project/${p.id}`,
+    url: `${personalInfo.websiteUrl}/project/${p.id}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,
@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: "https://kristalpithwa.vercel.app",
+      url: personalInfo.websiteUrl,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 1.0,

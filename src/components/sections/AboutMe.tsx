@@ -3,13 +3,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { keyHighlights, stats } from "@/data/constants";
+import { personalInfo, keyHighlights, stats } from "@/data/portfolioData";
 
 const AboutMe: React.FC = () => {
+  const { about } = personalInfo;
+
   return (
     <>
       <div className="section-divider">
-        <span>About Kristal</span>
+        <span>{about.sectionTag}</span>
       </div>
 
       <div className="mb-20">
@@ -28,8 +30,8 @@ const AboutMe: React.FC = () => {
 
               <div className="relative rounded-2xl overflow-hidden bg-slate-900 border-2 border-white/20 p-1.5 shadow-2xl">
                 <Image
-                  alt="Kristal Pithwa - Mobile Developer"
-                  src="https://lh3.googleusercontent.com/d/1ZTxWFS8pLTLI_k1n2bn_MU_1MQPFfMfY"
+                  alt={`${personalInfo.name} - ${personalInfo.shortRole}`}
+                  src={personalInfo.avatar}
                   width={280}
                   height={280}
                   priority
@@ -41,36 +43,31 @@ const AboutMe: React.FC = () => {
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#060b18]/90 backdrop-blur-md border border-cyan-500/30 px-3.5 py-1 rounded-full shadow-lg flex items-center gap-1.5 whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                 <span className="text-[11px] font-semibold text-slate-200">
-                  Senior Mobile Engineer
+                  {personalInfo.shortRole}
                 </span>
               </div>
             </div>
 
             <h3 className="text-xl font-bold text-white tracking-tight mt-2 mb-1">
-              Kristal Pithwa
+              {personalInfo.name}
             </h3>
             <p className="text-sm text-cyan-400 font-medium">
-              React Native • iOS • Android
+              {personalInfo.role}
             </p>
           </div>
 
           {/* Biography & Core Competencies (8 cols) */}
           <div className="lg:col-span-8 glass-card rounded-3xl p-7 sm:p-9 border border-white/[0.08] relative overflow-hidden">
             <div className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">
-              Engineering Philosophy
+              {about.philosophyTag}
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-4">
-              Crafting fluid, high-performance mobile experiences.
+              {about.title}
             </h2>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
-              With over{" "}
-              <strong>5+ years of specialized mobile development</strong>, I
-              bridge the gap between design vision and technical execution. I
-              build production-grade applications using React Native,
-              TypeScript, and native bridges, focusing on silky 60fps
-              animations, intuitive UX, and clean architecture.
+              {about.bio}
             </p>
 
             {/* Core Highlights List */}

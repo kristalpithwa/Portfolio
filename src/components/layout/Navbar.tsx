@@ -3,27 +3,15 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiFileText, FiExternalLink } from "react-icons/fi";
-
-interface NavLinkItem {
-  label: string;
-  href: string;
-  id: string;
-}
-
-const navLinks: NavLinkItem[] = [
-  { label: "About", href: "#about", id: "about" },
-  { label: "Tech", href: "#tech", id: "tech" },
-  { label: "Work", href: "#work", id: "work" },
-  { label: "Contact", href: "#contact", id: "contact" },
-];
+import { personalInfo, navLinks } from "@/data/portfolioData";
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  const googleDriveLink =
-    "https://drive.google.com/drive/folders/19cMUgW-c2jWw7XNj3_33FYw7Q4_Q-aH9?usp=drive_link";
+  const googleDriveLink = personalInfo.resumeUrl;
+
 
   useEffect(() => {
     const onScroll = () => {
@@ -64,13 +52,13 @@ const Navbar: React.FC = () => {
         <a
           href="#"
           className="group flex items-center gap-2 text-white font-sans font-bold text-xl tracking-tight focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg py-1 px-1.5 transition-transform hover:scale-105"
-          aria-label="Kristal Pithwa - Portfolio Home"
+          aria-label={`${personalInfo.name} - Portfolio Home`}
         >
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-cyan-500/20">
-            K
+            {personalInfo.initials.charAt(0)}
           </div>
           <span className="text-slate-100 font-semibold tracking-tight group-hover:text-cyan-400 transition-colors">
-            Kristal<span className="text-cyan-400">.</span>
+            {personalInfo.firstName}<span className="text-cyan-400">.</span>
           </span>
         </a>
 

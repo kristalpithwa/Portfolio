@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Matter from "matter-js";
 import { BubbleBody } from "@/types";
+import { fallingBubbleTech } from "@/data/portfolioData";
 
 const FallingLettersCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -57,29 +58,10 @@ const FallingLettersCanvas: React.FC = () => {
     let boundaries = createBoundaries();
     World.add(world, boundaries);
 
-    const techStack = [
-      "React Native",
-      "Expo",
-      "Next.js",
-      "TypeScript",
-      "React",
-      "JavaScript",
-      "Tailwind",
-      "Redux",
-      "iOS",
-      "Android",
-      "Firebase",
-      "Git",
-      "Node.js",
-      "GraphQL",
-      "Swift",
-      "Kotlin",
-      "CI/CD",
-      "REST API",
-      "Docker",
-    ];
+    const techStack = fallingBubbleTech;
 
     const fallingObjects: BubbleBody[] = [];
+
 
     function createFallingBubble() {
       const tech = techStack[Math.floor(Math.random() * techStack.length)];

@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { PROJECTS } from "@/data/projects";
+import { PROJECTS } from "@/data/portfolioData";
 import ProjectCard from "@/components/common/ProjectCard";
+
 
 interface FilterTab {
   id: string;

@@ -2,127 +2,39 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FiSmartphone, FiLayout, FiServer } from "react-icons/fi";
-import {
-  SiReact,
-  SiExpo,
-  SiXcode,
-  SiAndroid,
-  SiNodedotjs,
-  SiExpress,
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiTailwindcss,
-  SiRedux,
-} from "react-icons/si";
-import { IconType } from "react-icons";
-
-interface SkillItem {
-  name: string;
-  level: string;
-  icon: IconType;
-  color?: string;
-}
-
-interface TechCategory {
-  title: string;
-  icon: IconType;
-  description: string;
-  accent: string;
-  border: string;
-  skills: SkillItem[];
-}
-
-const techCategories: TechCategory[] = [
-  {
-    title: "Core Mobile Development",
-    icon: FiSmartphone,
-    description:
-      "Engineering production-grade iOS & Android applications with React Native, Expo, and fluid 60fps native interactions.",
-    accent: "from-cyan-500/20 via-blue-500/10 to-transparent",
-    border: "border-cyan-500/30",
-    skills: [
-      { name: "React Native", level: "Expert", icon: SiReact, color: "#61DAFB" },
-      { name: "Expo", level: "Expert", icon: SiExpo, color: "#FFFFFF" },
-      { name: "iOS / Xcode", level: "Advanced", icon: SiXcode, color: "#1575F9" },
-      { name: "Android", level: "Advanced", icon: SiAndroid, color: "#3DDC84" },
-    ],
-  },
-  {
-    title: "Frontend & Backend Ecosystem",
-    icon: FiLayout,
-    description:
-      "Building full-stack web architectures with high-performance React/Next.js interfaces and robust Node.js/Express services.",
-    accent: "from-purple-500/20 via-indigo-500/10 to-transparent",
-    border: "border-purple-500/30",
-    skills: [
-      { name: "React", level: "Expert", icon: SiReact, color: "#61DAFB" },
-      { name: "Node.js", level: "Expert", icon: SiNodedotjs, color: "#5FA04E" },
-      { name: "Express.js", level: "Expert", icon: SiExpress, color: "#FFFFFF" },
-      { name: "Next.js", level: "Advanced", icon: SiNextdotjs, color: "#FFFFFF" },
-    ],
-  },
-  {
-    title: "Languages, State & Design Systems",
-    icon: FiServer,
-    description:
-      "Type-safe software design with TypeScript/JavaScript, centralized state with Redux, and modern styling via Tailwind CSS.",
-    accent: "from-emerald-500/20 via-teal-500/10 to-transparent",
-    border: "border-emerald-500/30",
-    skills: [
-      {
-        name: "TypeScript",
-        level: "Expert",
-        icon: SiTypescript,
-        color: "#3178C6",
-      },
-      {
-        name: "JavaScript",
-        level: "Expert",
-        icon: SiJavascript,
-        color: "#F7DF1E",
-      },
-      {
-        name: "Tailwind CSS",
-        level: "Advanced",
-        icon: SiTailwindcss,
-        color: "#06B6D4",
-      },
-      {
-        name: "Redux Toolkit",
-        level: "Expert",
-        icon: SiRedux,
-        color: "#764ABC",
-      },
-    ],
-  },
-];
+import { techStackSection } from "@/data/portfolioData";
 
 const TechStack: React.FC = () => {
+  const {
+    sectionTag,
+    subtitleTag,
+    title: sectionTitle,
+    description: sectionDesc,
+    categories,
+  } = techStackSection;
+
   return (
     <>
       <div className="section-divider">
-        <span>Technical Arsenal</span>
+        <span>{sectionTag}</span>
       </div>
 
       <div className="mb-20">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-2">
-            Skills & Capabilities
+            {subtitleTag}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Technologies I Master
+            {sectionTitle}
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Specialized in high-performance mobile architectures, native
-            bridging, and modern full-stack web standards.
+            {sectionDesc}
           </p>
         </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {techCategories.map((category, idx) => {
+          {categories.map((category, idx) => {
             const {
               title,
               icon: Icon,

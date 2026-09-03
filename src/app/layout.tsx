@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import ClientCanvas from "@/components/ui/ClientCanvas";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { personalInfo, seoConfig } from "@/data/portfolioData";
 import "./globals.css";
 
 const geist = Geist({
@@ -19,34 +20,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kristalpithwa.vercel.app"),
+  metadataBase: new URL(personalInfo.websiteUrl),
   title: {
-    default:
-      "Kristal Pithwa | Expert Mobile Developer | React Native | iOS | Android",
-    template: "%s | Mobile Developer | Kristal Pithwa",
+    default: seoConfig.title,
+    template: seoConfig.titleTemplate,
   },
-  description:
-    "Kristal Pithwa is an expert mobile developer with 5+ years experience building React Native, iOS, and Android applications. Specialized in cross-platform development, animations, and pixel-perfect UI. View 20+ production apps and NPM packages.",
-  keywords: [
-    "React Native developer",
-    "iOS developer",
-    "Android developer",
-    "mobile developer",
-    "cross-platform development",
-    "React Native expert",
-    "mobile development",
-    "app developer for hire",
-    "freelance mobile developer",
-    "native iOS development",
-    "Android development expert",
-    "mobile app portfolio",
-    "TypeScript mobile development",
-    "app performance optimization",
-    "UI/UX developer",
-  ],
-  authors: [{ name: "Kristal Pithwa" }],
-  creator: "Kristal Pithwa",
-  publisher: "Kristal Pithwa",
+  description: seoConfig.description,
+  keywords: seoConfig.keywords,
+  authors: [{ name: personalInfo.name }],
+  creator: personalInfo.name,
+  publisher: personalInfo.name,
   robots: {
     index: true,
     follow: true,
@@ -57,23 +40,21 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://kristalpithwa.vercel.app",
+    canonical: personalInfo.websiteUrl,
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kristalpithwa.vercel.app",
-    siteName: "Kristal Pithwa Portfolio",
-    title: "Kristal Pithwa | Expert Mobile Developer",
-    description:
-      "Expert React Native, iOS, and Android developer with 5+ years experience. View my portfolio of 20+ apps and NPM packages built with performance and design excellence.",
+    url: personalInfo.websiteUrl,
+    siteName: `${personalInfo.name} Portfolio`,
+    title: `${personalInfo.name} | ${personalInfo.role}`,
+    description: seoConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kristal Pithwa | Mobile Developer",
-    description:
-      "Expert React Native, iOS & Android developer. 5+ years building production apps. View portfolio of 20+ applications.",
-    creator: "@kristalpithwa",
+    title: `${personalInfo.name} | ${personalInfo.shortRole}`,
+    description: seoConfig.description,
+    creator: seoConfig.twitterHandle,
   },
   icons: {
     icon: "/images/emoji.svg",
@@ -98,14 +79,13 @@ export default function RootLayout({
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Kristal Pithwa",
-    jobTitle: "Senior Mobile Developer",
-    description:
-      "Expert mobile developer specializing in React Native, iOS & Android development with 5+ years of experience building production applications.",
-    url: "https://kristalpithwa.vercel.app",
-    image: "https://kristalpithwa.vercel.app/kristal.jpg",
+    name: personalInfo.name,
+    jobTitle: personalInfo.jobTitle,
+    description: personalInfo.about.bio,
+    url: personalInfo.websiteUrl,
+    image: personalInfo.avatar,
     sameAs: [
-      "https://github.com/kristalpithwa",
+      `https://github.com/${personalInfo.name.toLowerCase().replace(/\s+/g, "")}`,
       "https://www.linkedin.com/in/kristal-pithwa",
     ],
     knowsAbout: [
@@ -119,26 +99,25 @@ export default function RootLayout({
     ],
     workLocation: {
       "@type": "Place",
-      name: "Remote",
+      name: personalInfo.location,
     },
   };
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Kristal Pithwa - Mobile Developer",
-    url: "https://kristalpithwa.vercel.app",
-    logo: "https://kristalpithwa.vercel.app/images/emoji.svg",
-    description:
-      "Professional mobile app development portfolio showcasing React Native, iOS and Android applications.",
+    name: `${personalInfo.name} - ${personalInfo.jobTitle}`,
+    url: personalInfo.websiteUrl,
+    logo: `${personalInfo.websiteUrl}/images/emoji.svg`,
+    description: seoConfig.description,
     sameAs: [
-      "https://github.com/kristalpithwa",
+      `https://github.com/${personalInfo.name.toLowerCase().replace(/\s+/g, "")}`,
       "https://www.linkedin.com/in/kristal-pithwa",
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Service",
-      email: "crystalpithwa@gmail.com",
+      email: personalInfo.email,
       availableLanguage: ["en"],
     },
   };
@@ -151,25 +130,25 @@ export default function RootLayout({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://kristalpithwa.vercel.app",
+        item: personalInfo.websiteUrl,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "About",
-        item: "https://kristalpithwa.vercel.app#about",
+        item: `${personalInfo.websiteUrl}#about`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Work",
-        item: "https://kristalpithwa.vercel.app#work",
+        item: `${personalInfo.websiteUrl}#work`,
       },
       {
         "@type": "ListItem",
         position: 4,
         name: "Contact",
-        item: "https://kristalpithwa.vercel.app#contact",
+        item: `${personalInfo.websiteUrl}#contact`,
       },
     ],
   };
@@ -177,40 +156,14 @@ export default function RootLayout({
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What technologies does Kristal Pithwa specialize in?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Kristal specializes in React Native, iOS, and Android development with expertise in building cross-platform mobile applications with native performance and pixel-perfect UI.",
-        },
+    mainEntity: seoConfig.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
       },
-      {
-        "@type": "Question",
-        name: "How many years of experience does Kristal have?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Kristal has 5+ years of professional experience building production mobile applications for iOS and Android platforms.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What is Kristal's experience level?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Kristal has delivered 20+ apps ranging from startups to enterprise applications with a focus on performance, UI/UX, and smooth animations.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How can I hire Kristal for mobile app development?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "You can reach out via the contact form on the portfolio website at kristalpithwa.vercel.app or email crystalpithwa@gmail.com.",
-        },
-      },
-    ],
+    })),
   };
 
   return (
