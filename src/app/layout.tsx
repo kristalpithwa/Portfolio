@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ClientCanvas from "@/components/ui/ClientCanvas";
+import { ToastProvider } from "@/components/ui/Toast";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { personalInfo, seoConfig } from "@/data/portfolioData";
@@ -198,11 +199,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-[#060b18] text-slate-100 font-sans overflow-x-hidden selection:bg-cyan-500/20 selection:text-white antialiased">
-        <ClientCanvas />
-        <div className="noise-overlay" />
-        {children}
-        <Analytics />
-        <SpeedInsights />
+        <ToastProvider>
+          <ClientCanvas />
+          <div className="noise-overlay" />
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </ToastProvider>
       </body>
     </html>
   );

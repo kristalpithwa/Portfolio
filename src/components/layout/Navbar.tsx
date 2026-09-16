@@ -14,27 +14,62 @@ const Navbar: React.FC = () => {
 
 
   useEffect(() => {
-    const onScroll = () => {
+    const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      // Scroll spy logic
-      const scrollPosition = window.scrollY + 200;
-      for (const link of [...navLinks].reverse()) {
-        const section = document.getElementById(link.id);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(link.id);
-          return;
+      // Bottom of page detection -> highlight contact
+      const isAtBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 80;
+
+      if (isAtBottom) {
+        setActiveSection("contact");
+        return;
+      }
+
+      if (window.scrollY < 180) {
+        setActiveSection("");
+        return;
+      }
+
+      // Accurate scroll spy using getBoundingClientRect
+      let currentSection = "";
+      for (const { id } of navLinks) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // The element is active if its top is near navbar or within top half of screen while still visible
+          if (rect.top <= 240 && rect.bottom >= 100) {
+            currentSection = id;
+          }
         }
       }
-      if (window.scrollY < 200) {
-        setActiveSection("");
+
+      if (currentSection) {
+        setActiveSection(currentSection);
       }
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+    href: string,
+  ) => {
+    setActiveSection(id);
+    if (href.startsWith("#")) {
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.pushState(null, "", href);
+      }
+    }
+  };
 
   return (
     <motion.nav
@@ -70,6 +105,7 @@ const Navbar: React.FC = () => {
               <a
                 key={label}
                 href={href}
+                onClick={(e) => handleNavClick(e, id, href)}
                 className={`relative px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 focus-visible:ring-2 focus-visible:ring-cyan-400 ${
                   isActive
                     ? "text-cyan-300 bg-cyan-500/15 border border-cyan-500/25 shadow-sm shadow-cyan-500/10"
@@ -134,7 +170,10 @@ const Navbar: React.FC = () => {
                 <a
                   key={label}
                   href={href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => {
+                    handleNavClick(e, id, href);
+                    setMenuOpen(false);
+                  }}
                   className={`block px-4 py-3 text-sm rounded-xl transition-all ${
                     isActive
                       ? "bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 font-semibold"

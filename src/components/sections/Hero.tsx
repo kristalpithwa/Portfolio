@@ -14,6 +14,7 @@ import {
 import { SiApple, SiAndroid, SiReact } from "react-icons/si";
 import { motion } from "framer-motion";
 import { personalInfo, socialLinks } from "@/data/portfolioData";
+import { useToast } from "@/components/ui/Toast";
 
 const PhoneMockup: React.FC = () => {
   const { mockup } = personalInfo.hero;
@@ -222,9 +223,10 @@ const PhoneMockup: React.FC = () => {
 const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const { hero } = personalInfo;
+  const { copyEmailWithToast } = useToast();
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personalInfo.email);
+    copyEmailWithToast(personalInfo.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -393,18 +395,28 @@ const Hero: React.FC = () => {
               <span className="text-xs text-slate-400 font-medium mr-1">
                 Find me on:
               </span>
-              {socialLinks.map(({ href, icon: Icon, label, hover, target }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={target}
-                  rel={target ? "noopener noreferrer" : undefined}
-                  aria-label={label}
-                  className={`p-2.5 rounded-xl border border-white/[0.08] bg-white/[0.03] text-slate-400 transition-all hover:scale-105 ${hover}`}
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
+              {socialLinks.map(({ href, icon: Icon, label, hover, target }) => {
+                const isMail = href.startsWith("mailto:");
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target={target}
+                    rel={target ? "noopener noreferrer" : undefined}
+                    onClick={
+                      isMail
+                        ? (e) => {
+                            copyEmailWithToast(personalInfo.email);
+                          }
+                        : undefined
+                    }
+                    aria-label={label}
+                    className={`p-2.5 rounded-xl border border-white/[0.08] bg-white/[0.03] text-slate-400 transition-all hover:scale-105 ${hover}`}
+                  >
+                    <Icon size={16} />
+                  </a>
+                );
+              })}
             </motion.div>
           </div>
 

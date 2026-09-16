@@ -2,8 +2,11 @@
 
 import React from "react";
 import { personalInfo, socialLinks } from "@/data/portfolioData";
+import { useToast } from "@/components/ui/Toast";
 
 const Footer: React.FC = () => {
+  const { copyEmailWithToast } = useToast();
+
   return (
     <footer className="relative mt-12 pb-12">
       <div className="divider-gradient mb-8" />
@@ -21,18 +24,28 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            {socialLinks.map(({ href, icon: Icon, label, hover, target }) => (
-              <a
-                key={label}
-                href={href}
-                target={target}
-                rel={target ? "noopener noreferrer" : undefined}
-                aria-label={`${personalInfo.name} on ${label}`}
-                className={`p-2 rounded-xl bg-white/[0.04] text-slate-300 hover:text-white hover:bg-white/[0.08] transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400 ${hover}`}
-              >
-                <Icon size={18} />
-              </a>
-            ))}
+            {socialLinks.map(({ href, icon: Icon, label, hover, target }) => {
+              const isMail = href.startsWith("mailto:");
+              return (
+                <a
+                  key={label}
+                  href={href}
+                  target={target}
+                  rel={target ? "noopener noreferrer" : undefined}
+                  onClick={
+                    isMail
+                      ? (e) => {
+                          copyEmailWithToast(personalInfo.email);
+                        }
+                      : undefined
+                  }
+                  aria-label={`${personalInfo.name} on ${label}`}
+                  className={`p-2 rounded-xl bg-white/[0.04] text-slate-300 hover:text-white hover:bg-white/[0.08] transition-colors focus-visible:ring-2 focus-visible:ring-cyan-400 ${hover}`}
+                >
+                  <Icon size={18} />
+                </a>
+              );
+            })}
           </div>
 
           <div className="text-center sm:text-right">

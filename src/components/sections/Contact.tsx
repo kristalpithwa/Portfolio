@@ -10,9 +10,11 @@ import {
   FiSend,
 } from "react-icons/fi";
 import { contactSection, contactOptions, personalInfo } from "@/data/portfolioData";
+import { useToast } from "@/components/ui/Toast";
 
 const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const { copyEmailWithToast } = useToast();
   const {
     sectionTag,
     subtitleTag,
@@ -24,7 +26,7 @@ const Contact: React.FC = () => {
   } = contactSection;
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(email);
+    copyEmailWithToast(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -65,6 +67,7 @@ const Contact: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
             <a
               href={`mailto:${email}`}
+              onClick={() => copyEmailWithToast(email)}
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full text-sm font-semibold shadow-lg shadow-cyan-500/25 hover:from-cyan-400 hover:to-blue-500 transition-all focus-visible:ring-2 focus-visible:ring-cyan-400"
             >
               <FiSend size={15} />
@@ -93,7 +96,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Contact Channels Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {contactOptions.map(
               ({
                 href,
@@ -104,14 +107,19 @@ const Contact: React.FC = () => {
                 accent,
                 border,
                 external,
-              }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={external ? "_blank" : undefined}
-                  rel={external ? "noopener noreferrer" : undefined}
-                  className={`group glass-card rounded-2xl p-5 text-left border border-white/[0.06] ${border} transition-all duration-300 flex flex-col justify-between hover:shadow-lg`}
-                >
+              }) => {
+                const isMail = href.startsWith("mailto:");
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                    onClick={
+                      isMail ? () => copyEmailWithToast(email) : undefined
+                    }
+                    className={`group glass-card rounded-2xl p-5 text-left border border-white/[0.06] ${border} transition-all duration-300 flex flex-col justify-between hover:shadow-lg`}
+                  >
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <div className="p-2.5 rounded-xl bg-white/[0.04] text-slate-300 group-hover:text-cyan-400 transition-colors">
@@ -135,8 +143,8 @@ const Contact: React.FC = () => {
                     <FiArrowUpRight size={14} />
                   </div>
                 </a>
-              ),
-            )}
+              );
+            })}
           </div>
 
           {/* Availability Footer Badge */}

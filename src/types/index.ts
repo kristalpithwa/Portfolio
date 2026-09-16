@@ -105,3 +105,72 @@ export interface BubbleBody extends Matter.Body {
   customBubble?: CustomBubbleData;
 }
 
+export interface TrustBadge {
+  label: string;
+  icon?: IconType;
+  description?: string;
+}
+
+export interface PlatformItem {
+  id: string;
+  name: string;
+  tagline: string;
+  roleBadge: string;
+  description: string;
+  profileUrl: string;
+  ratingOrStatus: string;
+  ratingSubtitle: string;
+  accentColor: string;
+  glowColor: string;
+  badgeBg: string;
+  badgeBorder: string;
+  badgeText: string;
+  borderColor: string;
+  buttonGradient: string;
+  buttonShadow: string;
+  icon: IconType;
+  highlights: string[];
+  contractTypes: string[];
+  verified: boolean;
+}
+
+export interface AvailablePlatformsSection {
+  sectionTag: string;
+  subtitleTag: string;
+  title: string;
+  highlight: string;
+  description: string;
+  liveStatusText: string;
+  responseTime: string;
+  platforms: PlatformItem[];
+  trustSignals: TrustBadge[];
+}
+
+export interface TestimonialItem {
+  id: string;
+  projectTitle: string;
+  clientName: string;
+  rating: number;
+  date: string;
+  feedback: string;
+  platform: string;
+  platformIcon?: IconType;
+  verified: boolean;
+  tags?: string[];
+}
+
+export interface ClientFeedbackSection {
+  sectionTag: string;
+  subtitleTag: string;
+  title: string;
+  highlight: string;
+  description: string;
+  totalScore: string;
+  totalReviews: string;
+  jobSuccessScore: string;
+  upworkProfileUrl: string;
+  feedbacks: TestimonialItem[];
+}
+
+
+

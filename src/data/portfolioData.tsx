@@ -8,6 +8,16 @@ import {
   FiGithub,
   FiLayout,
   FiServer,
+  FiShield,
+  FiCheckCircle,
+  FiClock,
+  FiZap,
+  FiAward,
+  FiLock,
+  FiGlobe,
+  FiStar,
+  FiUser,
+  FiCalendar,
 } from "react-icons/fi";
 import {
   SiApple,
@@ -22,6 +32,9 @@ import {
   SiJavascript,
   SiTailwindcss,
   SiRedux,
+  SiUpwork,
+  SiAndela,
+  SiArc,
 } from "react-icons/si";
 import {
   Project,
@@ -32,6 +45,8 @@ import {
   TechCategory,
   NavLinkItem,
   FAQItem,
+  AvailablePlatformsSection,
+  ClientFeedbackSection,
 } from "@/types";
 
 /**
@@ -53,7 +68,8 @@ export const personalInfo = {
   shortRole: "Senior Mobile Engineer",
   jobTitle: "Senior Mobile Developer",
   statusBadge: "Available for new mobile projects & contract",
-  avatar: "https://lh3.googleusercontent.com/d/1ZTxWFS8pLTLI_k1n2bn_MU_1MQPFfMfY",
+  avatar:
+    "https://lh3.googleusercontent.com/d/1ZTxWFS8pLTLI_k1n2bn_MU_1MQPFfMfY",
   email: "crystalpithwa@gmail.com",
   location: "Remote",
   resumeUrl:
@@ -145,6 +161,8 @@ export const navLinks: NavLinkItem[] = [
   { label: "About", href: "#about", id: "about" },
   { label: "Tech", href: "#tech", id: "tech" },
   { label: "Work", href: "#work", id: "work" },
+  { label: "Platforms", href: "#platforms", id: "platforms" },
+  { label: "Reviews", href: "#feedback", id: "feedback" },
   { label: "Contact", href: "#contact", id: "contact" },
 ];
 
@@ -167,6 +185,20 @@ export const socialLinks: SocialLink[] = [
     target: "_blank",
   },
   {
+    href: "https://www.upwork.com/freelancers/~0132919be20304de8f?viewMode=1",
+    icon: SiUpwork,
+    label: "Upwork",
+    hover: "hover:text-emerald-400 hover:border-emerald-400/30",
+    target: "_blank",
+  },
+  {
+    href: "https://arc.dev/@kristalpithwa602137?preview=1",
+    icon: SiArc,
+    label: "Arc.dev",
+    hover: "hover:text-teal-400 hover:border-teal-400/30",
+    target: "_blank",
+  },
+  {
     href: "mailto:crystalpithwa@gmail.com",
     icon: FiMail,
     label: "Email",
@@ -186,6 +218,16 @@ export const contactOptions: ContactOption[] = [
     badge: "Fastest response",
     accent: "group-hover:text-cyan-400",
     border: "hover:border-cyan-500/40",
+  },
+  {
+    href: "https://www.upwork.com/freelancers/~0132919be20304de8f?viewMode=1",
+    icon: SiUpwork,
+    label: "Upwork Profile",
+    value: "kristalpithwa",
+    badge: "Top Rated • 100% JSS",
+    accent: "group-hover:text-emerald-400",
+    border: "hover:border-emerald-500/40",
+    external: true,
   },
   {
     href: "https://www.linkedin.com/in/kristal-pithwa",
@@ -217,8 +259,7 @@ export const contactSection = {
   description:
     "Whether you need a brand-new React Native app from scratch, performance optimization for an existing codebase, or an experienced developer for your team — I'm here to help.",
   email: "crystalpithwa@gmail.com",
-  statusText:
-    "Current Status: Open to Opportunities • Replies within 24 Hours",
+  statusText: "Current Status: Open to Opportunities • Replies within 24 Hours",
 };
 
 /**
@@ -363,6 +404,190 @@ export const openSourceSection = {
   githubUsername: "kristalpithwa",
   githubProfileUrl: "https://github.com/kristalpithwa",
 };
+
+/**
+ * 🚀 Available On - Verified Hiring Platforms
+ */
+export const availablePlatformsSection: AvailablePlatformsSection = {
+  sectionTag: "Hire Me Directly",
+  subtitleTag: "Platform Availability",
+  title: "Available On Global",
+  highlight: "Talent Platforms",
+  description:
+    "Looking for escrow-protected contracts, vetted freelance engagements, or direct enterprise hiring? You can hire and collaborate with me across the world's leading tech platforms.",
+  liveStatusText: "Available for Q3/Q4 contracts & full-time mobile roles",
+  responseTime: "Replies within 24h",
+  platforms: [
+    {
+      id: "upwork",
+      name: "Upwork",
+      tagline: "Top Rated Freelancer & Mobile Specialist",
+      roleBadge: "Top Rated • 100% JSS",
+      description:
+        "Hire me with full escrow payment protection. Ideal for fixed-price milestones, hourly direct contracts, and short or long-term mobile development sprints.",
+      profileUrl:
+        "https://www.upwork.com/freelancers/~0132919be20304de8f?viewMode=1",
+      ratingOrStatus: "100% Job Success",
+      ratingSubtitle: "Top Rated Plus Track Record",
+      accentColor: "#14a800",
+      glowColor: "from-emerald-500/20 via-green-500/10 to-transparent",
+      badgeBg: "bg-emerald-500/10",
+      badgeBorder: "border-emerald-500/30",
+      badgeText: "text-emerald-400",
+      borderColor: "hover:border-emerald-500/40",
+      buttonGradient:
+        "from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 shadow-emerald-500/20",
+      buttonShadow: "shadow-emerald-500/20",
+      icon: SiUpwork,
+      highlights: [
+        "Hourly or Fixed-Price Contracts",
+        "Direct Escrow Protection",
+        "React Native & Full-Stack Apps",
+        "App Store & Google Play Deploy",
+      ],
+      contractTypes: ["Direct Contract", "Hourly / Fixed", "Milestone Based"],
+      verified: true,
+    },
+    {
+      id: "andela",
+      name: "Andela",
+      tagline: "Vetted Global Talent Network",
+      roleBadge: "Pre-Vetted Senior Engineer",
+      description:
+        "Available through Andela's elite talent cloud for enterprise engineering teams, high-growth tech companies, and distributed remote product squads.",
+      profileUrl: "https://www.andela.com",
+      ratingOrStatus: "Top 2% Vetted",
+      ratingSubtitle: "Enterprise Mobile Specialist",
+      accentColor: "#3359DF",
+      glowColor: "from-blue-600/20 via-indigo-500/10 to-transparent",
+      badgeBg: "bg-blue-500/10",
+      badgeBorder: "border-blue-500/30",
+      badgeText: "text-blue-400",
+      borderColor: "hover:border-blue-500/40",
+      buttonGradient:
+        "from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-blue-500/20",
+      buttonShadow: "shadow-blue-500/20",
+      icon: SiAndela,
+      highlights: [
+        "Enterprise Staff Augmentation",
+        "Full-Time Remote Integration",
+        "Cross-Platform Architecture",
+        "Scalable TypeScript Codebases",
+      ],
+      contractTypes: [
+        "Full-Time Remote",
+        "Dedicated Squads",
+        "Enterprise Staffing",
+      ],
+      verified: true,
+    },
+    {
+      id: "arc",
+      name: "Arc.dev",
+      tagline: "Silicon Valley-Vetted Remote Talent",
+      roleBadge: "Vetted Senior Developer",
+      description:
+        "Pre-screened for senior-level coding excellence, system design, and communication. Fast-tracked for high-impact US & international tech organizations.",
+      profileUrl: "https://arc.dev/@kristalpithwa602137?preview=1",
+      ratingOrStatus: "Pre-Vetted Talent",
+      ratingSubtitle: "Top 2.3% Global Candidates",
+      accentColor: "#00D084",
+      glowColor: "from-teal-500/20 via-cyan-500/10 to-transparent",
+      badgeBg: "bg-teal-500/10",
+      badgeBorder: "border-teal-500/30",
+      badgeText: "text-teal-400",
+      borderColor: "hover:border-teal-500/40",
+      buttonGradient:
+        "from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 shadow-teal-500/20",
+      buttonShadow: "shadow-teal-500/20",
+      icon: SiArc,
+      highlights: [
+        "Silicon Valley & Startup Ready",
+        "Async & Sync Fluent Communication",
+        "60 FPS Native Animations & UX",
+        "Instant Talent Matching",
+      ],
+      contractTypes: [
+        "Full-Time / Part-Time",
+        "Contract-to-Hire",
+        "Direct Remote",
+      ],
+      verified: true,
+    },
+  ],
+  trustSignals: [
+    {
+      label: "Escrow & Secure Billing",
+      description:
+        "100% safe payments with platform-backed milestone protection",
+      icon: FiShield,
+    },
+    {
+      label: "NDA & IP Protection",
+      description:
+        "Full intellectual property transfer & enterprise NDA compliance",
+      icon: FiLock,
+    },
+    {
+      label: "Global Timezone Overlap",
+      description:
+        "Flexible working hours aligned with US, European & Global teams",
+      icon: FiGlobe,
+    },
+    {
+      label: "Production-Grade Quality",
+      description:
+        "App Store approved, 60fps performance & clean type-safe code",
+      icon: FiZap,
+    },
+  ],
+};
+
+/**
+ * 🌟 Client Feedback & Upwork Testimonials
+ */
+export const clientFeedbackSection: ClientFeedbackSection = {
+  sectionTag: "Client Feedback",
+  subtitleTag: "Verified Upwork Reviews",
+  title: "What Clients Say About",
+  highlight: "Working With Me",
+  description:
+    "Real feedback from international clients and product teams on Upwork who hired me to build, optimize, and ship high-performance mobile applications.",
+  totalScore: "5.0",
+  totalReviews: "2+ Reviews",
+  jobSuccessScore: "100% Job Success",
+  upworkProfileUrl:
+    "https://www.upwork.com/freelancers/~0132919be20304de8f?viewMode=1",
+  feedbacks: [
+    {
+      id: "upwork-1",
+      projectTitle: "App Development Assistance Needed",
+      clientName: "Nick L.",
+      rating: 5.0,
+      date: "September 1, 2025",
+      feedback:
+        "Kristal is very good at mobile app development, he communicated well and finished the work as agreed. Im very happy with the outcome.",
+      platform: "Upwork",
+      platformIcon: SiUpwork,
+      verified: true,
+      tags: ["Mobile App Development", "Communication", "React Native"],
+    },
+    {
+      id: "upwork-2",
+      projectTitle: "Optimize React Native News App",
+      clientName: "Muhammed A.",
+      rating: 4.9,
+      date: "May 10, 2024",
+      feedback:
+        "Awesome guy, hard working and trying his best to satisfy client needs. I'd recommend working with him, he is good.",
+      platform: "Upwork",
+      platformIcon: SiUpwork,
+      verified: true,
+      tags: ["React Native Optimization", "Performance", "Client Satisfaction"],
+    },
+  ],
+};
+
 
 /**
  * 💼 Featured Projects
