@@ -220,15 +220,39 @@ const ProjectDetailsContent: React.FC<ProjectDetailsContentProps> = ({
                 })}
               </div>
             )}
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white text-xs font-medium transition-all ${theme.btn} shadow-lg`}
-            >
-              Open
-              <FiExternalLink size={12} />
-            </a>
+            {project.storeLinks?.appStore && (
+              <a
+                href={project.storeLinks.appStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white text-xs font-medium transition-all ${theme.btn} shadow-lg`}
+              >
+                <SiApple size={12} />
+                App Store
+              </a>
+            )}
+            {project.storeLinks?.playStore && (
+              <a
+                href={project.storeLinks.playStore}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white text-xs font-medium transition-all bg-emerald-600 hover:bg-emerald-500 shadow-lg hover:shadow-emerald-500/30`}
+              >
+                <SiAndroid size={12} />
+                Google Play
+              </a>
+            )}
+            {!project.storeLinks && project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white text-xs font-medium transition-all ${theme.btn} shadow-lg`}
+              >
+                Open
+                <FiExternalLink size={12} />
+              </a>
+            )}
           </div>
         </div>
       </motion.nav>
@@ -276,16 +300,40 @@ const ProjectDetailsContent: React.FC<ProjectDetailsContentProps> = ({
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex gap-3 justify-center">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-sm font-medium transition-all ${theme.btn} shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
-              >
-                <FiExternalLink size={14} />
-                View Live Project
-              </a>
+            <div className="flex gap-3 justify-center flex-wrap">
+              {project.storeLinks?.appStore && (
+                <a
+                  href={project.storeLinks.appStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-sm font-medium transition-all ${theme.btn} shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
+                >
+                  <SiApple size={14} />
+                  App Store
+                </a>
+              )}
+              {project.storeLinks?.playStore && (
+                <a
+                  href={project.storeLinks.playStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-sm font-medium transition-all bg-emerald-600 hover:bg-emerald-500 shadow-lg hover:shadow-emerald-500/30"
+                >
+                  <SiAndroid size={14} />
+                  Google Play
+                </a>
+              )}
+              {!project.storeLinks && project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-sm font-medium transition-all ${theme.btn} shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
+                >
+                  <FiExternalLink size={14} />
+                  View Live Project
+                </a>
+              )}
               <button
                 onClick={() => router.push("/#work")}
                 className="inline-flex items-center gap-2 px-6 py-2.5 glass-card rounded-full text-white text-sm font-medium hover:bg-white/[0.06] transition-all"
@@ -428,15 +476,39 @@ const ProjectDetailsContent: React.FC<ProjectDetailsContentProps> = ({
             {/* Quick Info */}
             <div className="glass-card rounded-2xl p-5 sticky top-20 space-y-5">
               {/* CTA */}
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center justify-center gap-2 w-full p-3.5 rounded-xl ${theme.btn} text-white text-sm font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
-              >
-                <FiExternalLink size={14} />
-                View Live Project
-              </a>
+              {project.storeLinks?.appStore && (
+                <a
+                  href={project.storeLinks.appStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center justify-center gap-2 w-full p-3.5 rounded-xl ${theme.btn} text-white text-sm font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
+                >
+                  <SiApple size={14} />
+                  App Store
+                </a>
+              )}
+              {project.storeLinks?.playStore && (
+                <a
+                  href={project.storeLinks.playStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full p-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium transition-all shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-0.5"
+                >
+                  <SiAndroid size={14} />
+                  Google Play
+                </a>
+              )}
+              {!project.storeLinks && project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center justify-center gap-2 w-full p-3.5 rounded-xl ${theme.btn} text-white text-sm font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
+                >
+                  <FiExternalLink size={14} />
+                  View Live Project
+                </a>
+              )}
 
               <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
 

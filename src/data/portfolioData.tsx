@@ -646,7 +646,7 @@ export const PROJECTS: Project[] = [
     ),
   },
   {
-    id: 2,
+    id: 3,
     title: "React Native Open Street Map View (Library)",
     tags: [
       "React-Native",
@@ -698,7 +698,7 @@ export const PROJECTS: Project[] = [
     ),
   },
   {
-    id: 3,
+    id: 4,
     title: "Social Music App - Dedicated Developer",
     tags: [
       "React-Native",
@@ -749,145 +749,21 @@ export const PROJECTS: Project[] = [
     ),
   },
   {
-    id: 4,
-    title: "Clinic System App - Dedicated Developer",
-    tags: [
-      "React-Native",
-      "JavaScript",
-      "RestAPI",
-      "Firebase",
-      "Spotify SDK",
-      "iOS",
-      "Android",
-    ],
-    link: "https://apps.apple.com/us/app/validi-clinic-system/id1049757545",
-    color: "border-purple-500",
-    images: [
-      "/images/Validi/230x498bb.webp",
-      "/images/Validi/230x498bb (1).webp",
-      "/images/Validi/230x498bb (2).webp",
-      "/images/Validi/230x498bb (5).webp",
-    ],
-    shortDescription:
-      "Clinic Management System App designed for registered staff, providing seamless access to client profiles, medical history, and detailed journal entries.",
-    fullDescription: (
-      <>
-        <p>
-          Designed and developed for registered medical staff, this application
-          provides seamless access to client profiles and enables the creation
-          of detailed journal entries.
-        </p>
-        <h3 className="text-xl text-white font-medium mt-4 mb-2">
-          System Capabilities
-        </h3>
-        <p>Profiles include vital information such as:</p>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>Medical History</li>
-          <li>Prescribed Treatments</li>
-          <li>Allergies</li>
-          <li>Emergency Contacts</li>
-        </ul>
-        <p className="mt-4">
-          The app ensures data security and compliance while improving the
-          efficiency of clinic operations.
-        </p>
-      </>
-    ),
-  },
-  {
     id: 5,
-    title: "Learning App for students",
+    title: "Finix - Smart Financial Assistant",
     tags: [
       "React-Native",
-      "JavaScript",
-      "RestAPI",
-      "ChatGPT",
-      "iOS",
-      "Android",
-    ],
-    link: "https://apps.apple.com/us/app/adaptive-instruction-advisor/id6461770153?uo=2",
-    color: "border-purple-500",
-    images: [
-      "/images/AIA/230x498bb.webp",
-      "/images/AIA/230x498bb (1).webp",
-      "/images/AIA/230x498bb (2).webp",
-      "/images/AIA/230x498bb (3).webp",
-    ],
-    shortDescription:
-      "Adaptive learning applications help students of all ages improve their writing skills with AI-powered instant feedback on responses.",
-    fullDescription: (
-      <>
-        <p>
-          This adaptive learning application mimics a personal tutor for writing
-          skills. By leveraging Artificial Intelligence, specifically ChatGPT
-          integration, the program provides instant, personalized feedback on
-          student responses to writing prompts.
-        </p>
-        <h3 className="text-xl text-white font-medium mt-4 mb-2">
-          Adaptive Learning
-        </h3>
-        <p>
-          The system adapts to the student&apos;s writing style, providing
-          progressively more challenging prompts and feedback as the
-          student&apos;s skills improve. It tracks progress over time and offers
-          insights to teachers and parents.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 7,
-    title: "Battle Rap Live App - Dedicated Developer",
-    tags: [
-      "React-Native",
-      "JavaScript",
-      "RestAPI",
+      "Expo",
+      "TypeScript",
       "Firebase",
       "iOS",
       "Android",
     ],
-    link: "https://apps.apple.com/us/app/battleraplive/id346512771",
-    color: "border-yellow-500",
-    images: [
-      "/images/BRL/230x498bb.webp",
-      "/images/BRL/230x498bb (1).webp",
-      "/images/BRL/230x498bb (2).webp",
-      "/images/BRL/230x498bb (4).webp",
-    ],
-    shortDescription:
-      "Discover your rap potential with BattleRapLive, the ultimate freestyle and battle rap app. Designed to awaken the MC within.",
-    fullDescription: (
-      <>
-        <p>
-          BattleRapLive brings a mobile recording studio right to your pocket.
-          Whether you&apos;re a seasoned rapper or a newcomer looking to step
-          into the cypher, this app is perfect for every skill level.
-        </p>
-        <h3 className="text-xl text-white font-medium mt-4 mb-2">
-          Key Features
-        </h3>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>
-            <strong>Mobile Studio:</strong> High-quality voice recording with
-            beat overlays.
-          </li>
-          <li>
-            <strong>Battle Mode:</strong> Challenge friends or random opponents
-            to rap battles.
-          </li>
-          <li>
-            <strong>Community:</strong> Share your tracks and get rated by the
-            community.
-          </li>
-        </ul>
-      </>
-    ),
-  },
-  {
-    id: 7,
-    title: "Finix - Smart Financial Assistant",
-    tags: ["React-Native", "Expo", "TypeScript", "Firebase", "iOS", "Android"],
     link: "https://apps.apple.com/in/app/finix/id1543162143",
+    storeLinks: {
+      appStore: "https://apps.apple.com/in/app/finix/id1543162143",
+      playStore: "https://play.google.com/store/apps/details?id=com.finix.jyoti&hl=en_IN",
+    },
     color: "border-cyan-500",
     images: [
       "/images/Finix/230x498bb.webp",
@@ -938,6 +814,141 @@ export const PROJECTS: Project[] = [
           <li>TypeScript for type-safe, maintainable codebase</li>
           <li>Firebase backend for real-time sync and authentication</li>
           <li>Published on both Apple App Store & Google Play Store</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 6,
+    title: "Clinic System App - Dedicated Developer",
+    tags: [
+      "React-Native",
+      "JavaScript",
+      "RestAPI",
+      "Firebase",
+      "Spotify SDK",
+      "iOS",
+      "Android",
+    ],
+    link: "https://apps.apple.com/us/app/validi-clinic-system/id1049757545",
+    color: "border-purple-500",
+    images: [
+      "/images/Validi/230x498bb.webp",
+      "/images/Validi/230x498bb (1).webp",
+      "/images/Validi/230x498bb (2).webp",
+      "/images/Validi/230x498bb (5).webp",
+    ],
+    shortDescription:
+      "Clinic Management System App designed for registered staff, providing seamless access to client profiles, medical history, and detailed journal entries.",
+    fullDescription: (
+      <>
+        <p>
+          Designed and developed for registered medical staff, this application
+          provides seamless access to client profiles and enables the creation
+          of detailed journal entries.
+        </p>
+        <h3 className="text-xl text-white font-medium mt-4 mb-2">
+          System Capabilities
+        </h3>
+        <p>Profiles include vital information such as:</p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Medical History</li>
+          <li>Prescribed Treatments</li>
+          <li>Allergies</li>
+          <li>Emergency Contacts</li>
+        </ul>
+        <p className="mt-4">
+          The app ensures data security and compliance while improving the
+          efficiency of clinic operations.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 7,
+    title: "Learning App for students",
+    tags: [
+      "React-Native",
+      "JavaScript",
+      "RestAPI",
+      "ChatGPT",
+      "iOS",
+      "Android",
+    ],
+    link: "https://apps.apple.com/us/app/adaptive-instruction-advisor/id6461770153?uo=2",
+    color: "border-purple-500",
+    images: [
+      "/images/AIA/230x498bb.webp",
+      "/images/AIA/230x498bb (1).webp",
+      "/images/AIA/230x498bb (2).webp",
+      "/images/AIA/230x498bb (3).webp",
+    ],
+    shortDescription:
+      "Adaptive learning applications help students of all ages improve their writing skills with AI-powered instant feedback on responses.",
+    fullDescription: (
+      <>
+        <p>
+          This adaptive learning application mimics a personal tutor for writing
+          skills. By leveraging Artificial Intelligence, specifically ChatGPT
+          integration, the program provides instant, personalized feedback on
+          student responses to writing prompts.
+        </p>
+        <h3 className="text-xl text-white font-medium mt-4 mb-2">
+          Adaptive Learning
+        </h3>
+        <p>
+          The system adapts to the student&apos;s writing style, providing
+          progressively more challenging prompts and feedback as the
+          student&apos;s skills improve. It tracks progress over time and offers
+          insights to teachers and parents.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 8,
+    title: "Battle Rap Live App - Dedicated Developer",
+    tags: [
+      "React-Native",
+      "JavaScript",
+      "RestAPI",
+      "Firebase",
+      "iOS",
+      "Android",
+    ],
+    link: "https://apps.apple.com/us/app/battleraplive/id346512771",
+    color: "border-yellow-500",
+    images: [
+      "/images/BRL/230x498bb.webp",
+      "/images/BRL/230x498bb (1).webp",
+      "/images/BRL/230x498bb (2).webp",
+      "/images/BRL/230x498bb (4).webp",
+    ],
+    shortDescription:
+      "Discover your rap potential with BattleRapLive, the ultimate freestyle and battle rap app. Designed to awaken the MC within.",
+    fullDescription: (
+      <>
+        <p>
+          BattleRapLive brings a mobile recording studio right to your pocket.
+          Whether you&apos;re a seasoned rapper or a newcomer looking to step
+          into the cypher, this app is perfect for every skill level.
+        </p>
+        <h3 className="text-xl text-white font-medium mt-4 mb-2">
+          Key Features
+        </h3>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <strong>Mobile Studio:</strong> High-quality voice recording with
+            beat overlays.
+          </li>
+          <li>
+            <strong>Battle Mode:</strong> Challenge friends or random opponents
+            to rap battles.
+          </li>
+          <li>
+            <strong>Community:</strong> Share your tracks and get rated by the
+            community.
+          </li>
         </ul>
       </>
     ),
