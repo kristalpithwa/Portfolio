@@ -28,6 +28,11 @@ export const platformMap: Record<string, PlatformInfo> = {
   "NPM Package": { icon: FiPackage, color: "text-rose-400", bg: "bg-rose-950/60" },
 };
 
+const storeIconMap: Record<string, { icon: IconType; color: string; label: string }> = {
+  appStore: { icon: SiApple, color: "text-slate-200", label: "App Store" },
+  playStore: { icon: SiAndroid, color: "text-emerald-400", label: "Google Play" },
+};
+
 export interface ProjectCardProps {
   project: Project;
 }
@@ -155,7 +160,37 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
 
         <div className="flex items-center gap-3 shrink-0">
-          {project.link && (
+          {project.storeLinks && (
+            <>
+              {project.storeLinks.appStore && (
+                <a
+                  href={project.storeLinks.appStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/[0.04] hover:bg-slate-800/80 text-slate-200 hover:text-white border border-white/[0.08] hover:border-slate-500/30 transition-all group"
+                  aria-label={`Open ${project.title} on App Store`}
+                  title="Open on App Store"
+                >
+                  <SiApple size={14} className="group-hover:text-white transition-colors" />
+                  <span className="text-xs font-medium hidden sm:inline">App Store</span>
+                </a>
+              )}
+              {project.storeLinks.playStore && (
+                <a
+                  href={project.storeLinks.playStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/[0.04] hover:bg-emerald-950/60 text-emerald-400 hover:text-emerald-200 border border-white/[0.08] hover:border-emerald-500/30 transition-all group"
+                  aria-label={`Open ${project.title} on Google Play`}
+                  title="Open on Google Play"
+                >
+                  <SiAndroid size={14} className="group-hover:text-emerald-200 transition-colors" />
+                  <span className="text-xs font-medium hidden sm:inline">Google Play</span>
+                </a>
+              )}
+            </>
+          )}
+          {project.link && !project.storeLinks && (
             <a
               href={project.link}
               target="_blank"

@@ -11,6 +11,10 @@ export interface Project {
   images: string[];
   shortDescription: string;
   fullDescription: React.ReactNode;
+  storeLinks?: {
+    appStore?: string;
+    playStore?: string;
+  };
 }
 
 export interface StatItem {

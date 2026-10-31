@@ -588,7 +588,6 @@ export const clientFeedbackSection: ClientFeedbackSection = {
   ],
 };
 
-
 /**
  * 💼 Featured Projects
  */
@@ -647,7 +646,7 @@ export const PROJECTS: Project[] = [
     ),
   },
   {
-    id: 2,
+    id: 3,
     title: "React Native Open Street Map View (Library)",
     tags: [
       "React-Native",
@@ -699,7 +698,7 @@ export const PROJECTS: Project[] = [
     ),
   },
   {
-    id: 3,
+    id: 4,
     title: "Social Music App - Dedicated Developer",
     tags: [
       "React-Native",
@@ -750,7 +749,77 @@ export const PROJECTS: Project[] = [
     ),
   },
   {
-    id: 4,
+    id: 5,
+    title: "Finix - Smart Financial Assistant",
+    tags: [
+      "React-Native",
+      "Expo",
+      "TypeScript",
+      "Firebase",
+      "iOS",
+      "Android",
+    ],
+    link: "https://apps.apple.com/in/app/finix/id1543162143",
+    storeLinks: {
+      appStore: "https://apps.apple.com/in/app/finix/id1543162143",
+      playStore: "https://play.google.com/store/apps/details?id=com.finix.jyoti&hl=en_IN",
+    },
+    color: "border-cyan-500",
+    images: [
+      "/images/Finix/230x498bb.webp",
+      "/images/Finix/230x498bb (1).webp",
+      "/images/Finix/230x498bb (2).webp",
+    ],
+    shortDescription:
+      "Finix is a smart financial assistant app that helps users manage their finances, track expenses, and make informed financial decisions with AI-powered insights.",
+    fullDescription: (
+      <>
+        <p>
+          Finix is a comprehensive financial management application built with
+          React Native and Expo, designed to help users take control of their
+          personal finances. The app provides intuitive expense tracking,
+          budgeting tools, and AI-powered financial insights to help users make
+          smarter money decisions.
+        </p>
+        <h3 className="text-xl text-white font-medium mt-4 mb-2">
+          Core Features
+        </h3>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <strong>Expense Tracking:</strong> Categorize and monitor daily
+            expenses with ease.
+          </li>
+          <li>
+            <strong>Smart Budgeting:</strong> Set budgets and get alerts when
+            approaching limits.
+          </li>
+          <li>
+            <strong>Financial Insights:</strong> AI-powered analysis of spending
+            patterns and recommendations.
+          </li>
+          <li>
+            <strong>Multi-platform:</strong> Available on both iOS and Android
+            via App Store and Google Play.
+          </li>
+          <li>
+            <strong>Secure & Private:</strong> Bank-grade encryption for
+            financial data protection.
+          </li>
+        </ul>
+        <h3 className="text-xl text-white font-medium mt-4 mb-2">
+          Technical Highlights
+        </h3>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Built with React Native & Expo for cross-platform consistency</li>
+          <li>TypeScript for type-safe, maintainable codebase</li>
+          <li>Firebase backend for real-time sync and authentication</li>
+          <li>Published on both Apple App Store & Google Play Store</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 6,
     title: "Clinic System App - Dedicated Developer",
     tags: [
       "React-Native",
@@ -796,7 +865,7 @@ export const PROJECTS: Project[] = [
     ),
   },
   {
-    id: 5,
+    id: 7,
     title: "Learning App for students",
     tags: [
       "React-Native",
@@ -837,7 +906,7 @@ export const PROJECTS: Project[] = [
     ),
   },
   {
-    id: 6,
+    id: 8,
     title: "Battle Rap Live App - Dedicated Developer",
     tags: [
       "React-Native",
